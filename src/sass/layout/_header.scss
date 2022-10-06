@@ -11,7 +11,7 @@
   border-bottom: 0px solid #e0e0e0;
   @include fixed(top 0 left 0 bottom 0);
   width: 100%;
-  height: 56px;
+  height: 80px;
   z-index: 1;
 
   @include for-size(desktop) {
@@ -33,8 +33,8 @@
     align-items: center;
     padding: 0;
     margin: 0;
-    width: 188px;
-    height: 35px;
+    max-width: 264px;
+    height: 36px;
 
     .img-logo {
       width: 100%;

@@ -492,3 +492,9 @@
     margin: 0;
   }
 }
+
+.form-control, .form-select {
+  @include media-breakpoint-up(md) {
+    font-size: 16px;
+  }
+}

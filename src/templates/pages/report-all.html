@@ -1,0 +1,152 @@
+<!-- index.html -->
+{% import "../components/partials/webapp/aside.html" as aside %} {% import
+"../components/cards.html" as card %} {% extends "layout.html" %} {% block
+content %}
+
+<header>{% include "partials/webapp/nav.html" %}</header>
+<main class="webapp webapp--whare-page">
+  {{ aside.whanau() }}
+  <section class="section">
+    <div class="container-fluid">
+      <div class="content">
+        <div class="card card--all-report">
+          <div class="card-header">
+            <h4 class="header__title">Whanau Email</h4>
+            <input
+              type="search"
+              name=""
+              id=""
+              class="form-control"
+              placeholder="Eg. dedekysf93@gmail.com"
+            />
+          </div>
+          <div class="card-body">
+            <div class="container-fluid">
+              <div
+                class="row g-2 gx-md-3 align-items-center justify-content-between mb-4 align-items-center"
+              >
+                <div class="col-12 col-md-4 col-lg-6 bg-heading">
+                  <h4 class="room__name">Rudi’s House</h4>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                  <h6 class="room__location">
+                    <i class="fas fa-map me-md-2"></i>Auckland Central
+                  </h6>
+                </div>
+                <div class="col-6 col-md-4 col-lg-auto">
+                  <div class="container">
+                    <div class="row gx-2 gx-md-3 mb-0">
+                      <div class="col">
+                        <div
+                          class="temperature-column temperature--comfortable"
+                        >
+                          <i class="icon icon--temperature"></i>
+                          <h6 class="room__label">22.2°C</h6>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div
+                          class="temperature-column humidity--comfortable align-items-center"
+                        >
+                          <i class="icon icon--temperature"></i>
+                          <h6 class="room__label">52.2%</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="filters">
+              <div class="container-fluid">
+                <div
+                  class="bg-light row p-2 py-md-4 px-md-2 rounded gx-1 gy-3 gy-md-0 gx-md-3"
+                >
+                  <div class="col-12 col-md col-lg-4 col-xl-3">
+                    <input type="date" name="date" class="form-control" id="" />
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-4 col-xl-3">
+                    <input type="time" name="time" class="form-control" id="" />
+                  </div>
+                  <div class="col-6 col-md-4 ms-lg-auto col-lg-3">
+                    <select class="form-select" aria-label="room type">
+                      <option selected>All Room</option>
+                      <option value="1">Room 1</option>
+                      <option value="2">Room 2</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="room-list">
+              <div class="container-fluid">
+                <div class="row row-cols-md-2 row-cols-xxl-3">
+                  <div class="col">
+                    <div class="room-item border rounded-2 p-2">
+                      <h4 class="room-item__title">Parent Bedroom</h4>
+                      <h6 class="room-item__subtitle">Adult's bedroom</h6>
+                      <div class="d-flex align-items-center mb-2">
+                        <div class="flex-grow-1">
+                          <h6 class="room-item__current-condition">
+                            <i class="fas fa-thermometer-quarter"></i
+                            >Comfortable room
+                          </h6>
+                          <h6 class="room-item__time">
+                            <i class="fas fa-clock"></i>10 minutes ago
+                          </h6>
+                        </div>
+                        <figure class="room-item__image-wrapper">
+                          <img
+                            src="assets/img/comfortable.png"
+                            alt=""
+                            class="img-fluid"
+                          />
+                        </figure>
+                      </div>
+                      <div class="room-item__data-wrapper">
+                        <div class="data-item">
+                          <div class="data-item__label">Temperature</div>
+                          <h6 class="data-item__value">26.2°C</h6>
+                        </div>
+                        <div class="data-item">
+                          <div class="data-item__label">Humidity</div>
+                          <h6 class="data-item__value">50.2%</h6>
+                        </div>
+                        <div class="data-item">
+                          <div class="data-item__label">Dewpoint</div>
+                          <h6 class="data-item__value">10.9°C</h6>
+                        </div>
+                      </div>
+                      <div class="mt-2">
+                        <a
+                          href="#"
+                          class="btn bg-danger text-white w-100 d-flex align-items-center"
+                        >
+                          <span class="ms-auto">Analysis</span>
+                          <i class="fas fa-chevron-right ms-auto"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">{{ card.room('Ricky Bedroom', 'Child’s bedroom', '22.6', '56.8', '11.2') }}</div>
+                  <div class="col">{{ card.room('Living Room', 'Living Space', '29.5', '54.4', '10.5') }}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="search-wrapper">
+              <figure>
+                <img src="./assets/img/ic-search.svg" alt="icon search" />
+              </figure>
+              <h5 class="fw-bold">Please search whānau first</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Modal -->
+{% endblock %}

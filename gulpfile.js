@@ -5,6 +5,13 @@ const browsersync = require("browser-sync");
 const sourcemaps = require("gulp-sourcemaps");
 const date = new Date().toISOString().slice(0, 10);
 
+const ghPages = require('gulp-gh-pages');
+
+//deploy
+task('deploy', function () {
+  return src('./site/**/*').pipe(ghPages());
+});
+
 // HTML-task variable
 const nunjucksRender = require("gulp-nunjucks-render");
 
@@ -40,7 +47,7 @@ function scss() {
       .pipe(
         autoprefixer({
           overrideBrowserslist: ["last 2 versions"],
-          cascade: false
+          cascade: false,
         })
       )
       .pipe(concat("style.min.css"))
@@ -64,7 +71,7 @@ function njk() {
   return src("./src/templates/pages/**/*.+(html|nunjucks|njk)")
     .pipe(
       nunjucksRender({
-        path: ["./src/templates/components"]
+        path: ["./src/templates/components"],
       })
     )
     .pipe(dest("./site"));
@@ -74,7 +81,7 @@ function njk() {
 function img() {
   return src([
     "./src/img/*.+(png|jpg|gif|svg)",
-    "./src/img/**/*.+(png|jpg|gif|svg)"
+    "./src/img/**/*.+(png|jpg|gif|svg)",
   ])
     .pipe(imagemin())
     .pipe(dest("./site/assets/img"));
@@ -83,7 +90,7 @@ function img() {
 // browserSync
 function browserSync() {
   browsersync.init({
-    server: "./site"
+    server: "./site",
   });
 }
 
@@ -95,16 +102,24 @@ function browserReload() {
 // static server & task watch
 function watchFiles() {
   // watch scss
-  watch("src/sass/**/*.scss", { usePolling: true }).on('change', series(scss, browserReload));
+  watch("src/sass/**/*.scss", { usePolling: true }).on(
+    "change",
+    series(scss, browserReload)
+  );
   // Watch javascripts
-  watch("src/js/**/*.js", { usePolling: true }).on('change', series(js, browserReload));
+  watch("src/js/**/*.js", { usePolling: true }).on(
+    "change",
+    series(js, browserReload)
+  );
   // Watch images
-  watch(["src/img/**/*.+(png|jpg|gif|svg)"], { usePolling: true }).on('change', series(img, browserReload));
+  watch(["src/img/**/*.+(png|jpg|gif|svg)"], { usePolling: true }).on(
+    "change",
+    series(img, browserReload)
+  );
   // Watch template
-  watch(
-    [
-      "src/templates/**/**/*.+(html|nunjucks|njk)"
-    ], { usePolling: true }).on('change', series(njk, browserReload));
+  watch(["src/templates/**/**/*.+(html|nunjucks|njk)"], {
+    usePolling: true,
+  }).on("change", series(njk, browserReload));
 }
 
 // delivery & compress ( integrated with web & apps )
@@ -117,29 +132,28 @@ task("archive", function archive() {
 task("optimize", function img() {
   return src([
     "./src/img/*.+(png|jpg|jpeg|gif|svg|PNG|JPG|JPEG|GIF|SVG)",
-    "./src/img/**/*.+(png|jpg|jpeg|gif|svg|PNG|JPG|JPEG|GIF|SVG)"
+    "./src/img/**/*.+(png|jpg|jpeg|gif|svg|PNG|JPG|JPEG|GIF|SVG)",
   ])
-    .pipe(imagemin({
-      verbose: true
-    }))
+    .pipe(
+      imagemin({
+        verbose: true,
+      })
+    )
     .pipe(dest("./site/assets/img"));
-}
-);
+});
 
 task("html", function njk() {
   return src("./src/templates/pages/**/*.+(html|nunjucks|njk)")
     .pipe(
       nunjucksRender({
-        path: ["./src/templates/components"]
+        path: ["./src/templates/components"],
       })
     )
     .pipe(dest("./site"));
-}
-);
+});
 task("reload", function browserReload() {
   return browsersync.reload;
-}
-);
+});
 
 const watching = parallel(watchFiles, browserSync);
 

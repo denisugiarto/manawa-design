@@ -61,15 +61,16 @@
   }
   &.icon--circle-red {
     margin: 0 10px 0 0;    
-    width: 24px;
-    height: 24px;
-    background: $color-soft-red;
-    color: $color-white;
+    width: 40px;
+    height: 40px;
+    background: rgba($color-soft-red, .25);
+    color: $color-secondary-900;
     border-radius: 50%;
     display: flex;
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
+    font-weight: 700;
     &.fas {
       font-size: 12px;
     }

@@ -1,0 +1,42 @@
+{% macro room(title, type, temp = 0, hum = 0, dew = 0) %}
+<div class="room-item border rounded-2 p-2">
+  <h4 class="room-item__title">{{ title }}</h4>
+  <h6 class="room-item__subtitle">{{ type }}</h6>
+  <div class="d-flex align-items-center mb-2">
+    <div class="flex-grow-1">
+      <h6 class="room-item__current-condition">
+        <i class="fas fa-thermometer-quarter"></i>Comfortable room
+      </h6>
+      <h6 class="room-item__time">
+        <i class="fas fa-clock"></i>10 minutes ago
+      </h6>
+    </div>
+    <figure class="room-item__image-wrapper">
+      <img src="assets/img/comfortable.png" alt="" class="img-fluid" />
+    </figure>
+  </div>
+  <div class="room-item__data-wrapper">
+    <div class="data-item">
+      <div class="data-item__label">Temperature</div>
+      <h6 class="data-item__value">{{ temp }}°C</h6>
+    </div>
+    <div class="data-item">
+      <div class="data-item__label">Humidity</div>
+      <h6 class="data-item__value">{{ hum }}%</h6>
+    </div>
+    <div class="data-item">
+      <div class="data-item__label">Dewpoint</div>
+      <h6 class="data-item__value">{{ dew }}°C</h6>
+    </div>
+  </div>
+  <div class="mt-2">
+    <a
+      href="#"
+      class="btn bg-danger text-white w-100 d-flex align-items-center"
+    >
+      <span class="ms-auto">Analysis</span>
+      <i class="fas fa-chevron-right ms-auto"></i>
+    </a>
+  </div>
+</div>
+{% endmacro %}

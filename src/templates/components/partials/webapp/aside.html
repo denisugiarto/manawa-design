@@ -1,3 +1,4 @@
+{% macro admin() %}
 <aside class="aside">
   <div class="sidenav">
     <ul class="nav-menu">
@@ -124,3 +125,85 @@
   </div>
   <div class="backdrop"></div>
 </aside>
+{% endmacro %}
+
+{% macro whanau() %}
+<aside class="aside">
+  <div class="sidenav">
+    <ul class="nav-menu">
+      <li class="menu-list active">
+        <a href="list-of-whare.html" class="menu-title">
+          <div class="wrapper">            
+            <i class="icon icon-fontello">&#xe806;</i>            
+            <span class="title">Home</span> 
+          </div>
+        </a>        
+      </li>
+      <li class="menu-list menu-list--whare">
+        <div class="menu-title collapsed" data-bs-toggle="collapse" data-bs-target="#whareContent" aria-expanded="false" aria-controls="whareContent">        
+          <div class="wrapper">            
+            <i class="icon icon-fontello">&#xe807;</i>
+            <span class="title">Whares</span> 
+          </div>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="collapse" id="whareContent">
+          <ul class="menu-sublist">
+            <li class="menu-sublist__item active">
+              <a href="#" class="link">Rudi's House</a>
+            </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">10 Silverstream Road</a>
+            </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">Garys Home</a>
+            </li>
+          </ul>          
+        </div>
+      </li>
+    </ul>
+    <ul class="nav-menu nav-menu--profile">
+      <li class="menu-list">
+        <div class="menu-title collapsed"  data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <div class="wrapper">
+            <i class="icon icon--circle-red">
+              R
+            </i>
+            <span class="title">admin@kaimahi.nz</span> 
+          </div>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="collapse" id="collapseExample">
+          <ul class="menu-sublist">
+            <li class="menu-sublist__item menu-sublist__item--title">
+             <h6 class="title">Account</h6>
+            </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">                                
+                <i class="icon icon-fontello">&#xe804;</i>
+                <h6 class="subtitle">Account Setting</h6>                
+              </a>
+            </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">                
+                <i class="icon icon-fontello icon--logout">&#xe801;</i>
+                <h6 class="subtitle text--red">Logout</h6>                
+              </a>
+            </li>
+            <li class="menu-sublist__item menu-sublist__item--title">
+              <h6 class="title">Admin</h6>
+             </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">
+                <i class="icon icon-fontello icon--back">&#xe802;</i>
+                <h6 class="subtitle">Admin Page</h6>                
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="backdrop"></div>
+</aside>
+{% endmacro %}
