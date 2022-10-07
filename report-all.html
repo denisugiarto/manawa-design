@@ -159,36 +159,32 @@
             />
           </div>
           <div class="card-body">
-            <div class="container-fluid">
-              <div
-                class="row g-2 gx-md-3 align-items-center justify-content-between mb-4 align-items-center"
-              >
-                <div class="col-12 col-md-4 col-lg-6 bg-heading">
-                  <h4 class="room__name">Rudi’s House</h4>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                  <h6 class="room__location">
-                    <i class="fas fa-map me-md-2"></i>Auckland Central
-                  </h6>
-                </div>
-                <div class="col-6 col-md-4 col-lg-auto">
-                  <div class="container">
-                    <div class="row gx-2 gx-md-3 mb-0">
-                      <div class="col">
-                        <div
-                          class="temperature-column temperature--comfortable"
-                        >
-                          <i class="icon icon--temperature"></i>
-                          <h6 class="room__label">22.2°C</h6>
-                        </div>
+            <div
+              class="row g-2 gx-md-3 align-items-center justify-content-between mb-4 align-items-center"
+            >
+              <div class="col-12 col-md-4 col-lg-6 bg-heading">
+                <h4 class="room__name">Rudi’s House</h4>
+              </div>
+              <div class="col-6 col-md-3 col-lg-2">
+                <h6 class="room__location">
+                  <i class="fas fa-map me-2"></i>Auckland Central
+                </h6>
+              </div>
+              <div class="col-6 col-md-5 col-lg-auto">
+                <div class="container">
+                  <div class="row gx-2 gx-md-3 mb-0">
+                    <div class="col">
+                      <div class="temperature-column temperature--comfortable">
+                        <i class="icon icon--temperature"></i>
+                        <h6 class="room__label">22.2°C</h6>
                       </div>
-                      <div class="col">
-                        <div
-                          class="temperature-column humidity--comfortable align-items-center"
-                        >
-                          <i class="icon icon--temperature"></i>
-                          <h6 class="room__label">52.2%</h6>
-                        </div>
+                    </div>
+                    <div class="col">
+                      <div
+                        class="temperature-column humidity--comfortable align-items-center"
+                      >
+                        <i class="icon icon--temperature"></i>
+                        <h6 class="room__label">52.2%</h6>
                       </div>
                     </div>
                   </div>
@@ -217,7 +213,7 @@
               </div>
             </div>
 
-            <div class="d-flex border-bottom">
+            <div class="d-flex border-bottom justify-content-between">
               <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
                   <button
@@ -249,8 +245,10 @@
                 </li>
               </ul>
               <div class="collapse show" id="tempHighLow">
-                <h6 class="fw-bold">High 43°C</h6>
-                <h6 class="fw-bold">Low 17°C</h6>
+                <div class="d-flex align-items-center">
+                  <h6 class="fw-bold border-end p-3">High 43°C</h6>
+                  <h6 class="fw-bold p-3">Low 17°C</h6>
+                </div>
               </div>
               <div class="collapse" id="humidityHighLow">
                 <h6 class="fw-bold">High 63.2%</h6>
