@@ -77,7 +77,11 @@ $(document).ready(function () {
   handleVideo();
   handleAlert()
   handleFlash()
+
+
 });
+
+
 
 // temp chart
 var ctx = document.getElementById('tempChart');
