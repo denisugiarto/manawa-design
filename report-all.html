@@ -40,7 +40,7 @@
 	<!-- <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 	<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" /> -->
 
-	<script defer src="./assets/js/main.js"></script>
+	<script defer src="./assets/js/script.min.js"></script>
 	<!-- <script src="./assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script> -->
 </head>
 
@@ -217,28 +217,101 @@
               </div>
             </div>
 
-            <div class="card card--room-line">
-              <div class="card-header">
-                <div class="title-wrapper">
-                  <h4 class="title">Temperature</h4>
+            <div class="d-flex border-bottom">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="temp-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#temp"
+                    type="button"
+                    role="tab"
+                    aria-controls="temp"
+                    aria-selected="true"
+                  >
+                    Temperature
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="humidity-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#humidity"
+                    type="button"
+                    role="tab"
+                    aria-controls="humidity"
+                    aria-selected="false"
+                  >
+                    Humidity
+                  </button>
+                </li>
+              </ul>
+              <div class="collapse show" id="tempHighLow">
+                <h6 class="fw-bold">High 43°C</h6>
+                <h6 class="fw-bold">Low 17°C</h6>
+              </div>
+              <div class="collapse" id="humidityHighLow">
+                <h6 class="fw-bold">High 63.2%</h6>
+                <h6 class="fw-bold">Low 52.5%</h6>
+              </div>
+            </div>
+
+            <div class="tab-content" id="myTabContent">
+              <div
+                class="tab-pane fade show active"
+                id="temp"
+                role="tabpanel"
+                aria-labelledby="temp-tab"
+              >
+                <div class="card card--room-line">
+                  <div class="card-body">
+                    <div class="chart-wrapper">
+                      <canvas id="tempChart"></canvas>
+                      <div class="legends">
+                        <span class="item">
+                          <span class="color cold"></span>
+                          <span class="text">Cold</span>
+                        </span>
+                        <span class="item">
+                          <span class="color comfortable"></span>
+                          <span class="text">Comfortable</span>
+                        </span>
+                        <span class="item">
+                          <span class="color hot"></span>
+                          <span class="text">Hot</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="card-body">
-                <div class="chart-wrapper">
-                  <canvas id="humidityChart"></canvas>
-                  <div class="legends">
-                    <span class="item">
-                      <span class="color cold"></span>
-                      <span class="text">Cold</span>
-                    </span>
-                    <span class="item">
-                      <span class="color comfortable"></span>
-                      <span class="text">Comfortable</span>
-                    </span>
-                    <span class="item">
-                      <span class="color hot"></span>
-                      <span class="text">Hot</span>
-                    </span>
+              <div
+                class="tab-pane fade"
+                id="humidity"
+                role="tabpanel"
+                aria-labelledby="humidity-tab"
+              >
+                <div class="card card--room-line">
+                  <div class="card-body">
+                    <div class="chart-wrapper">
+                      <canvas id="humidityChart"></canvas>
+                      <div class="legends">
+                        <span class="item">
+                          <span class="color cold"></span>
+                          <span class="text">Cold</span>
+                        </span>
+                        <span class="item">
+                          <span class="color comfortable"></span>
+                          <span class="text">Comfortable</span>
+                        </span>
+                        <span class="item">
+                          <span class="color hot"></span>
+                          <span class="text">Hot</span>
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
