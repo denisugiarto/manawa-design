@@ -169,7 +169,10 @@
         <div class="card card--all-report">
           <div class="card-header">
             <h4 class="header__title">Whanau Email</h4>
-            <select class="js-select form-control" aria-placeholder="Eg. dedekysf93@gmail.com">
+            <select
+              class="js-select form-control"
+              aria-placeholder="Eg. dedekysf93@gmail.com"
+            >
               <optgroup label="airah92@gmail.com">
                 <option value="airah">Airah’s house</option>
                 <option value="airah-parent">Airah’s parent house</option>
@@ -217,23 +220,21 @@
               </div>
             </div>
             <div id="filters">
-              <div class="container-fluid">
-                <div
-                  class="bg-light row p-2 py-md-4 px-md-2 rounded gx-1 gy-3 gy-md-0 gx-md-3"
-                >
-                  <div class="col-12 col-md col-lg-4 col-xl-3">
-                    <input type="date" name="date" class="form-control" id="" />
-                  </div>
-                  <div class="col-6 col-md-3 col-lg-4 col-xl-3">
-                    <input type="time" name="time" class="form-control" id="" />
-                  </div>
-                  <div class="col-6 col-md-4 ms-lg-auto col-lg-3">
-                    <select class="form-select" aria-label="room type">
-                      <option selected>All Room</option>
-                      <option value="1">Room 1</option>
-                      <option value="2">Room 2</option>
-                    </select>
-                  </div>
+              <div
+                class="bg-light row p-2 py-md-4 px-md-2 border rounded gx-1 gy-3 gy-md-0 gx-md-3 m-0"
+              >
+                <div class="col-12 col-md col-lg-4 col-xl-3">
+                  <input type="date" name="date" class="form-control" id="" />
+                </div>
+                <div class="col-6 col-md-3 col-lg-4 col-xl-3">
+                  <input type="time" name="time" class="form-control" id="" />
+                </div>
+                <div class="col-6 col-md-4 ms-lg-auto col-lg-3">
+                  <select class="form-select" aria-label="room type">
+                    <option selected>All Room</option>
+                    <option value="1">Room 1</option>
+                    <option value="2">Room 2</option>
+                  </select>
                 </div>
               </div>
             </div>
@@ -271,14 +272,26 @@
               </ul>
               <div class="collapse show" id="tempHighLow">
                 <div class="d-flex align-items-center">
-                  <div class="fw-bold border-end my-3 px-3"><span class="d-none d-md-inline">High</span> <i class="fas fa-arrow-up d-md-none me-1"></i>43°C</div>
-                  <div class="fw-bold p-3"><span class="d-none d-md-inline">Low</span> <i class="fas fa-arrow-down d-md-none me-1"></i>17°C</div>
+                  <div class="fw-bold border-end my-3 px-3">
+                    <span class="d-none d-md-inline">High</span>
+                    <i class="fas fa-arrow-up d-md-none me-1"></i>43°C
+                  </div>
+                  <div class="fw-bold p-3">
+                    <span class="d-none d-md-inline">Low</span>
+                    <i class="fas fa-arrow-down d-md-none me-1"></i>17°C
+                  </div>
                 </div>
               </div>
               <div class="collapse" id="humidityHighLow">
                 <div class="d-flex align-items-center">
-                  <div class="fw-bold border-end my-3 px-3"><span class="d-none d-md-inline">High</span> <i class="fas fa-arrow-up d-md-none me-1"></i>63.2%</div>
-                  <div class="fw-bold p-3"><span class="d-none d-md-inline">Low</span> <i class="fas fa-arrow-down d-md-none me-1"></i>52.5%</div>
+                  <div class="fw-bold border-end my-3 px-3">
+                    <span class="d-none d-md-inline">High</span>
+                    <i class="fas fa-arrow-up d-md-none me-1"></i>63.2%
+                  </div>
+                  <div class="fw-bold p-3">
+                    <span class="d-none d-md-inline">Low</span>
+                    <i class="fas fa-arrow-down d-md-none me-1"></i>52.5%
+                  </div>
                 </div>
               </div>
             </div>
