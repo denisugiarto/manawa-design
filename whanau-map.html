@@ -65,7 +65,7 @@
           <div id="map-wrapper" class="collapse show">
             <div id="map" class="mt-3"></div>
           </div>
-          <div class="form--float">
+          <div class="form--float header">
             <div class="col-auto">
               <select class="form-select" name="" id="">
                 <option value="">By email</option>
@@ -368,8 +368,10 @@
                 href="#dataMarker"
                 data-bs-toggle="collapse"
                 class="toggle-hide-show"
-              >
+              > 
+              <span class="toggle-hide-show__label">
                 Marker Information
+              </span>
                 <span class="text--show">
                   <i class="fas fa-chevron-down ms-auto me-2"></i>
                   show
@@ -475,10 +477,12 @@
       $(".view-type").change(function () {
         $("#list-wrapper").toggleClass("show");
         $("#map-wrapper").toggleClass("show");
-        $(".form--float").toggleClass("no-float");
-        $(".form--float.footer").toggleClass("d-none");
-        // alert($(this).value());
-        console.log($(this)[0].value);
+        $(".form--float.header").toggleClass("no-float");
+        if ($(this)[0].value === "list" ) {
+          $('.toggle-hide-show__label').text('Filter Conditions')
+        } else {
+          $('.toggle-hide-show__label').text('Marker Information')
+        }
       });
       $(".js-select").select2({
         placeholder: "Eg. dedekysf93@gmail.com",
