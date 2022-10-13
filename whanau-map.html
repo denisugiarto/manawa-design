@@ -1,3 +1,4 @@
+
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
@@ -28,6 +29,11 @@
     <script src="./assets/js/vendor/jquery.min.js"></script>
     <script src="./assets/js/vendor/bootstrap.bundle.min.js"></script>
     <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
       integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
@@ -44,13 +50,6 @@
       crossorigin=""
     />
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script defer src="./assets/js/script.min.js"></script>
   </head>
 
   <body>
@@ -63,7 +62,9 @@
           <div class="form-header__map">
             Find Whānau Homes by Email or Suburb
           </div>
-          <div id="map" class="mt-3"></div>
+          <div id="map-wrapper" class="collapse show">
+            <div id="map" class="mt-3"></div>
+          </div>
           <div class="form--float">
             <div class="col-auto">
               <select class="form-select" name="" id="">
@@ -72,10 +73,7 @@
               </select>
             </div>
             <div class="col ms-3 position-relative">
-              <select
-                class="js-select form-control"
-                aria-placeholder="Eg. dedekysf93@gmail.com"
-              >
+              <select class="js-select">
                 <optgroup label="airah92@gmail.com">
                   <option value="airah">Airah’s house</option>
                   <option value="airah-parent">Airah’s parent house</option>
@@ -88,15 +86,280 @@
                   <option value="airah-parent">Parent house</option>
                 </optgroup>
               </select>
-              <!-- <div class="position-absolute start-100 top-50 translate-middle pe-5 me-5">
-                  <i class="fas fa-search"></i>
-                </div> -->
             </div>
             <div class="col-auto ms-3">
-              <select class="form-select" name="" id="">
-                <option value="">View by map</option>
-                <option value="">View by list</option>
+              <select class="form-select view-type">
+                <option value="map" selected>View by map</option>
+                <option value="list">View by list</option>
               </select>
+            </div>
+          </div>
+          <div id="list-wrapper" class="collapse mt-5">
+            <div class="row row-cols-3 gx-5 gy-2">
+              <div class="col">
+                
+<div class="room-item border rounded-2 p-2">
+  <h4 class="room-item__title">Ricky Bedroom</h4>
+  <h6 class="room-item__subtitle">Child’s bedroom</h6>
+  <div class="d-flex align-items-center mb-2">
+    <div class="flex-grow-1">
+      <h6 class="room-item__current-condition">
+        <i class="fas fa-thermometer-quarter"></i>Comfortable room
+      </h6>
+      <h6 class="room-item__time">
+        <i class="fas fa-clock"></i>10 minutes ago
+      </h6>
+    </div>
+    <figure class="room-item__image-wrapper">
+      <img src="assets/img/comfortable.png" alt="" class="img-fluid" />
+    </figure>
+  </div>
+  <div class="room-item__data-wrapper">
+    <div class="data-item">
+      <div class="data-item__label">Temperature</div>
+      <h6 class="data-item__value">22.6°C</h6>
+    </div>
+    <div class="data-item">
+      <div class="data-item__label">Humidity</div>
+      <h6 class="data-item__value">56.8%</h6>
+    </div>
+    <div class="data-item">
+      <div class="data-item__label">Dewpoint</div>
+      <h6 class="data-item__value">11.2°C</h6>
+    </div>
+  </div>
+  <div class="mt-2">
+    <a
+      href="#"
+      class="btn bg-danger text-white w-100 d-flex align-items-center"
+    >
+      <span class="ms-auto">Analysis</span>
+      <i class="fas fa-chevron-right ms-auto"></i>
+    </a>
+  </div>
+</div>
+
+              </div>
+              <div class="col">
+                
+<div class="room-item border rounded-2 p-2">
+  <h4 class="room-item__title">Ricky Bedroom</h4>
+  <h6 class="room-item__subtitle">Child’s bedroom</h6>
+  <div class="d-flex align-items-center mb-2">
+    <div class="flex-grow-1">
+      <h6 class="room-item__current-condition">
+        <i class="fas fa-thermometer-quarter"></i>Comfortable room
+      </h6>
+      <h6 class="room-item__time">
+        <i class="fas fa-clock"></i>10 minutes ago
+      </h6>
+    </div>
+    <figure class="room-item__image-wrapper">
+      <img src="assets/img/comfortable.png" alt="" class="img-fluid" />
+    </figure>
+  </div>
+  <div class="room-item__data-wrapper">
+    <div class="data-item">
+      <div class="data-item__label">Temperature</div>
+      <h6 class="data-item__value">22.6°C</h6>
+    </div>
+    <div class="data-item">
+      <div class="data-item__label">Humidity</div>
+      <h6 class="data-item__value">56.8%</h6>
+    </div>
+    <div class="data-item">
+      <div class="data-item__label">Dewpoint</div>
+      <h6 class="data-item__value">11.2°C</h6>
+    </div>
+  </div>
+  <div class="mt-2">
+    <a
+      href="#"
+      class="btn bg-danger text-white w-100 d-flex align-items-center"
+    >
+      <span class="ms-auto">Analysis</span>
+      <i class="fas fa-chevron-right ms-auto"></i>
+    </a>
+  </div>
+</div>
+
+              </div>
+              <div class="col">
+                
+<div class="room-item border rounded-2 p-2">
+  <h4 class="room-item__title">Ricky Bedroom</h4>
+  <h6 class="room-item__subtitle">Child’s bedroom</h6>
+  <div class="d-flex align-items-center mb-2">
+    <div class="flex-grow-1">
+      <h6 class="room-item__current-condition">
+        <i class="fas fa-thermometer-quarter"></i>Comfortable room
+      </h6>
+      <h6 class="room-item__time">
+        <i class="fas fa-clock"></i>10 minutes ago
+      </h6>
+    </div>
+    <figure class="room-item__image-wrapper">
+      <img src="assets/img/comfortable.png" alt="" class="img-fluid" />
+    </figure>
+  </div>
+  <div class="room-item__data-wrapper">
+    <div class="data-item">
+      <div class="data-item__label">Temperature</div>
+      <h6 class="data-item__value">22.6°C</h6>
+    </div>
+    <div class="data-item">
+      <div class="data-item__label">Humidity</div>
+      <h6 class="data-item__value">56.8%</h6>
+    </div>
+    <div class="data-item">
+      <div class="data-item__label">Dewpoint</div>
+      <h6 class="data-item__value">11.2°C</h6>
+    </div>
+  </div>
+  <div class="mt-2">
+    <a
+      href="#"
+      class="btn bg-danger text-white w-100 d-flex align-items-center"
+    >
+      <span class="ms-auto">Analysis</span>
+      <i class="fas fa-chevron-right ms-auto"></i>
+    </a>
+  </div>
+</div>
+
+              </div>
+              <div class="col">
+                
+<div class="room-item border rounded-2 p-2">
+  <h4 class="room-item__title">Ricky Bedroom</h4>
+  <h6 class="room-item__subtitle">Child’s bedroom</h6>
+  <div class="d-flex align-items-center mb-2">
+    <div class="flex-grow-1">
+      <h6 class="room-item__current-condition">
+        <i class="fas fa-thermometer-quarter"></i>Comfortable room
+      </h6>
+      <h6 class="room-item__time">
+        <i class="fas fa-clock"></i>10 minutes ago
+      </h6>
+    </div>
+    <figure class="room-item__image-wrapper">
+      <img src="assets/img/comfortable.png" alt="" class="img-fluid" />
+    </figure>
+  </div>
+  <div class="room-item__data-wrapper">
+    <div class="data-item">
+      <div class="data-item__label">Temperature</div>
+      <h6 class="data-item__value">22.6°C</h6>
+    </div>
+    <div class="data-item">
+      <div class="data-item__label">Humidity</div>
+      <h6 class="data-item__value">56.8%</h6>
+    </div>
+    <div class="data-item">
+      <div class="data-item__label">Dewpoint</div>
+      <h6 class="data-item__value">11.2°C</h6>
+    </div>
+  </div>
+  <div class="mt-2">
+    <a
+      href="#"
+      class="btn bg-danger text-white w-100 d-flex align-items-center"
+    >
+      <span class="ms-auto">Analysis</span>
+      <i class="fas fa-chevron-right ms-auto"></i>
+    </a>
+  </div>
+</div>
+
+              </div>
+              <div class="col">
+                
+<div class="room-item border rounded-2 p-2">
+  <h4 class="room-item__title">Ricky Bedroom</h4>
+  <h6 class="room-item__subtitle">Child’s bedroom</h6>
+  <div class="d-flex align-items-center mb-2">
+    <div class="flex-grow-1">
+      <h6 class="room-item__current-condition">
+        <i class="fas fa-thermometer-quarter"></i>Comfortable room
+      </h6>
+      <h6 class="room-item__time">
+        <i class="fas fa-clock"></i>10 minutes ago
+      </h6>
+    </div>
+    <figure class="room-item__image-wrapper">
+      <img src="assets/img/comfortable.png" alt="" class="img-fluid" />
+    </figure>
+  </div>
+  <div class="room-item__data-wrapper">
+    <div class="data-item">
+      <div class="data-item__label">Temperature</div>
+      <h6 class="data-item__value">22.6°C</h6>
+    </div>
+    <div class="data-item">
+      <div class="data-item__label">Humidity</div>
+      <h6 class="data-item__value">56.8%</h6>
+    </div>
+    <div class="data-item">
+      <div class="data-item__label">Dewpoint</div>
+      <h6 class="data-item__value">11.2°C</h6>
+    </div>
+  </div>
+  <div class="mt-2">
+    <a
+      href="#"
+      class="btn bg-danger text-white w-100 d-flex align-items-center"
+    >
+      <span class="ms-auto">Analysis</span>
+      <i class="fas fa-chevron-right ms-auto"></i>
+    </a>
+  </div>
+</div>
+
+              </div>
+              <div class="col">
+                
+<div class="room-item border rounded-2 p-2">
+  <h4 class="room-item__title">Ricky Bedroom</h4>
+  <h6 class="room-item__subtitle">Child’s bedroom</h6>
+  <div class="d-flex align-items-center mb-2">
+    <div class="flex-grow-1">
+      <h6 class="room-item__current-condition">
+        <i class="fas fa-thermometer-quarter"></i>Comfortable room
+      </h6>
+      <h6 class="room-item__time">
+        <i class="fas fa-clock"></i>10 minutes ago
+      </h6>
+    </div>
+    <figure class="room-item__image-wrapper">
+      <img src="assets/img/comfortable.png" alt="" class="img-fluid" />
+    </figure>
+  </div>
+  <div class="room-item__data-wrapper">
+    <div class="data-item">
+      <div class="data-item__label">Temperature</div>
+      <h6 class="data-item__value">22.6°C</h6>
+    </div>
+    <div class="data-item">
+      <div class="data-item__label">Humidity</div>
+      <h6 class="data-item__value">56.8%</h6>
+    </div>
+    <div class="data-item">
+      <div class="data-item__label">Dewpoint</div>
+      <h6 class="data-item__value">11.2°C</h6>
+    </div>
+  </div>
+  <div class="mt-2">
+    <a
+      href="#"
+      class="btn bg-danger text-white w-100 d-flex align-items-center"
+    >
+      <span class="ms-auto">Analysis</span>
+      <i class="fas fa-chevron-right ms-auto"></i>
+    </a>
+  </div>
+</div>
+
+              </div>
             </div>
           </div>
           <div class="form--float footer">
@@ -107,11 +370,11 @@
                 class="toggle-hide-show"
               >
                 Marker Information
-                <span class="text--show text-secondary fw-normal">
+                <span class="text--show">
                   <i class="fas fa-chevron-down ms-auto me-2"></i>
                   show
                 </span>
-                <span class="text--hide text-secondary fw-normal">
+                <span class="text--hide">
                   <i class="fas fa-chevron-up ms-auto me-2"></i>
                   hide
                 </span>
@@ -209,6 +472,20 @@
       [-37.9061991333, 175.4492620333, "Rudi’s House"],
     ];
     $(document).ready(function () {
+      $(".view-type").change(function () {
+        $("#list-wrapper").toggleClass("show");
+        $("#map-wrapper").toggleClass("show");
+        $(".form--float").toggleClass("no-float");
+        $(".form--float.footer").toggleClass("d-none");
+        // alert($(this).value());
+        console.log($(this)[0].value);
+      });
+      $(".js-select").select2({
+        placeholder: "Eg. dedekysf93@gmail.com",
+        allowClear: true,
+        dropdownAutoWidth: true,
+        width: "80%",
+      });
       $(".toggle-hide-show").click(function () {
         $(this).toggleClass("active");
       });
@@ -253,7 +530,7 @@
         <div class="status-bar-wrapper cold">
             <div class="status-bar"></div>
             <div class="position-absolute start-0 top-0 w-100 p-1">
-                <div class="status-bar-value">                
+                <div class="status-bar-value">
                     Temperature <span class="fw-bold ms-auto">19.9°C</span>
                 </div>
             </div>
@@ -261,7 +538,7 @@
         <div class="status-bar-wrapper dry">
             <div class="status-bar"></div>
             <div class="position-absolute start-0 top-0 w-100 p-1">
-                <div class="status-bar-value">                
+                <div class="status-bar-value">
                     Humidity <span class="fw-bold ms-auto">28%</span>
                 </div>
             </div>
