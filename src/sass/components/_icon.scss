@@ -12,7 +12,7 @@
     margin: 0 0 17px;
   }
   &.icon--question {
-    color: $color-dark-grey;
+    color: $color-secondary-grey;
     display: none;
     @include for-size(desktop) {
       display: block;
@@ -78,4 +78,30 @@
   &.icon--logout {
     color: $color-soft-red;
   }
+  &--small {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+
+    &.dry {
+      background-color: $color-dry;
+    }
+    &.comfortable {
+      background-color: $color-comfortable;
+    }
+    &.cold {
+      background-color: $color-cold;
+    }
+    &.damp {
+      background-color: $color-damp;
+    }
+  }
+}
+
+.fa-arrow-up {
+  color: $color-soft-red;
+}
+
+.fa-arrow-down {
+  color: $color-damp;
 }

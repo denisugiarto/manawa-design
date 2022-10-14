@@ -86,14 +86,17 @@ $color-white: #ffffff;
 $color-black: #000000;
 $color-secondary-black: #333333;
 $color-secondary-900: #101b37;
+$color-secondary-600: #6F757E;
 $color-secondary-400: #899aab;
+$color-secondary-200: #F3F3F4;
+$color-secondary-100: #EBF3F8;
 $color-secondary-grey: #777777;
 $color-green: #abcc75;
 $color-yellow: #fdff8c;
 $color-dark-grey: #909090;
 $color-grey: #4b4b4b;
 $color-red: #d62f0e;
-$color-soft-red: #d62f0e;
+$color-soft-red: #cd6276;
 $color-lite-grey: #595959;
 $color-grey-button: #f0f0f0;
 $color-white-grey: #f9f9f9;
@@ -106,6 +109,7 @@ $color-offline: #777777;
 
 $danger: $color-red;
 $secondary: $color-secondary-400;
+$primary: $color-red;
 
 // font families
 // $font-lato: 'Lato', Arial, Verdana, sans-serif;
@@ -133,3 +137,8 @@ $spacers: (
 $border-radius: 0.375rem;
 $border-radius-sm: 0.25rem;
 $border-radius-lg: 0.5rem;
+
+
+$nav-tabs-border-width: 0;
+$nav-link-padding-y: 0.625rem;
+$nav-link-padding-x: 0.625rem;

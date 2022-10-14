@@ -15,9 +15,9 @@
     border: 1px solid $bg-black;
   }
   &.button--red {
-    background-color: rgba(220, 53, 69, 0.25);
+    background-color: $color-red;
     border: none;
-    color: $color-red;
+    color: $color-white;
   }
   &.button--grey {
     background-color: $color-grey-button;

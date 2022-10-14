@@ -1,0 +1,16 @@
+.nav-tabs {
+    
+    .nav-link {
+        @include media-breakpoint-up(md) {
+            padding: 15px;
+        }
+        &.active {
+            box-shadow: inset 0px -4px 0px #D62F0E;
+            color: $color-red;
+        }
+        &:hover {
+            background-color: $color-secondary-200;
+        }
+    }
+
+}

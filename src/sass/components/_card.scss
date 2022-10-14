@@ -204,7 +204,11 @@
 
   &.card--all-report {
     @extend .flex-column;
-    padding: 20px;
+    padding: 15px;
+
+    @include media-breakpoint-up(md) {
+      padding: 20px;
+    }
 
     .card {
       &-header {
@@ -1127,6 +1131,14 @@
     color: $color-black;
     margin: 0;
   }
+  &.card--map {
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
+    padding: 0;
+
+    .card-body {
+      padding: 15px;
+    }
+  }
 }
 
 .room-item {
@@ -1162,11 +1174,11 @@
     gap: 15px;
 
     .data-item {
+      text-align: center;
       @extend .col;
       padding-right: 15px;
       &:not(:last-child) {
         @extend .border-end;
-
       }
       &__label {
         font-size: 12px;

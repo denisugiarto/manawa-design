@@ -1,0 +1,332 @@
+{% import "../components/cards.html" as card %}
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>List of Whanau Homes by Map</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="./assets/css/style.min.css" rel="stylesheet" />
+    <script src="./assets/js/vendor/jquery.min.js"></script>
+    <script src="./assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+      crossorigin=""
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+      crossorigin=""
+    />
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="img-wrapper my-5 text-center">
+        <img src="/assets/img/ic-logo-big.svg" alt="" class="logo-big" />
+      </div>
+      <div class="card card--map">
+        <div class="card-body position-relative">
+          <div class="form-header__map">
+            Find Whānau Homes by Email or Suburb
+          </div>
+          <div id="map-wrapper" class="collapse show">
+            <div id="map" class="maps-wrapper"></div>
+          </div>
+          <div class="form--float header">
+            <div class="col-auto">
+              <select class="form-select search-type">
+                <option value="email" selected><i class="fas fa-voicemail"></i> By email</option>
+                <option value="suburb">By suburb</option>
+              </select>
+            </div>
+            <div class="col col-md-6 col-lg-7 position-relative">
+              <div class="collapse show search-type-list">
+                <select class="js-select">
+                  <optgroup label="airah92@gmail.com">
+                    <option value="airah">Airah’s house</option>
+                    <option value="airah-parent">Airah’s parent house</option>
+                  </optgroup>
+                  <optgroup label="bams3802@gmail.com">
+                    <option value="bambam">Bambam’s house</option>
+                  </optgroup>
+                  <optgroup label="dedekyusuf93@gmail.com">
+                    <option value="airah">Rudi’s house</option>
+                    <option value="airah-parent">Parent house</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="collapse search-type-list">
+                <select class="js-select">
+                  <option>Tauranga Central</option>
+                  <option>Tauranga South</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-12 col-md-auto ms-auto">
+              <select class="form-select view-type">
+                <option value="map" selected>View by map</option>
+                <option value="list">View by list</option>
+              </select>
+            </div>
+          </div>
+          <div id="list-wrapper" class="whanau-list-wrapper">
+            <div class="row row-cols-md-2 row-cols-xxl-3 g-3 gx-md-5 gy-md-5 gy-xxl-2">
+              <div class="col">
+                {{ card.room('Ricky Bedroom', 'Child’s bedroom', '22.6', '56.8',
+                '11.2') }}
+              </div>
+              <div class="col">
+                {{ card.room('Ricky Bedroom', 'Child’s bedroom', '22.6', '56.8',
+                '11.2') }}
+              </div>
+              <div class="col">
+                {{ card.room('Ricky Bedroom', 'Child’s bedroom', '22.6', '56.8',
+                '11.2') }}
+              </div>
+              <div class="col">
+                {{ card.room('Ricky Bedroom', 'Child’s bedroom', '22.6', '56.8',
+                '11.2') }}
+              </div>
+              <div class="col">
+                {{ card.room('Ricky Bedroom', 'Child’s bedroom', '22.6', '56.8',
+                '11.2') }}
+              </div>
+              <div class="col">
+                {{ card.room('Ricky Bedroom', 'Child’s bedroom', '22.6', '56.8',
+                '11.2') }}
+              </div>
+            </div>
+          </div>
+          <div class="form--float footer">
+            <div class="form-control">
+              <a
+                href="#dataMarker"
+                data-bs-toggle="collapse"
+                class="toggle-hide-show"
+              >
+                <span class="toggle-hide-show__label">
+                  Marker Information
+                </span>
+                <span class="text--show">
+                  <i class="fas fa-chevron-down ms-auto me-2"></i>
+                  show
+                </span>
+                <span class="text--hide">
+                  <i class="fas fa-chevron-up ms-auto me-2"></i>
+                  hide
+                </span>
+              </a>
+              <div class="collapse" id="dataMarker">
+                <div class="d-flex border-top mt-2 pt-2">
+                  <div class="col">
+                    <p class="mb-2">Temperature</p>
+                    <ul>
+                      <li class="d-flex px-3 gap-3">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          name=""
+                          id=""
+                        />
+                        <label class="form-label" for="">&gt; 30 °C</label>
+                        <div class="icon--small dry ms-auto"></div>
+                      </li>
+                      <li class="d-flex px-3 gap-3">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          name=""
+                          id=""
+                        />
+                        <label class="form-label" for="">18 - 29 °C</label>
+                        <div class="icon--small comfortable ms-auto"></div>
+                      </li>
+                      <li class="d-flex px-3 gap-3">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          name=""
+                          id=""
+                        />
+                        <label class="form-label" for="">&lt; 18 °C</label>
+                        <div class="icon--small cold ms-auto"></div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col border-start ps-3">
+                    <p class="mb-2">Humidity</p>
+                    <ul>
+                      <li class="d-flex px-3 gap-3">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          name=""
+                          id=""
+                        />
+                        <label class="form-label" for="">&gt; 60%</label>
+                        <div class="icon--small damp ms-auto"></div>
+                      </li>
+                      <li class="d-flex px-3 gap-3">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          name=""
+                          id=""
+                        />
+                        <label class="form-label" for="">30 - 60%</label>
+                        <div class="icon--small comfortable ms-auto"></div>
+                      </li>
+                      <li class="d-flex px-3 gap-3">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          name=""
+                          id=""
+                        />
+                        <label class="form-label" for="">&lt; 30%</label>
+                        <div class="icon--small dry ms-auto"></div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var addressPoints = [
+      [-37.8839, 175.3745188667, "Rudi’s House"],
+      [-37.8869090667, 175.3657417333, "Rudi’s House"],
+      [-37.8894207167, 175.4015351167, "Rudi’s House"],
+      [-37.8927369333, 175.4087452333, "Rudi’s House"],
+      [-37.90585105, 175.4453463833, "Rudi’s House"],
+      [-37.9064188833, 175.4441556833, "Rudi’s House"],
+      [-37.90584715, 175.4463564333, "Rudi’s House"],
+      [-37.9033391333, 175.4244005667, "Rudi’s House"],
+      [-37.9061991333, 175.4492620333, "Rudi’s House"],
+    ];
+    $(document).ready(function () {
+      $(".view-type").change(function () {
+        $("#list-wrapper").toggleClass("show");
+        $("#map-wrapper").toggleClass("show");
+        $(".form--float.header").toggleClass("no-float");
+        if ($(this)[0].value === "list") {
+          $(".toggle-hide-show__label").text("Filter Conditions");
+        } else {
+          $(".toggle-hide-show__label").text("Marker Information");
+        }
+      });
+      $(".search-type").change(function () {
+        $(".search-type-list").toggleClass("show");
+      });
+      $(".js-select").select2({
+        placeholder: "Eg. dedekysf93@gmail.com",
+        allowClear: true,
+        dropdownAutoWidth: true,
+        width: "100%",
+      });
+      $(".toggle-hide-show").click(function () {
+        $(this).toggleClass("active");
+      });
+
+      var tiles = L.tileLayer(
+          "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+          {
+            maxZoom: 18,
+            attribution:
+              '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ',
+          }
+        ),
+        latlng = L.latLng(-37.89, 175.46);
+
+      var map = L.map("map", {
+        center: latlng,
+        zoomControl: false,
+        zoom: 13,
+        layers: [tiles],
+      });
+
+      var markers = L.markerClusterGroup({ chunkedLoading: true });
+
+      for (var i = 0; i < addressPoints.length; i++) {
+        var a = addressPoints[i];
+        var title = a[2];
+        var myIcon = L.icon({
+          iconUrl: "/assets/img/marker.svg",
+          iconSize: [24, 28],
+          iconAnchor: [12, 14],
+          popupAnchor: [0, -10],
+        });
+        var marker = L.marker(L.latLng(a[0], a[1]), {
+          icon: myIcon,
+          title: title,
+          maxWidth: "180px",
+        });
+        var content = `
+        <h6 class="text-danger fw-bold border-bottom pb-2">Rudi’s House</h6>
+        <p class="fw-bold border-bottom pb-1">Home is too Cold and Dry</p>
+        <div class="status-bar-wrapper cold">
+            <div class="status-bar"></div>
+            <div class="position-absolute start-0 top-0 w-100 p-1">
+                <div class="status-bar-value">
+                    Temperature <span class="fw-bold ms-auto">19.9°C</span>
+                </div>
+            </div>
+        </div>
+        <div class="status-bar-wrapper dry">
+            <div class="status-bar"></div>
+            <div class="position-absolute start-0 top-0 w-100 p-1">
+                <div class="status-bar-value">
+                    Humidity <span class="fw-bold ms-auto">28%</span>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="text-center">
+            <a class="text-decoration-underline text-dark" >See Detail Room</a>
+        </div>
+        `;
+        marker.bindPopup(content);
+        markers.addLayer(marker);
+      }
+
+      map.addLayer(markers);
+    });
+  </script>
+</html>
