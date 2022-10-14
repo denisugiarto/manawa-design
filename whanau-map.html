@@ -63,39 +63,47 @@
             Find Whānau Homes by Email or Suburb
           </div>
           <div id="map-wrapper" class="collapse show">
-            <div id="map" class="mt-3"></div>
+            <div id="map" class="maps-wrapper"></div>
           </div>
           <div class="form--float header">
             <div class="col-auto">
-              <select class="form-select" name="" id="">
-                <option value="">By email</option>
-                <option value="">By suburb</option>
+              <select class="form-select search-type">
+                <option value="email" selected><i class="fas fa-voicemail"></i> By email</option>
+                <option value="suburb">By suburb</option>
               </select>
             </div>
-            <div class="col ms-3 position-relative">
-              <select class="js-select">
-                <optgroup label="airah92@gmail.com">
-                  <option value="airah">Airah’s house</option>
-                  <option value="airah-parent">Airah’s parent house</option>
-                </optgroup>
-                <optgroup label="bams3802@gmail.com">
-                  <option value="bambam">Bambam’s house</option>
-                </optgroup>
-                <optgroup label="dedekyusuf93@gmail.com">
-                  <option value="airah">Rudi’s house</option>
-                  <option value="airah-parent">Parent house</option>
-                </optgroup>
-              </select>
+            <div class="col col-md-6 col-lg-7 position-relative">
+              <div class="collapse show search-type-list">
+                <select class="js-select">
+                  <optgroup label="airah92@gmail.com">
+                    <option value="airah">Airah’s house</option>
+                    <option value="airah-parent">Airah’s parent house</option>
+                  </optgroup>
+                  <optgroup label="bams3802@gmail.com">
+                    <option value="bambam">Bambam’s house</option>
+                  </optgroup>
+                  <optgroup label="dedekyusuf93@gmail.com">
+                    <option value="airah">Rudi’s house</option>
+                    <option value="airah-parent">Parent house</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="collapse search-type-list">
+                <select class="js-select">
+                  <option>Tauranga Central</option>
+                  <option>Tauranga South</option>
+                </select>
+              </div>
             </div>
-            <div class="col-auto ms-3">
+            <div class="col-12 col-md-auto ms-auto">
               <select class="form-select view-type">
                 <option value="map" selected>View by map</option>
                 <option value="list">View by list</option>
               </select>
             </div>
           </div>
-          <div id="list-wrapper" class="collapse mt-5">
-            <div class="row row-cols-3 gx-5 gy-2">
+          <div id="list-wrapper" class="whanau-list-wrapper">
+            <div class="row row-cols-md-2 row-cols-xxl-3 g-3 gx-md-5 gy-md-5 gy-xxl-2">
               <div class="col">
                 
 <div class="room-item border rounded-2 p-2">
@@ -368,10 +376,10 @@
                 href="#dataMarker"
                 data-bs-toggle="collapse"
                 class="toggle-hide-show"
-              > 
-              <span class="toggle-hide-show__label">
-                Marker Information
-              </span>
+              >
+                <span class="toggle-hide-show__label">
+                  Marker Information
+                </span>
                 <span class="text--show">
                   <i class="fas fa-chevron-down ms-auto me-2"></i>
                   show
@@ -478,23 +486,25 @@
         $("#list-wrapper").toggleClass("show");
         $("#map-wrapper").toggleClass("show");
         $(".form--float.header").toggleClass("no-float");
-        if ($(this)[0].value === "list" ) {
-          $('.toggle-hide-show__label').text('Filter Conditions')
+        if ($(this)[0].value === "list") {
+          $(".toggle-hide-show__label").text("Filter Conditions");
         } else {
-          $('.toggle-hide-show__label').text('Marker Information')
+          $(".toggle-hide-show__label").text("Marker Information");
         }
+      });
+      $(".search-type").change(function () {
+        $(".search-type-list").toggleClass("show");
       });
       $(".js-select").select2({
         placeholder: "Eg. dedekysf93@gmail.com",
         allowClear: true,
         dropdownAutoWidth: true,
-        width: "80%",
+        width: "100%",
       });
       $(".toggle-hide-show").click(function () {
         $(this).toggleClass("active");
       });
 
-      $("#map").css("height", "500px");
       var tiles = L.tileLayer(
           "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
           {
