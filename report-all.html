@@ -49,6 +49,8 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script> -->
 
     <!-- <script src="./assets/js/vendor/datepicker.js"></script> -->
@@ -221,13 +223,14 @@
             </div>
             <div id="filters">
               <div
-                class="bg-secondary row py-2 px-0 py-md-4 px-md-2 border rounded g-3 gy-md-0 gx-md-3 m-0"
+                class="bg-light-gray row py-2 px-0 py-md-4 px-md-2 border rounded g-3 gy-md-0 gx-md-3 m-0"
               >
                 <div class="col-12 col-md col-lg-4 col-xl-3 mt-0">
                   <input
                     type="date"
                     name="date"
-                    class="form-control date-picker"
+                    class="form-control"
+                    id="litepicker"
                   />
                 </div>
                 <div class="col-6 col-md-3 col-lg-4 col-xl-3">
@@ -368,7 +371,7 @@
             </div>
 
             <div id="room-list">
-              <div class="row row-cols-md-2 row-cols-xxl-3 g-3">
+              <div class="row row-cols-md-2 row-cols-xxl-3 g-3 mt-1">
                 <div class="col">
                   <div class="room-item border rounded-2 p-2">
                     <h4 class="room-item__title">Parent Bedroom</h4>
@@ -520,7 +523,6 @@
   </section>
 </main>
 
-<!-- Modal -->
 
   </body>
 </html>
