@@ -46,11 +46,15 @@ content %}
                   </select>
                 </div>
                 <div class="col-md-4">
-                  <input type="date" class="form-control date-filter" />
+                  <input
+                    type="date"
+                    class="form-control date-filter"
+                    placeholder="select your date"
+                  />
                 </div>
               </div>
             </div>
-            <!-- <div class="card card--chart">
+            <div class="card card--chart">
               <div class="card-body">
                 <div class="chart-wrapper">
                   <canvas id="electricChart"></canvas>
@@ -71,28 +75,26 @@ content %}
                   </div>
                 </div>
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
         <div class="card card--list">
           <div class="card-body">
             <div class="card-title">Other companies' electricity costs</div>
-            <div class="card-wrapper">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">{{ card.company() }}</div>
+                <div class="swiper-slide">{{ card.company() }}</div>
+                <div class="swiper-slide">{{ card.company() }}</div>
+                <div class="swiper-slide">{{ card.company() }}</div>
+                <div class="swiper-slide">{{ card.company() }}</div>
+                <div class="swiper-slide">{{ card.company() }}</div>
+              </div>
             </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
-        </div>
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-          </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
         </div>
       </div>
     </div>
