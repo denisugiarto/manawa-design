@@ -342,15 +342,22 @@ function dateFilterHandler() {
 // });
 
 const swiper = new Swiper(".swiper", {
-  slidesPerView: 3,
+  slidesPerView: 1,
   spaceBetween: 12,
-  slidesPerGroup: 3,
   loop: true,
   loopFillGroupWithBlank: true,
   // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
   },
 });
 
