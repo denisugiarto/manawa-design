@@ -34,45 +34,54 @@ content %}
               <div
                 class="row g-2 gx-md-3 align-items-center justify-content-between"
               >
-                <div class="col-12 col-md-4 col-lg-6">
+                <div class="col-12 col-md-5 col-lg-4 col-xl-5 col-xxl-6">
                   <h4 class="room__name bg-heading">Rudi’s House</h4>
                 </div>
-                <div class="col-6 col-md-3 col-lg-2">
+                <div class="col-6 col-md-3">
                   <h6 class="room__location">
                     <i class="fas fa-map me-2"></i>Auckland Central
                   </h6>
                 </div>
-                <div class="col-6 col-md-5 col-lg-auto">
-                    <div class="row gx-2 gx-md-3 mb-0">
-                      <div class="col">
-                        <div
-                          class="temperature-column temperature--comfortable"
-                        >
-                          <i class="icon icon--temperature"></i>
-                          <h6 class="room__label">22.2°C</h6>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div
-                          class="temperature-column humidity--comfortable align-items-center"
-                        >
-                          <i class="icon icon--temperature"></i>
-                          <h6 class="room__label">52.2%</h6>
-                        </div>
+                <div class="col-auto">
+                  <div class="row gx-2 gx-md-3 mb-0">
+                    <div class="col border-end">
+                      <div class="temperature-column temperature--comfortable">
+                        <i class="icon icon--temperature"></i>
+                        <h6 class="room__label">22.2°C</h6>
                       </div>
                     </div>
+                    <div class="col">
+                      <div
+                        class="temperature-column humidity--comfortable align-items-center"
+                      >
+                        <i class="icon icon--temperature"></i>
+                        <h6 class="room__label">52.2%</h6>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <div id="filters">
               <div
-                class="bg-light row p-2 py-md-4 px-md-2 border rounded g-3 gy-md-0 gx-md-3 m-0"
+                class="bg-light-gray row py-2 px-0 py-md-4 px-md-2 border rounded g-3 gy-md-0 gx-md-3 m-0"
               >
-                <div class="col-12 col-md col-lg-4 col-xl-3">
-                  <input type="date" name="date" class="form-control" id="" />
+                <div class="col-12 col-md col-lg-4 col-xl-3 mt-0">
+                  <input
+                    type="date"
+                    name="date"
+                    class="form-control"
+                    id="litepicker"
+                  />
                 </div>
                 <div class="col-6 col-md-3 col-lg-4 col-xl-3">
-                  <input type="time" name="time" class="form-control" id="" />
+                  <select class="form-select" aria-label="time">
+                    <option selected>00:00 - 05.00</option>
+                    <option>05:01 - 10.00</option>
+                    <option>10:01 - 15.00</option>
+                    <option>15:01 - 20.00</option>
+                    <option>20:01 - 23.59</option>
+                  </select>
                 </div>
                 <div class="col-6 col-md-4 ms-lg-auto col-lg-3">
                   <select class="form-select" aria-label="room type">
@@ -84,7 +93,9 @@ content %}
               </div>
             </div>
 
-            <div class="d-flex border-bottom justify-content-between">
+            <div
+              class="d-flex border-bottom justify-content-between mt-2 mt-md-3"
+            >
               <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
                   <button
@@ -116,24 +127,24 @@ content %}
                 </li>
               </ul>
               <div class="collapse show" id="tempHighLow">
-                <div class="d-flex align-items-center">
-                  <div class="fw-bold border-end my-3 px-3">
+                <div class="high-low-wrapper">
+                  <div class="high-wrapper">
                     <span class="d-none d-md-inline">High</span>
                     <i class="fas fa-arrow-up d-md-none me-1"></i>43°C
                   </div>
-                  <div class="fw-bold p-3">
+                  <div class="low-wrapper">
                     <span class="d-none d-md-inline">Low</span>
                     <i class="fas fa-arrow-down d-md-none me-1"></i>17°C
                   </div>
                 </div>
               </div>
               <div class="collapse" id="humidityHighLow">
-                <div class="d-flex align-items-center">
-                  <div class="fw-bold border-end my-3 px-3">
+                <div class="high-low-wrapper">
+                  <div class="high-wrapper">
                     <span class="d-none d-md-inline">High</span>
                     <i class="fas fa-arrow-up d-md-none me-1"></i>63.2%
                   </div>
-                  <div class="fw-bold p-3">
+                  <div class="low-wrapper">
                     <span class="d-none d-md-inline">Low</span>
                     <i class="fas fa-arrow-down d-md-none me-1"></i>52.5%
                   </div>
@@ -148,7 +159,7 @@ content %}
                 role="tabpanel"
                 aria-labelledby="temp-tab"
               >
-                <div class="card card--room-line">
+                <div class="card card--chart">
                   <div class="card-body">
                     <div class="chart-wrapper">
                       <canvas id="tempChart"></canvas>
@@ -176,7 +187,7 @@ content %}
                 role="tabpanel"
                 aria-labelledby="humidity-tab"
               >
-                <div class="card card--room-line">
+                <div class="card card--chart">
                   <div class="card-body">
                     <div class="chart-wrapper">
                       <canvas id="humidityChart"></canvas>
@@ -201,63 +212,61 @@ content %}
             </div>
 
             <div id="room-list">
-              <div class="container-fluid">
-                <div class="row row-cols-md-2 row-cols-xxl-3 g-3">
-                  <div class="col">
-                    <div class="room-item border rounded-2 p-2">
-                      <h4 class="room-item__title">Parent Bedroom</h4>
-                      <h6 class="room-item__subtitle">Adult's bedroom</h6>
-                      <div class="d-flex align-items-center mb-2">
-                        <div class="flex-grow-1">
-                          <h6 class="room-item__current-condition">
-                            <i class="fas fa-thermometer-quarter"></i
-                            >Comfortable room
-                          </h6>
-                          <h6 class="room-item__time">
-                            <i class="fas fa-clock"></i>10 minutes ago
-                          </h6>
-                        </div>
-                        <figure class="room-item__image-wrapper">
-                          <img
-                            src="assets/img/comfortable.png"
-                            alt=""
-                            class="img-fluid"
-                          />
-                        </figure>
+              <div class="row row-cols-md-2 row-cols-xxl-3 g-3 mt-1">
+                <div class="col">
+                  <div class="room-item border rounded-2 p-2">
+                    <h4 class="room-item__title">Parent Bedroom</h4>
+                    <h6 class="room-item__subtitle">Adult's bedroom</h6>
+                    <div class="d-flex align-items-center mb-2">
+                      <div class="flex-grow-1">
+                        <h6 class="room-item__current-condition">
+                          <i class="fas fa-thermometer-quarter"></i>Comfortable
+                          room
+                        </h6>
+                        <h6 class="room-item__time">
+                          <i class="fas fa-clock"></i>10 minutes ago
+                        </h6>
                       </div>
-                      <div class="room-item__data-wrapper">
-                        <div class="data-item">
-                          <div class="data-item__label">Temperature</div>
-                          <h6 class="data-item__value">26.2°C</h6>
-                        </div>
-                        <div class="data-item">
-                          <div class="data-item__label">Humidity</div>
-                          <h6 class="data-item__value">50.2%</h6>
-                        </div>
-                        <div class="data-item">
-                          <div class="data-item__label">Dewpoint</div>
-                          <h6 class="data-item__value">10.9°C</h6>
-                        </div>
+                      <figure class="room-item__image-wrapper">
+                        <img
+                          src="assets/img/comfortable.png"
+                          alt=""
+                          class="img-fluid"
+                        />
+                      </figure>
+                    </div>
+                    <div class="room-item__data-wrapper">
+                      <div class="data-item">
+                        <div class="data-item__label">Temperature</div>
+                        <h6 class="data-item__value">26.2°C</h6>
                       </div>
-                      <div class="mt-2">
-                        <a
-                          href="#"
-                          class="btn bg-danger text-white w-100 d-flex align-items-center"
-                        >
-                          <span class="ms-auto">Analysis</span>
-                          <i class="fas fa-chevron-right ms-auto"></i>
-                        </a>
+                      <div class="data-item">
+                        <div class="data-item__label">Humidity</div>
+                        <h6 class="data-item__value">50.2%</h6>
+                      </div>
+                      <div class="data-item">
+                        <div class="data-item__label">Dewpoint</div>
+                        <h6 class="data-item__value">10.9°C</h6>
                       </div>
                     </div>
+                    <div class="mt-2">
+                      <a
+                        href="#"
+                        class="btn bg-danger text-white w-100 d-flex align-items-center"
+                      >
+                        <span class="ms-auto">Analysis</span>
+                        <i class="fas fa-chevron-right ms-auto"></i>
+                      </a>
+                    </div>
                   </div>
-                  <div class="col">
-                    {{ card.room('Ricky Bedroom', 'Child’s bedroom', '22.6',
-                    '56.8', '11.2') }}
-                  </div>
-                  <div class="col">
-                    {{ card.room('Living Room', 'Living Space', '29.5', '54.4',
-                    '10.5') }}
-                  </div>
+                </div>
+                <div class="col">
+                  {{ card.room('Ricky Bedroom', 'Child’s bedroom', '22.6',
+                  '56.8', '11.2') }}
+                </div>
+                <div class="col">
+                  {{ card.room('Living Room', 'Living Space', '29.5', '54.4',
+                  '10.5') }}
                 </div>
               </div>
             </div>
@@ -275,5 +284,4 @@ content %}
   </section>
 </main>
 
-<!-- Modal -->
 {% endblock %}

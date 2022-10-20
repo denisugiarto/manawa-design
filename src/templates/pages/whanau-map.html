@@ -54,7 +54,7 @@
 
   <body>
     <div class="container">
-      <div class="img-wrapper my-5 text-center">
+      <div class="img-wrapper py-5 text-center">
         <img src="/assets/img/ic-logo-big.svg" alt="" class="logo-big" />
       </div>
       <div class="card card--map">
@@ -67,13 +67,40 @@
           </div>
           <div class="form--float header">
             <div class="col-auto">
-              <select class="form-select search-type">
-                <option value="email" selected><i class="fas fa-voicemail"></i> By email</option>
-                <option value="suburb">By suburb</option>
-              </select>
+              <div class="dropdown">
+                <button
+                  class="form-select"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-envelope me-1 lh-base d-md-none"></i
+                  ><span class="search-type-label">By email</span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      role="button"
+                      onclick="searchTypeHandle('email')"
+                    >
+                      By email
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      role="button"
+                      onclick="searchTypeHandle('suburb')"
+                    >
+                      By suburb
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div class="col col-md-6 col-lg-7 position-relative">
-              <div class="collapse show search-type-list">
+              <div class="collapse show search-type-email">
                 <select class="js-select">
                   <optgroup label="airah92@gmail.com">
                     <option value="airah">Airah’s house</option>
@@ -88,7 +115,7 @@
                   </optgroup>
                 </select>
               </div>
-              <div class="collapse search-type-list">
+              <div class="collapse search-type-suburb">
                 <select class="js-select">
                   <option>Tauranga Central</option>
                   <option>Tauranga South</option>
@@ -103,7 +130,9 @@
             </div>
           </div>
           <div id="list-wrapper" class="whanau-list-wrapper">
-            <div class="row row-cols-md-2 row-cols-xxl-3 g-3 gx-md-5 gy-md-5 gy-xxl-2">
+            <div
+              class="row row-cols-md-2 row-cols-xxl-3 g-3 gx-md-5 gy-md-5 gy-xxl-2"
+            >
               <div class="col">
                 {{ card.room('Ricky Bedroom', 'Child’s bedroom', '22.6', '56.8',
                 '11.2') }}
@@ -154,7 +183,7 @@
                   <div class="col">
                     <p class="mb-2">Temperature</p>
                     <ul>
-                      <li class="d-flex px-3 gap-3">
+                      <li class="d-flex ps-0 pe-2 px-md-3 gap-2 gap-md-3">
                         <input
                           type="checkbox"
                           class="form-check-input"
@@ -164,7 +193,7 @@
                         <label class="form-label" for="">&gt; 30 °C</label>
                         <div class="icon--small dry ms-auto"></div>
                       </li>
-                      <li class="d-flex px-3 gap-3">
+                      <li class="d-flex ps-0 pe-2 px-md-3 gap-2 gap-md-3">
                         <input
                           type="checkbox"
                           class="form-check-input"
@@ -174,7 +203,7 @@
                         <label class="form-label" for="">18 - 29 °C</label>
                         <div class="icon--small comfortable ms-auto"></div>
                       </li>
-                      <li class="d-flex px-3 gap-3">
+                      <li class="d-flex ps-0 pe-2 px-md-3 gap-2 gap-md-3">
                         <input
                           type="checkbox"
                           class="form-check-input"
@@ -186,10 +215,10 @@
                       </li>
                     </ul>
                   </div>
-                  <div class="col border-start ps-3">
+                  <div class="col border-start ps-2 ps-md-3">
                     <p class="mb-2">Humidity</p>
                     <ul>
-                      <li class="d-flex px-3 gap-3">
+                      <li class="d-flex px-0 px-md-3 gap-2 gap-md-3">
                         <input
                           type="checkbox"
                           class="form-check-input"
@@ -199,7 +228,7 @@
                         <label class="form-label" for="">&gt; 60%</label>
                         <div class="icon--small damp ms-auto"></div>
                       </li>
-                      <li class="d-flex px-3 gap-3">
+                      <li class="d-flex px-0 px-md-3 gap-2 gap-md-3">
                         <input
                           type="checkbox"
                           class="form-check-input"
@@ -209,7 +238,7 @@
                         <label class="form-label" for="">30 - 60%</label>
                         <div class="icon--small comfortable ms-auto"></div>
                       </li>
-                      <li class="d-flex px-3 gap-3">
+                      <li class="d-flex px-0 px-md-3 gap-2 gap-md-3">
                         <input
                           type="checkbox"
                           class="form-check-input"
@@ -241,6 +270,19 @@
       [-37.9033391333, 175.4244005667, "Rudi’s House"],
       [-37.9061991333, 175.4492620333, "Rudi’s House"],
     ];
+
+    function searchTypeHandle(type) {
+      if (type === "email") {
+        $(".search-type-label").text("By email");
+        $(".search-type-email").addClass("show");
+        $(".search-type-suburb").removeClass("show");
+      } else {
+        $(".search-type-label").text("By suburb");
+        $(".search-type-email").removeClass("show");
+        $(".search-type-suburb").addClass("show");
+      }
+    }
+
     $(document).ready(function () {
       $(".view-type").change(function () {
         $("#list-wrapper").toggleClass("show");

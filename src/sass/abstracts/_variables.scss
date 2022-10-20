@@ -68,7 +68,7 @@ $typi: (
   //   null: (ms(4), vr(2.5)),
   //   small: (ms(4), vr(2.5)),
   //   large: (ms(4), vr(2.5))
-  // ),
+  // ),,,,
 );
 
 $ms-base: 1em;
@@ -86,10 +86,10 @@ $color-white: #ffffff;
 $color-black: #000000;
 $color-secondary-black: #333333;
 $color-secondary-900: #101b37;
-$color-secondary-600: #6F757E;
+$color-secondary-600: #6f757e;
 $color-secondary-400: #899aab;
-$color-secondary-200: #F3F3F4;
-$color-secondary-100: #EBF3F8;
+$color-secondary-200: #f3f3f4;
+$color-secondary-100: #ebf3f8;
 $color-secondary-grey: #777777;
 $color-green: #abcc75;
 $color-yellow: #fdff8c;
@@ -107,13 +107,33 @@ $color-hot: #ea6720;
 $color-dry: #cd6276;
 $color-offline: #777777;
 
-$danger: $color-red;
-$secondary: $color-secondary-400;
 $primary: $color-red;
+$secondary: $color-secondary-600;
+$danger: $color-red;
+$light: $bg-white;
+$success: $color-comfortable;
+$info: $color-damp;
+$warning: $color-yellow;
+$dark: $color-secondary-900;
 
-// font families
-// $font-lato: 'Lato', Arial, Verdana, sans-serif;
-// $font-raleway: 'Raleway', Arial, Verdana, sans-serif;
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+);
+
+// Add custom color map
+$custom-colors: (
+  "light-gray": $color-secondary-200,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
 
 // sizing
 $base-font-size: 16px;
@@ -137,7 +157,6 @@ $spacers: (
 $border-radius: 0.375rem;
 $border-radius-sm: 0.25rem;
 $border-radius-lg: 0.5rem;
-
 
 $nav-tabs-border-width: 0;
 $nav-link-padding-y: 0.625rem;

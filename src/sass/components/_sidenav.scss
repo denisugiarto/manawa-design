@@ -8,6 +8,7 @@
   transform: translateX(100%);
   transition: transform 400ms ease-in-out;
   z-index: 1;
+  top: 57px;
   @include for-size(tablet) {
     transform: translateX(300px);
     left: auto;

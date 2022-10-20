@@ -1,13 +1,17 @@
 .chart-wrapper {
   .legends {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
     padding: 12px;
     background-color: $color-secondary-200;
 
     .item {
-      margin-right: 30px;
+      margin-right: 10px;
       display: inline-flex;
+      
+      @include media-breakpoint-up(md) {
+        margin-right: 30px;
+      }
 
       &:last-child {
         margin-right: 0;
@@ -56,6 +60,13 @@
         line-height: 14px;
         color: $color-secondary-900;
       }
+    }
+
+    &--small {
+      text-align: left;
+      font-size: 11.63px;
+      line-height: 11.63px;
+      padding: 20px 5px;
     }
   }
 }
