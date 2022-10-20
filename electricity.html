@@ -49,8 +49,12 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script> -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script> -->
 
     <!-- <script src="./assets/js/vendor/datepicker.js"></script> -->
@@ -194,8 +198,12 @@
             <div id="chart-filter" class="bg-light-gray p-4 w-100 rounded">
               <div class="row g-3">
                 <div class="col-md-4">
-                  <select name="date-filter" class="form-select" onchange="dateFilterHandler()">
-                    <option value="date" >Day</option>
+                  <select
+                    name="date-filter"
+                    class="form-select"
+                    onchange="dateFilterHandler()"
+                  >
+                    <option value="date">Day</option>
                     <option value="week">Week</option>
                     <option value="month">Month</option>
                   </select>
@@ -205,7 +213,7 @@
                 </div>
               </div>
             </div>
-            <div class="card card--chart">
+            <!-- <div class="card card--chart">
               <div class="card-body">
                 <div class="chart-wrapper">
                   <canvas id="electricChart"></canvas>
@@ -214,7 +222,6 @@
                     <span class="fw-bold">42 watt</span>
                   </div>
                 </div>
-                
               </div>
             </div>
             <div class="card card--chart">
@@ -227,18 +234,28 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
-        <div class="card">
+        <div class="card card--list">
           <div class="card-body">
             <div class="card-title">Other companies' electricity costs</div>
             <div class="card-wrapper">
-              <div class="col-auto">
-                
-              </div>
             </div>
           </div>
+        </div>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
       </div>
     </div>
