@@ -1,0 +1,19 @@
+.high-low-wrapper {
+  @extend .row, .gx-3, .gx-md-3, .align-items-center;
+  height: 100%;
+  margin: auto 0;
+  font-size: 12px;
+  @include media-breakpoint-up(md) {
+    font-size: 16px;
+  }
+}
+
+.high-wrapper {
+  @extend .border-end;
+}
+
+.high-wrapper,
+.low-wrapper {
+  @extend .col-auto;
+  font-weight: 700;
+}

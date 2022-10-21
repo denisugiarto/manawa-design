@@ -1,0 +1,43 @@
+.toggle-hide-show {
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $dark;
+  @include media-breakpoint-up(md) {
+    font-size: 20px;
+  }
+
+  .text--hide {
+    display: none;
+    color: $secondary;
+    font-size: 14px;
+    font-weight: 400;
+    @include media-breakpoint-up(md) {
+      font-size: 16px;
+    }
+  }
+
+  .text--show {
+    display: block;
+    color: $color-secondary-600;
+    font-size: 14px;
+    font-weight: 400;
+    @include media-breakpoint-up(md) {
+      font-size: 16px;
+    }
+  }
+  &:hover {
+    color: $color-secondary-black;
+  }
+
+  &.active {
+    .text--hide {
+      display: block;
+    }
+    .text--show {
+      display: none;
+    }
+  }
+}

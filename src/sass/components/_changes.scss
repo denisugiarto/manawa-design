@@ -1,0 +1,26 @@
+.changes-wrapper {
+  font-size: 12px;
+  font-weight: 300;
+  margin-left: auto;
+  &--up {
+    color: $color-comfortable;
+  }
+
+  &--up::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f062";
+    margin-left: 5px;
+  }
+
+  &--down {
+    color: $color-red;
+  }
+
+  &--down::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f063";
+    margin-left: 5px;
+  }
+}

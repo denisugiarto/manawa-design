@@ -9,7 +9,7 @@
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
-    color: $color-red;
+    color: $primary;
     font-size: 45px;
     line-height: 53px;
     text-align: center;
@@ -156,7 +156,7 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
-    color: $color-red;
+    color: $primary;
     text-decoration: none;
     &:hover {
       color: $color-soft-red;

@@ -52,14 +52,14 @@
       &.active {
         .wrapper {
           .icon {
-            color: $color-red !important;
+            color: $primary !important;
           }
           .title {
-            color: $color-red !important;
+            color: $primary !important;
           }
         }
         i.fas {
-          color: $color-red !important;
+          color: $primary !important;
         }
       }
       .menu-title {
@@ -81,7 +81,7 @@
             font-weight: bold;
             font-size: 20px;
             line-height: 140.62%;
-            color: $color-secondary-900;
+            color: $dark;
             &--house {
               font-family: Merriweather;
               font-size: 20px;

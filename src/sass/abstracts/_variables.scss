@@ -109,8 +109,9 @@ $color-offline: #777777;
 
 $primary: $color-red;
 $secondary: $color-secondary-600;
-$danger: $color-red;
+$danger: $color-soft-red;
 $light: $bg-white;
+$light-gray: $color-secondary-200;
 $success: $color-comfortable;
 $info: $color-damp;
 $warning: $color-yellow;
@@ -129,7 +130,7 @@ $theme-colors: (
 
 // Add custom color map
 $custom-colors: (
-  "light-gray": $color-secondary-200,
+  "light-gray": $light-gray,
 );
 
 // Merge the maps

@@ -1,0 +1,20 @@
+.bg-heading {
+  position: relative;
+  z-index: 0;
+}
+
+.bg-heading::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-top: solid 48px $primary;
+  border-right: solid 24px transparent;
+  width: 100%;
+  z-index: -1;
+
+  @include media-breakpoint-up(md) {
+    border-top: solid 60px $primary;
+    border-right: solid 40px transparent;
+  }
+}

@@ -1,0 +1,11 @@
+.marker-cluster span {
+  line-height: 43px;
+  margin-left: 3px;
+}
+
+.marker-cluster-small div {
+  width: 56px;
+  height: 56px;
+  text-align: center;
+  background: url("../img/group-marker.svg"), no-repeat, center;
+}

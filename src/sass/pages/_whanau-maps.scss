@@ -1,0 +1,89 @@
+.logo-big {
+  @extend .img-fluid;
+}
+
+.maps-wrapper {
+  height: 60vh;
+  margin-top: 15px;
+}
+
+.room {
+  &__location {
+    @extend .text-truncate;
+  }
+  &__name {
+    @extend .text-truncate;
+  }
+}
+
+.search-type-label {
+  display: none;
+  @include media-breakpoint-up(md) {
+    display: inline;
+  }
+}
+
+.status-bar {
+  display: flex;
+  width: 25%;
+  &-value {
+    color: $dark;
+    display: flex;
+    justify-content: space-between;
+  }
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 50px;
+    border: 5px solid transparent;
+    height: 32px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 15px;
+
+    &.dry {
+      border-color: #f3d8dd;
+      background-color: #eabbc3;
+      .status-bar {
+        background-color: $color-dry;
+      }
+    }
+    &.cold {
+      border-color: #ccdaec;
+      background-color: #a7bede;
+      .status-bar {
+        background-color: $color-cold;
+      }
+    }
+    &.comfortable {
+      border-color: #d3e7cb;
+      background-color: #aad6a8;
+      .status-bar {
+        background-color: $color-comfortable;
+      }
+    }
+    &.damp {
+      border-color: #d5e8f1;
+      background-color: #b6d7e7;
+      .status-bar {
+        background-color: $color-damp;
+      }
+    }
+  }
+}
+
+.whanau-list-wrapper {
+  @extend .collapse;
+  margin-top: 15px;
+  max-height: 40vh;
+  overflow-y: auto;
+  overflow-x: clip;
+  margin-bottom: 55px;
+  @include media-breakpoint-up(md) {
+    margin-top: 30px;
+  }
+
+  &.show + .form--float.footer {
+    bottom: 15px;
+  }
+}
