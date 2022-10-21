@@ -101,7 +101,7 @@
         position: absolute;
         width: 100%;
         @include for-size(desktop) {
-          background-color: $color-green;
+          background-color: $primary;
         }        
       }
     }
@@ -167,7 +167,7 @@
           .form__label--has-checkbox {
             width: 100%;
             margin: 0 0 15px !important;
-            border: 1px solid $color-green;
+            border: 1px solid $primary;
             padding: 16px 13px;
             cursor: pointer;
             @include for-size(tablet) {
@@ -256,7 +256,7 @@
           li {
             flex: 0;
             &.active {
-              background-color: $color-green;
+              background-color: $primary;
             }
             &.done {
               background-color: $bg-gray;
@@ -348,7 +348,7 @@
     border-radius: 50%;
     display: inline-block;
     &.active {
-      background-color: $color-green;
+      background-color: $primary;
     }
   }
   &__content {

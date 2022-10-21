@@ -145,7 +145,7 @@
   }
   .form.form--section {
     background-color: $color-white;
-    border-top: 6px solid $color-green;
+    border-top: 6px solid $primary;
     padding: 20px;
     .form-group {
       margin-bottom: 15px;
@@ -173,7 +173,7 @@
           }
           .form__input--radio {
             &:checked ~ .form__custom-radio-wrapper .form__custom-radio {
-              border: 7px solid $color-green;
+              border: 7px solid $primary;
             }
             &:checked ~ .input-wrapper--other {
               display: block;
@@ -223,12 +223,12 @@
           .form__label {
             .form__input--radio {
               &:checked ~ .form__custom-radio-wrapper {
-                border: 1px solid $color-green;
+                border: 1px solid $primary;
                 .form__custom-radio {
-                  border: 7px solid $color-green;
+                  border: 7px solid $primary;
                 }
                 .form__custom-radio-title {
-                  color: $color-green;
+                  color: $primary;
                 }
               }
             }
@@ -255,9 +255,9 @@
             border: none;
             .form__input--checkbox {
               &:checked ~ .form__custom-checkbox-wrapper {
-                border: 1px solid $color-green;
+                border: 1px solid $primary;
                 .form__text-label {
-                  color: $color-green;
+                  color: $primary;
                 }
               }
             }

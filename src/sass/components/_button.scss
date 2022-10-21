@@ -15,7 +15,7 @@
     border: 1px solid $bg-black;
   }
   &.button--red {
-    background-color: $primary;
+    background-color: $danger;
     border: none;
     color: $color-white;
   }
@@ -33,10 +33,10 @@
     border: 1px solid $bg-white;
     color: $color-black;
   }
-  &.button--green {
-    background-color: $color-green;
+  &.button--primary {
+    background-color: $primary;
     color: $color-white;
-    border: 1px solid $color-green;
+    border: 1px solid $primary;
   }
   &.button--transparent {
     background-color: transparent;

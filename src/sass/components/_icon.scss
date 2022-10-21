@@ -7,7 +7,7 @@
   &.icon--checked-circle {
     display: flex;
     justify-content: center;
-    color: $color-green;
+    color: $primary;
     font-size: 70px;
     margin: 0 0 17px;
   }
@@ -18,11 +18,11 @@
       display: block;
     }    
   }
-  &.icon--circle-green {
+  &.icon--circle-primary {
     margin: 0 10px 0 0;    
     width: 38px;
     height: 38px;
-    background: rgba(171, 204, 117, 0.25);
+    background: rgba($primary, 0.25);
     border-radius: 50%;
     align-items: center;
     justify-content: center;
@@ -32,11 +32,11 @@
     font-size: 16px;
     line-height: 140.62%;
   }
-  &.icon--circle-green-sm {
+  &.icon--circle-primary-sm {
     margin: 0 10px 0 0;    
     width: 20px;
     height: 20px;
-    background: $color-green;
+    background: $primary;
     border-radius: 50%;
     align-items: center;
     justify-content: center;

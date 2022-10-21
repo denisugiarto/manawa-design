@@ -115,7 +115,7 @@
       .form__label--has-checkbox {
         width: 100%;
         margin: 0 0 15px !important;
-        border: 1px solid $color-green;
+        border: 1px solid $primary;
         padding: 16px 13px;
         cursor: pointer;
         @include for-size(tablet) {
@@ -222,7 +222,7 @@
     &--checkbox {
       display: none;
       &:checked ~ .form__custom-checkbox-wrapper .form__custom-checkbox {
-        background-color: $color-green;
+        background-color: $primary;
         &::after {
           display: block;
         }
@@ -231,7 +231,7 @@
     &--radio {
       display: none;
       &:checked ~ .form__custom-radio-wrapper .form__custom-radio {
-        border: 5px solid $color-green;
+        border: 5px solid $primary;
         &::after {
           display: block;
         }
@@ -263,7 +263,7 @@
     cursor: pointer;
     position: relative;
     background: $bg-white;
-    border: 1px solid $color-green;
+    border: 1px solid $primary;
     border-radius: 3px;
     width: 16px;
     height: 16px;
@@ -288,7 +288,7 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    border: 1px solid $color-green;
+    border: 1px solid $primary;
     margin: 0 15px 0 0;
   }
   &__custom-radio-title {
@@ -307,7 +307,7 @@
     cursor: pointer;
     position: relative;
     border-radius: 0;
-    border: 1px solid $color-green;
+    border: 1px solid $primary;
     margin: 0;
     display: flex;
     align-items: center;

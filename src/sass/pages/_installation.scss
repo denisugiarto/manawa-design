@@ -7,7 +7,7 @@
   .sidebar {
     @include fixed(top 0 bottom 0 left 0 right 0);
     transform: translateX(-100%);
-    background-color: $color-green;
+    background-color: $primary;
     z-index: 3;
     padding: 59px 29px;
     transition: transform 200ms ease-in-out;
@@ -118,7 +118,7 @@
       .icon.icon--list-content {
         margin-right: 15px;
         font-size: 16px;
-        color: $color-green;
+        color: $primary;
       }
     }
     &__text {
@@ -235,7 +235,7 @@
     }
     &__toggle {
       padding: 30px 27px;
-      background-color: $color-green;
+      background-color: $primary;
       display: flex;
       align-items: center;
       justify-content: center;

@@ -11,8 +11,8 @@
   color: $color-black;
   border-radius: 100px;
   width: max-content;
-  &.badge--green {
-    border: 1px solid $color-green;
+  &.badge--primary {
+    border: 1px solid $primary;
   }
   &.badge--has-icon {
     display: flex;

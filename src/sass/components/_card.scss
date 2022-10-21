@@ -283,7 +283,7 @@
     width: 100%;
     border-color: $bg-yellow;
     border-radius: 0;
-    border-bottom: 5px solid $color-green;
+    border-bottom: 5px solid $primary;
     display: flex;
     align-items: center;
 
@@ -1217,7 +1217,7 @@
         margin: 0;
       }
       .link {
-        color: $color-green;
+        color: $primary;
       }
       .image-wrapper {
         width: 100%;

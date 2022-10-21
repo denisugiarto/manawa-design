@@ -97,12 +97,12 @@
       }
       .menu-sublist {
         margin: 27px 0 0 9px;
-        border-left: 3px solid $color-green;
+        border-left: 3px solid $primary;
         &__item {
           padding: 16px 21px;
           &.active {
             .link {
-              color: $color-green;
+              color: $primary;
             }
           }
           .link {
