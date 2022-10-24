@@ -34,15 +34,15 @@
     align-items: center;
 
     .icon {
-      width: 15px;
-      height: 15px;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
       background-color: transparent;
       display: flex;
       justify-content: center;
       align-items: center;
       flex: 0 0 auto;
-      margin: 0 5px 0 0;
+      margin: 0 13px 0 0;
       background-repeat: no-repeat;
       background-size: cover;
       image-rendering: -moz-crisp-edges;
@@ -54,11 +54,18 @@
       image-rendering: crisp-edges;
       -ms-interpolation-mode: nearest-neighbor;
       /* IE (non-standard property) */
+    }
+    &--small {
+      .icon {
+        width: 15px;
+        height: 15px;
+        margin: 0 5px 0 0;
 
-      @include media-breakpoint-up(md) {
-        margin: 0 15px 0 0;
-        width: 30px;
-        height: 30px;
+        @include media-breakpoint-up(md) {
+          margin: 0 15px 0 0;
+          width: 30px;
+          height: 30px;
+        }
       }
     }
 
@@ -436,7 +443,7 @@
   &.card--info {
     flex-direction: column;
     padding: 10px;
-    margin: 20px 0 0;
+    margin: 0;
 
     .card {
       &-content {
@@ -1245,81 +1252,121 @@
       padding: 15px;
     }
   }
-}
 
-.room-item {
-  &__title {
-    font-weight: 700;
-    font-size: 14px;
-    color: $color-secondary-900;
-  }
-
-  &__subtitle {
-    @extend .border-bottom;
-    padding-bottom: 10px;
-    font-size: 12px;
-    color: $color-secondary-400;
-  }
-
-  &__current-condition {
-    color: $color-comfortable;
-    font-weight: 700;
-    font-size: 14px;
-    i {
-      width: 20px;
-      height: 20px;
-      text-align: center;
-      margin-right: 5px;
-    }
-  }
-
-  &__data-wrapper {
-    @extend .d-flex;
-    background-color: $color-white-grey;
-    padding: 10px 13px;
-    gap: 15px;
-
-    .data-item {
-      text-align: center;
-      @extend .col;
-      padding-right: 15px;
-      &:not(:last-child) {
-        @extend .border-end;
-      }
-      &__label {
-        font-size: 12px;
-        color: $color-secondary-grey;
-      }
-
-      &__value {
-        font-size: 14px;
+  &.card--room-whanau {
+    padding: 0;
+    .card-body {
+      padding: 10px;
+      .room-item__description {
+        margin-left: 5px;
         font-weight: 700;
-        color: $color-secondary-900;
+        font-size: 12px;
+      }
+    }
+
+    .room-item {
+      &__data-wrapper {
+        align-items: center;
+        gap: 10px;
+      }
+    }
+    .temperature-column {
+      .icon {
+        width: 24px;
+        height: 24px;
+        margin: 0 10px 0 0;
+      }
+      .text-wrapper {
+        .title {
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 1.4;
+          color: $color-secondary-grey;
+        }
+        .value {
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 1.4;
+        }
       }
     }
   }
 
-  &__time {
-    font-size: 12px;
-    color: $color-secondary-400;
-
-    i {
+  .room-item {
+    &__title {
+      font-weight: 700;
       font-size: 14px;
-      width: 20px;
-      height: 20px;
-      text-align: center;
-      margin-right: 5px;
+      color: $color-secondary-900;
     }
-  }
 
-  &__image-wrapper {
-    background: rgba(248, 247, 246, 0.8);
-    border-radius: 6px;
-    padding: 15px;
-    margin: 0;
-    img {
-      width: 35px;
-      height: 35px;
+    &__subtitle {
+      @extend .border-bottom;
+      padding-bottom: 10px;
+      font-size: 12px;
+      color: $color-secondary-400;
+      margin-bottom: 10px;
+    }
+
+    &__current-condition {
+      color: $color-comfortable;
+      font-weight: 700;
+      font-size: 14px;
+      i {
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        margin-right: 5px;
+      }
+    }
+
+    &__data-wrapper {
+      @extend .d-flex;
+      background-color: $color-white-grey;
+      padding: 10px 13px;
+      gap: 15px;
+
+      .data-item {
+        text-align: center;
+        @extend .col;
+        padding-right: 15px;
+        &:not(:last-child) {
+          @extend .border-end;
+        }
+        &__label {
+          font-size: 12px;
+          color: $color-secondary-grey;
+        }
+
+        &__value {
+          font-size: 14px;
+          font-weight: 700;
+          color: $color-secondary-900;
+        }
+      }
+    }
+
+    &__time {
+      font-size: 12px;
+      color: $color-secondary-400;
+
+      i {
+        font-size: 14px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        margin-right: 5px;
+      }
+    }
+
+    &__image-wrapper {
+      background: rgba(248, 247, 246, 0.8);
+      border-radius: 6px;
+      padding: 15px;
+      margin: 0;
+      img {
+        width: 35px;
+        height: 35px;
+      }
     }
   }
 }

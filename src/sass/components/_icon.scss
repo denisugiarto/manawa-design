@@ -59,11 +59,11 @@
     align-items: center;
     justify-content: center;
   }
-  &.icon--circle-red {
+  &.icon--circle-primary {
     margin: 0 10px 0 0;    
     width: 40px;
     height: 40px;
-    background: rgba($color-soft-red, .25);
+    background: rgba($primary, .25);
     color: $color-secondary-900;
     border-radius: 50%;
     display: flex;

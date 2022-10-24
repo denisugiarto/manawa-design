@@ -41,6 +41,47 @@
 </div>
 {% endmacro %}
 
+<!-- Card Room Whanau -->
+{% macro roomWhanau(name, email, imgUrl, description, tempType, tempValue, humType, humValue ) %}
+<div class="card card--room-whanau">
+  <div class="card-body">
+    <h4 class="room-item__title">{{ name }}</h4>
+    <h6 class="room-item__subtitle">{{ email }}</h6>
+    <div class="d-flex align-items-center mb-2">
+      <figure class="room-item__image-wrapper">
+        <img src="assets/img/{{ imgUrl }}" alt="" class="img-fluid" />
+      </figure>
+      <p class="room-item__description">{{ description }}</p>
+    </div>
+    <div class="room-item__data-wrapper">
+      <div class="temperature-column {{ tempType }}">
+        <i class="icon icon--temperature"></i>
+        <div class="text-wrapper">
+          <div class="title">Temperature</div>
+          <div class="value">{{ tempValue }}°C</div>
+        </div>
+      </div>
+      <div class="temperature-column {{ humType }}">
+        <i class="icon icon--temperature"></i>
+        <div class="text-wrapper">
+          <div class="title">Humidity</div>
+          <div class="value">{{ humValue }}%</div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-2">
+      <a
+        href="#"
+        class="btn bg-primary text-white w-100 d-flex align-items-center"
+      >
+        <span class="ms-auto">See Detail Room</span>
+        <i class="fas fa-chevron-right ms-auto"></i>
+      </a>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
 <!-- Card Company -->
 {% macro company() %}
 <div class="card card--company">

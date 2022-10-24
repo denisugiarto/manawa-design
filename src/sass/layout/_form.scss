@@ -358,6 +358,9 @@
         bottom: 35px;
         width: calc(100% - 60px);
       }
+      & > .form-control {
+        margin-top: 0;
+      }
     }
   }
 
