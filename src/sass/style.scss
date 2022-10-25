@@ -24,8 +24,15 @@
   "components/toggle-hide-show";
 
 // 6. Page-specific styles
-@import "pages/home", "pages/auth", "pages/step-guide", "pages/installation",
-  "pages/webapp/add-whanau", "pages/report", "pages/whanau-maps";
+@import 
+"pages/auth", 
+"pages/home", 
+"pages/installation",
+"pages/outside-temp",
+"pages/report",
+"pages/step-guide", 
+"pages/webapp/add-whanau",
+"pages/whanau-maps";
 
 // 7. Themes
 @import "themes/default";

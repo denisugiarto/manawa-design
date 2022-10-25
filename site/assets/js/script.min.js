@@ -154,11 +154,15 @@ if (ctxTemp != null) {
       ],
     },
     options: {
+      maintainAspectRatio: false,
       scales: {
         y: {
           beginAtZero: true,
           grid: {
             color: "#ccc",
+          },
+          ticks: {
+            stepSize: 15,
           },
         },
       },
@@ -231,9 +235,145 @@ if (ctxHumidity != null) {
       ],
     },
     options: {
+      maintainAspectRatio: false,
       scales: {
         y: {
           beginAtZero: true,
+          grid: {
+            color: "#ccc",
+          },
+          ticks: {
+            stepSize: 25,
+          },
+        },
+      },
+
+      plugins: {
+        legend: {
+          position: "bottom",
+          display: false,
+        },
+      },
+    },
+  });
+}
+
+// temp chart single data
+let ctxTempSingle = document.getElementById("tempChartSingle");
+if (ctxTempSingle != null) {
+  const tempChart = new Chart(ctxTempSingle, {
+    type: "line",
+    data: {
+      labels: ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00"],
+      datasets: [
+        {
+          label: "Adult’s Bedroom",
+          data: [23, 23, 33, 22, 25, 25],
+          backgroundColor: "rgb(0,0,0)",
+          borderColor: "rgb(0,0,0)",
+          fill: false,
+        },
+        {
+          label: "Hot",
+          data: [60, 60, 60, 60, 60, 60], // max area hot
+          backgroundColor: "rgba(205, 98, 118, 0)",
+          borderColor: "rgba(205, 98, 118, 0)",
+          fill: { above: "rgba(205, 98, 118, 0.75)", target: { value: 29 } }, // min area hot
+        },
+        {
+          label: "Comfortable",
+          data: [29, 29, 29, 29, 29, 29],
+          backgroundColor: "rgba(77, 157, 46, 0)",
+          borderColor: "rgba(77, 157, 46, 0)",
+          fill: { above: "rgba(77, 157, 46, 0.75)", target: { value: 21 } },
+        },
+        {
+          label: "Cold",
+          data: [21, 21, 21, 21, 21, 21],
+          backgroundColor: "rgba(89, 162, 201, 0)",
+          borderColor: "rgba(89, 162, 201, 0)",
+          fill: { above: "rgba(89, 162, 201, 0.75)", target: { value: 0 } },
+        },
+      ],
+    },
+    options: {
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          grid: {
+            color: "#ccc",
+          },
+          ticks: {
+            stepSize: 15,
+          },
+        },
+      },
+
+      plugins: {
+        legend: {
+          position: "bottom",
+          display: false,
+        },
+        tooltip: {
+          backgroundColor: "rgba(255,255,255, 1)",
+          bodyColor: "#101B37",
+          titleColor: "#101B37",
+        },
+      },
+    },
+  });
+}
+
+// humidity chart
+let ctxHumiditySingle = document.getElementById("humidityChartSingle");
+if (ctxHumiditySingle != null) {
+  const humidityChart = new Chart(ctxHumiditySingle, {
+    type: "line",
+    data: {
+      labels: ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00"],
+      datasets: [
+        {
+          label: "Adult’s Bedroom",
+          data: [53, 58, 54, 53, 59, 55],
+          backgroundColor: "#000",
+          borderColor: "#000",
+          fill: false,
+        },
+        {
+          label: "Damp",
+          data: [100, 100, 100, 100, 100, 100],
+          backgroundColor: "rgba(89,162,201, 0)",
+          borderColor: "rgba(89,162,201, 0)",
+          fill: { above: "rgba(89,162,201, 0.75)", target: { value: 60 } },
+        },
+        {
+          label: "Comfortable",
+          data: [60, 60, 60, 60, 60, 60],
+          backgroundColor: "rgba(77, 157, 46, 0)",
+          borderColor: "rgba(77, 157, 46, 0)",
+          fill: { above: "rgba(77, 157, 46, 0.75)", target: { value: 30 } },
+        },
+        {
+          label: "Dry",
+          data: [30, 30, 30, 30, 30, 30],
+          backgroundColor: "rgba(205,98,118, 0)",
+          borderColor: "rgba(205,98,118, 0)",
+          fill: { above: "rgba(205,98,118, 0.75)", target: { value: 0 } },
+        },
+      ],
+    },
+    options: {
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          grid: {
+            color: "#ccc",
+          },
+          ticks: {
+            stepSize: 25,
+          },
         },
       },
 

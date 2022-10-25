@@ -48,7 +48,7 @@
       margin-right: 5px;
 
       @include for-size(phone-xs) {
-        color: $color-secondary-grey;
+        color: $gray;
       }
     }
   }
@@ -63,7 +63,7 @@
 //     background: #fff;
 
 //     i {
-//       color: $color-secondary-grey;
+//       color: $gray;
 //     }
 //   }
 // }

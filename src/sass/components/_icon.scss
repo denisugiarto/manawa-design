@@ -12,7 +12,7 @@
     margin: 0 0 17px;
   }
   &.icon--question {
-    color: $color-secondary-grey;
+    color: $gray;
     display: none;
     @include for-size(desktop) {
       display: block;

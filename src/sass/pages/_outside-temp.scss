@@ -1,0 +1,26 @@
+.outside-page {
+    .card--room-line {
+        .card-header {
+            .title {
+                color: $dark;
+            }
+        }
+        .card-body {
+            .sensor-wrapper {
+                margin-bottom: 0;
+                .item {
+                    .label {
+                        color: $dark;
+                        margin-bottom: 5px;
+                    }
+                    .text {      
+                        font-size: 12px;
+                        font-weight: 700;                  
+                        line-height: 1.4;
+                        color: $gray;
+                    }
+                }
+            }
+        }
+    }
+}

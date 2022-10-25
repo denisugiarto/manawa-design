@@ -90,7 +90,7 @@ $color-secondary-600: #6f757e;
 $color-secondary-400: #899aab;
 $color-secondary-200: #f3f3f4;
 $color-secondary-100: #ebf3f8;
-$color-secondary-grey: #777777;
+$gray: #777777;
 $color-green: #abcc75;
 $color-yellow: #fdff8c;
 $color-dark-grey: #909090;
@@ -131,6 +131,7 @@ $theme-colors: (
 // Add custom color map
 $custom-colors: (
   "light-gray": $light-gray,
+  "gray": $gray,
 );
 
 // Merge the maps
