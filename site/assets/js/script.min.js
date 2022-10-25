@@ -405,6 +405,7 @@ if (ctxElectricity != null) {
       ],
     },
     options: {
+      maintainAspectRatio: false,
       scales: {
         y: {
           beginAtZero: true,
@@ -439,6 +440,7 @@ if (ctxBill != null) {
       ],
     },
     options: {
+      maintainAspectRatio: false,
       scales: {
         y: {
           beginAtZero: true,
