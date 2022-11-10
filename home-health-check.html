@@ -550,9 +550,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="uploadPhotoModalLabel">
-          Upload Photo
-        </h1>
+        <h5 class="modal-title" id="uploadPhotoModalLabel">Upload Photo</h5>
         <button
           type="button"
           class="btn-close"
@@ -568,19 +566,21 @@
           name="photoName"
           class="form-control"
           placeholder="Enter title"
+          required
         />
         <input
           type="file"
           name="photoFile"
-          id="photo"
+          id="photoFile"
           class="visually-hidden"
+          onchange="imagePreview(this, 'photoPreview', 'btnPhotoFile');"
         />
         <div class="mt-4 text-center">
-          <label
-            for="photo"
-            class="btn btn--sm"
-            style="border: 1px dashed #e0e0e0; width: 104px; height: 104px"
-            >+ <br />
+          <div class="image-preview__wrapper">
+            <img id="photoPreview" alt="" class="image-preview" />
+          </div>
+          <label id="btnPhotoFile" for="photoFile" class="btn btn--select-file">
+            <i class="fas fa-plus"></i><br />
             Choose File</label
           >
         </div>
@@ -639,6 +639,33 @@
 
   let dots = document.querySelectorAll(".dot");
   Array.from(dots).map((dot, index) => (dot.innerHTML = index + 1));
+
+  //Modal Image handler
+  function imagePreview(input, imgId, btnInputId) {
+    const reader = new FileReader();
+    const btnInput = document.getElementById(btnInputId);
+    const img = document.getElementById(imgId);
+    reader.onload = (e) => {
+      img.src = e.target.result;
+    };
+    if (input.files && input.files[0]) {
+      const f = input.files[0];
+      reader.readAsDataURL(f);
+      setTimeout(() => {
+        document.getElementById("uploadProgress").ariaValueNow = 100;
+        document.getElementById("uploadProgress").style.width = "100%";
+        setTimeout(() => {
+          btnInput.style.display = "none";
+          img.parentElement.classList.add("show");
+        }, 1000);
+      }, 1000);
+      btnInput.innerHTML = `
+      <span class="fw-normal">Uploading</span> <br/> <br/> 
+      <div class="progress progress--sm mt-2">
+        <div id="uploadProgress" class="progress-bar bg-info" role="progressbar" aria-label="upload progress" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>`;
+    }
+  }
 </script>
 
   </body>
