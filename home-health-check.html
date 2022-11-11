@@ -181,6 +181,17 @@
             <h6 class="fw-bold mb-1">Health Organization</h6>
             <p class="text-secondary fw-light">Turanga Health</p>
             <form class="wizard mt-5" id="formWizard">
+              <aside class="wizard-nav--mobile">
+                <!-- progress -->
+                <div class="circular-progress">
+                  <div class="progress-value">1 of 5</div>
+                </div>
+                <!-- data -->
+                <div class="wizard-step">
+                  <h5 class="wizard-step__title">Heating</h5>
+                  <p class="wizard-step__next-step">Next : Insulation</p>
+                </div>
+              </aside>
               <aside class="wizard-content">
                 <!-- Step 1 -->
                 <div class="wizard-step" data-title="Heating">
@@ -220,6 +231,134 @@
                           <label class="form-label mt-2" for="heatingPhoto">
                             Photo
                           </label>
+                          <!-- Image Preview List -->
+                          <div class="row row-cols-md-4 row-cols-2 g-2 mb-2">
+                            <div class="col">
+                              <div class="card card--image">
+                                <div class="card-body">
+                                  <p class="image-title text-center">Windows</p>
+                                  <a
+                                    role="button"
+                                    class="mb-1"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#viewPhotoModal"
+                                  >
+                                    <img
+                                      src="./assets/img/img-windows.webp"
+                                      class="image-wrapper"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div class="action-box">
+                                    <a role="button" class="btn__edit">Edit</a>
+                                    <a role="button" class="btn__remove">
+                                      Remove
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card card--image">
+                                <div class="card-body">
+                                  <p class="image-title text-center">Windows</p>
+                                  <a
+                                    role="button"
+                                    class="mb-1"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#viewPhotoModal"
+                                  >
+                                    <img
+                                      src="./assets/img/img-windows.webp"
+                                      class="image-wrapper"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div class="action-box">
+                                    <a role="button" class="btn__edit">Edit</a>
+                                    <a role="button" class="btn__remove">
+                                      Remove
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card card--image">
+                                <div class="card-body">
+                                  <p class="image-title text-center">Windows</p>
+                                  <a
+                                    role="button"
+                                    class="mb-1"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#viewPhotoModal"
+                                  >
+                                    <img
+                                      src="./assets/img/img-windows.webp"
+                                      class="image-wrapper"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div class="action-box">
+                                    <a role="button" class="btn__edit">Edit</a>
+                                    <a role="button" class="btn__remove">
+                                      Remove
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card card--image">
+                                <div class="card-body">
+                                  <p class="image-title text-center">Windows</p>
+                                  <a
+                                    role="button"
+                                    class="mb-1"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#viewPhotoModal"
+                                  >
+                                    <img
+                                      src="./assets/img/img-windows.webp"
+                                      class="image-wrapper"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div class="action-box">
+                                    <a role="button" class="btn__edit">Edit</a>
+                                    <a role="button" class="btn__remove">
+                                      Remove
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card card--image">
+                                <div class="card-body">
+                                  <p class="image-title text-center">Windows</p>
+                                  <a
+                                    role="button"
+                                    class="mb-1"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#viewPhotoModal"
+                                  >
+                                    <img
+                                      src="./assets/img/img-windows.webp"
+                                      class="image-wrapper"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div class="action-box">
+                                    <a role="button" class="btn__edit">Edit</a>
+                                    <a role="button" class="btn__remove">
+                                      Remove
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                           <input
                             type="file"
                             class="visually-hidden"
@@ -573,6 +712,7 @@
           name="photoFile"
           id="photoFile"
           class="visually-hidden"
+          accept="image/*"
           onchange="imagePreview(this, 'photoPreview', 'btnPhotoFile');"
         />
         <div class="mt-4 text-center">
@@ -585,8 +725,38 @@
           >
         </div>
         <div class="mt-4 text-center">
-          <button type="button" class="btn btn-primary px-5">Upload</button>
+          <button id="btn-upload" type="button" class="btn btn-primary px-5">
+            Upload
+          </button>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal View Photo -->
+<div
+  class="modal fade"
+  id="viewPhotoModal"
+  tabindex="-1"
+  aria-labelledby="viewPhotoModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="viewPhotoModalLabel">Windows</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="./assets/img/img-windows.webp" alt="" class="img-fluid" />
       </div>
     </div>
   </div>
@@ -636,6 +806,12 @@
   $wz_doc.addEventListener("errorFormValidatorWizard", function (e) {
     alert("Some required field is empty or incorrectly formatted.");
   });
+  $wz_doc.addEventListener("nextWizard", function (e) {
+    nextNavWizard();
+  });
+  $wz_doc.addEventListener("prevWizard", function (e) {
+    prevNavWizard();
+  });
 
   let dots = document.querySelectorAll(".dot");
   Array.from(dots).map((dot, index) => (dot.innerHTML = index + 1));
@@ -660,12 +836,83 @@
         }, 1000);
       }, 1000);
       btnInput.innerHTML = `
-      <span class="fw-normal">Uploading</span> <br/> <br/> 
+      <span class="fw-normal">Uploading</span> <br/> <br/>
       <div class="progress progress--sm mt-2">
         <div id="uploadProgress" class="progress-bar bg-info" role="progressbar" aria-label="upload progress" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
       </div>`;
     }
   }
+
+  //Stepper in Mobile View
+  const stepItems = document.querySelectorAll(".wizard-content .wizard-step");
+  const countStep = stepItems.length;
+  let circularProgress = document.querySelector(".circular-progress");
+  let progressStartValue = 0,
+    speed = 50;
+  //update circular progress in percentage
+  const updateProgress = (value) => {
+    let update = setInterval(() => {
+      progressStartValue > value ? progressStartValue-- : progressStartValue++;
+      circularProgress.style.background = `conic-gradient(#d62f0e ${
+        progressStartValue * 3.6
+      }deg, #ced4da 0deg)`;
+      if (progressStartValue == value) {
+        clearInterval(update);
+      }
+    }, speed);
+  };
+
+  const updateProgressValue = (value, countStep) => {
+    let progressValue = document.querySelector(".progress-value");
+    progressValue.innerHTML = `${value} of ${countStep}`;
+  };
+
+  const updateStepTitle = (value) => {
+    let title = document.querySelector(".wizard-step .wizard-step__title");
+    title.innerHTML = value;
+  };
+
+  const updateStepNextTitle = (value) => {
+    let nextTitle = document.querySelector(
+      ".wizard-step .wizard-step__next-step"
+    );
+    value == ""
+      ? (nextTitle.innerHTML = "")
+      : (nextTitle.innerHTML = `Next : ${value}`);
+  };
+
+  const nextNavWizard = () => {
+    let activeStep = document.querySelector(
+      ".wizard-content .wizard-step.active"
+    ).nextElementSibling;
+    let stepTitle = activeStep.dataset.title;
+    let currentStep = Number(activeStep.dataset.step) + 1;
+    let nextStep = activeStep.nextElementSibling;
+    let nextStepTitle = nextStep ? nextStep.dataset.title : "";
+    let nextValue = currentStep / countStep * 100;
+    updateStepTitle(stepTitle);
+    updateStepNextTitle(nextStepTitle);
+    updateProgress(nextValue);
+    updateProgressValue(currentStep, countStep);
+  };
+
+  const prevNavWizard = () => {
+    let activeStep = document.querySelector(
+      ".wizard-content .wizard-step.active"
+    ).previousElementSibling;
+    let stepTitle = activeStep.dataset.title;
+    let currentStep = Number(activeStep.dataset.step) + 1;
+    let prevStep = activeStep.previousElementSibling;
+    let prevStepTitle = prevStep ? prevStep.dataset.title : "";
+    let prevValue = currentStep / countStep * 100;
+
+    updateStepTitle(stepTitle);
+    updateStepNextTitle(prevStepTitle);
+    updateProgress(prevValue);
+    updateProgressValue(currentStep, countStep);
+  };
+
+  updateProgress(20);
 </script>
 
   </body>
