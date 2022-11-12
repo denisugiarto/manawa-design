@@ -849,17 +849,31 @@
   let circularProgress = document.querySelector(".circular-progress");
   let progressStartValue = 0,
     speed = 50;
-  //update circular progress in percentage
+    let intervalId = 0;
+
   const updateProgress = (value) => {
-    let update = setInterval(() => {
-      progressStartValue > value ? progressStartValue-- : progressStartValue++;
+    const update = setInterval(() => {
+      console.log("update: ", update);
+      if (progressStartValue > value) {
+        progressStartValue--;
+      } else if (progressStartValue < value) {
+        progressStartValue++;
+      }
       circularProgress.style.background = `conic-gradient(#d62f0e ${
         progressStartValue * 3.6
       }deg, #ced4da 0deg)`;
+
       if (progressStartValue == value) {
         clearInterval(update);
+        console.log("clearInterval");
+        return;
       }
     }, speed);
+    if (intervalId != update) {
+      console.log("clear")
+      clearInterval(intervalId);
+      intervalId = update;
+    }
   };
 
   const updateProgressValue = (value, countStep) => {
@@ -889,7 +903,7 @@
     let currentStep = Number(activeStep.dataset.step) + 1;
     let nextStep = activeStep.nextElementSibling;
     let nextStepTitle = nextStep ? nextStep.dataset.title : "";
-    let nextValue = currentStep / countStep * 100;
+    let nextValue = (currentStep / countStep) * 100;
     updateStepTitle(stepTitle);
     updateStepNextTitle(nextStepTitle);
     updateProgress(nextValue);
@@ -902,9 +916,9 @@
     ).previousElementSibling;
     let stepTitle = activeStep.dataset.title;
     let currentStep = Number(activeStep.dataset.step) + 1;
-    let prevStep = activeStep.previousElementSibling;
+    let prevStep = activeStep.nextElementSibling;
     let prevStepTitle = prevStep ? prevStep.dataset.title : "";
-    let prevValue = currentStep / countStep * 100;
+    let prevValue = (currentStep / countStep) * 100;
 
     updateStepTitle(stepTitle);
     updateStepNextTitle(prevStepTitle);
@@ -912,7 +926,7 @@
     updateProgressValue(currentStep, countStep);
   };
 
-  updateProgress(20);
+  updateProgress((1 / 5) * 100);
 </script>
 
   </body>
