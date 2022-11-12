@@ -848,29 +848,27 @@
   const countStep = stepItems.length;
   let circularProgress = document.querySelector(".circular-progress");
   let progressStartValue = 0,
-    speed = 50;
-    let intervalId = 0;
+    speed = 50, intervalId = 0;
 
   const updateProgress = (value) => {
     const update = setInterval(() => {
-      console.log("update: ", update);
       if (progressStartValue > value) {
         progressStartValue--;
       } else if (progressStartValue < value) {
         progressStartValue++;
       }
+      //update progress circle from 0 to 100
       circularProgress.style.background = `conic-gradient(#d62f0e ${
         progressStartValue * 3.6
       }deg, #ced4da 0deg)`;
 
       if (progressStartValue == value) {
         clearInterval(update);
-        console.log("clearInterval");
         return;
       }
     }, speed);
+    //Clear old interval when detect new interval
     if (intervalId != update) {
-      console.log("clear")
       clearInterval(intervalId);
       intervalId = update;
     }
