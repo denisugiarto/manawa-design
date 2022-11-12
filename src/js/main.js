@@ -503,12 +503,10 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
-// // datepicker
-// $(".datepicker").datepicker({
-//   uiLibrary: "bootstrap4",
-// });
-
-//litePicker
-// const picker = new Litepicker({
-//   element: document.getElementById("litepicker"),
-// });
+//Enable Tooltip
+const tooltipTriggerList = document.querySelectorAll(
+  '[data-bs-toggle="tooltip"]'
+);
+const tooltipList = [...tooltipTriggerList].map(
+  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+);

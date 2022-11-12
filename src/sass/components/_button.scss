@@ -90,3 +90,31 @@
     }
   }
 }
+
+.btn {
+  &.btn--back {
+    @extend .btn--md;
+    border: 1px solid $gray-300;
+    color: $secondary;
+    margin-right: 16px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+  &.btn--md {
+    width: 38px;
+    height: 38px;
+    padding: 4px 0 0;
+  }
+  &.btn--select-file {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22.5px;
+    border: 1px dashed $color-secondary-500;
+    border-radius: 2px;
+    background-color: $color-secondary-200;
+    width: 104px;
+    height: 104px;
+    padding: 28px 8px;
+    color: $color-secondary-900;
+  }
+}

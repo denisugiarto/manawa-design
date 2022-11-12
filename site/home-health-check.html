@@ -1,0 +1,931 @@
+<!-- layout.html -->
+<!DOCTYPE html>
+<!--[if lt IE 7]>      
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> 
+<![endif]-->
+<!--[if IE 7]>         
+<html class="no-js lt-ie9 lt-ie8" lang=""> 
+<![endif]-->
+<!--[if IE 8]>         
+<html class="no-js lt-ie9" lang=""> 
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Home Health Check</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="./assets/css/style.min.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Library Wizard-JS for Stepper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/AdrianVillamayor/Wizard-JS@1.8/styles/css/main.css"
+      integrity="sha256-btHibfSEWQ4O0dUO3Jo22dZVkFr4T75RU7+EU5SGS0A="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser</a> to improve
+        your experience.
+      </p>
+    <![endif]-->
+    
+
+<header><nav class="navbar navbar-webapp fixed-top navbar-light bg-light">
+  <div class="container-fluid navbar-header">
+    <a class="navbar-brand" href="/">
+      <img src="assets/img/ic-logo-red.svg" alt="" class="img-logo">      
+    </a>
+    <div class="nav-action">
+      <div class="menu-button">
+        <span class="menu-text">MENU</span>
+        <span class="hamburger"></span>
+      </div>
+    </div>
+  </div>  
+</nav></header>
+<main class="webapp webapp--whare-page">
+  
+<aside class="aside">
+  <div class="sidenav">
+    <ul class="nav-menu">
+      <li class="menu-list active">
+        <a href="list-of-whare.html" class="menu-title">
+          <div class="wrapper">            
+            <i class="icon icon-fontello">&#xe806;</i>            
+            <span class="title">Home</span> 
+          </div>
+        </a>        
+      </li>
+      <li class="menu-list menu-list--whare">
+        <div class="menu-title collapsed" data-bs-toggle="collapse" data-bs-target="#whareContent" aria-expanded="false" aria-controls="whareContent">        
+          <div class="wrapper">            
+            <i class="icon icon-fontello">&#xe807;</i>
+            <span class="title">Whares</span> 
+          </div>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="collapse" id="whareContent">
+          <ul class="menu-sublist">
+            <li class="menu-sublist__item active">
+              <a href="#" class="link">Rudi's House</a>
+            </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">10 Silverstream Road</a>
+            </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">Garys Home</a>
+            </li>
+          </ul>          
+        </div>
+      </li>
+    </ul>
+    <ul class="nav-menu nav-menu--profile">
+      <li class="menu-list">
+        <div class="menu-title collapsed"  data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <div class="wrapper">
+            <i class="icon icon--circle-primary">
+              R
+            </i>
+            <span class="title">admin@kaimahi.nz</span> 
+          </div>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="collapse" id="collapseExample">
+          <ul class="menu-sublist">
+            <li class="menu-sublist__item menu-sublist__item--title">
+             <h6 class="title">Account</h6>
+            </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">                                
+                <i class="icon icon-fontello">&#xe804;</i>
+                <h6 class="subtitle">Account Setting</h6>                
+              </a>
+            </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">                
+                <i class="icon icon-fontello icon--logout">&#xe801;</i>
+                <h6 class="subtitle text--red">Logout</h6>                
+              </a>
+            </li>
+            <li class="menu-sublist__item menu-sublist__item--title">
+              <h6 class="title">Admin</h6>
+             </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">
+                <i class="icon icon-fontello icon--back">&#xe802;</i>
+                <h6 class="subtitle">Admin Page</h6>                
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="backdrop"></div>
+</aside>
+
+  <section class="section">
+    <div class="container-fluid">
+      <div class="content">
+        <!-- Back Navigation -->
+        <div class="d-flex align-items-center">
+          <a href="" role="button" class="btn btn--back">
+            <i class="fas fa-arrow-left"></i>
+          </a>
+          <div class="fw-bold">Back</div>
+        </div>
+        <div class="card m-0 mt-5 p-0">
+          <div class="card-body p-3 p-md-4">
+            <h3 class="fs-5 fw-bold mb-2">Rudi’s House</h3>
+            <p class="text-secondary fw-light mb-4">
+              <i class="fas fa-map-marker-alt me-1 fs-5"></i>Whitemore St,
+              Boulevard 99 O
+            </p>
+            <h6 class="fw-bold mb-1">Health Organization</h6>
+            <p class="text-secondary fw-light">Turanga Health</p>
+            <form class="wizard mt-5" id="formWizard">
+              <aside class="wizard-nav--mobile">
+                <!-- progress -->
+                <div class="circular-progress">
+                  <div class="progress-value">1 of 5</div>
+                </div>
+                <!-- data -->
+                <div class="wizard-step">
+                  <h5 class="wizard-step__title">Heating</h5>
+                  <p class="wizard-step__next-step">Next : Insulation</p>
+                </div>
+              </aside>
+              <aside class="wizard-content">
+                <!-- Step 1 -->
+                <div class="wizard-step" data-title="Heating">
+                  <h3 class="wizard-step__title">1. Heating</h3>
+                  <p class="wizard-step__desc">
+                    Your rental will need one or more direct heating fixed
+                    heating the main living room. Heating must be acceptable
+                    type, and must meet the minimum heating capacity, up to 18℃
+                    for your living room.
+                  </p>
+                  <div class="accordion mt-5 ms-2" id="accordion1">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button
+                          class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseOne"
+                          aria-expanded="true"
+                          aria-controls="collapseOne"
+                        >
+                          1. Does the ‘main living room’ have a heater in it?
+                          <i
+                            class="fas fa-question-circle mx-2 align-self-baseline"
+                            data-bs-toggle="tooltip"
+                            data-bs-title="If you have a rental property with more than one living room, only the largest living room needs to have a heating device under the healthy homes standards. A ‘living room’ includes any connected spaces that cannot be closed off from the room e.g., open-plan kitchen or dining room, hallway or staircase"
+                          ></i>
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseOne"
+                        class="accordion-collapse collapse show"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#accordion1"
+                      >
+                        <div class="accordion-body">
+                          <label class="form-label mt-2" for="heatingPhoto">
+                            Photo
+                          </label>
+                          <!-- Image Preview List -->
+                          <div class="row row-cols-md-4 row-cols-2 g-2 mb-2">
+                            <div class="col">
+                              <div class="card card--image">
+                                <div class="card-body">
+                                  <p class="image-title text-center">Windows</p>
+                                  <a
+                                    role="button"
+                                    class="mb-1"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#viewPhotoModal"
+                                  >
+                                    <img
+                                      src="./assets/img/img-windows.webp"
+                                      class="image-wrapper"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div class="action-box">
+                                    <a role="button" class="btn__edit">Edit</a>
+                                    <a role="button" class="btn__remove">
+                                      Remove
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card card--image">
+                                <div class="card-body">
+                                  <p class="image-title text-center">Windows</p>
+                                  <a
+                                    role="button"
+                                    class="mb-1"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#viewPhotoModal"
+                                  >
+                                    <img
+                                      src="./assets/img/img-windows.webp"
+                                      class="image-wrapper"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div class="action-box">
+                                    <a role="button" class="btn__edit">Edit</a>
+                                    <a role="button" class="btn__remove">
+                                      Remove
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card card--image">
+                                <div class="card-body">
+                                  <p class="image-title text-center">Windows</p>
+                                  <a
+                                    role="button"
+                                    class="mb-1"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#viewPhotoModal"
+                                  >
+                                    <img
+                                      src="./assets/img/img-windows.webp"
+                                      class="image-wrapper"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div class="action-box">
+                                    <a role="button" class="btn__edit">Edit</a>
+                                    <a role="button" class="btn__remove">
+                                      Remove
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card card--image">
+                                <div class="card-body">
+                                  <p class="image-title text-center">Windows</p>
+                                  <a
+                                    role="button"
+                                    class="mb-1"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#viewPhotoModal"
+                                  >
+                                    <img
+                                      src="./assets/img/img-windows.webp"
+                                      class="image-wrapper"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div class="action-box">
+                                    <a role="button" class="btn__edit">Edit</a>
+                                    <a role="button" class="btn__remove">
+                                      Remove
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card card--image">
+                                <div class="card-body">
+                                  <p class="image-title text-center">Windows</p>
+                                  <a
+                                    role="button"
+                                    class="mb-1"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#viewPhotoModal"
+                                  >
+                                    <img
+                                      src="./assets/img/img-windows.webp"
+                                      class="image-wrapper"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div class="action-box">
+                                    <a role="button" class="btn__edit">Edit</a>
+                                    <a role="button" class="btn__remove">
+                                      Remove
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <input
+                            type="file"
+                            class="visually-hidden"
+                            name="heatingPhoto"
+                            id="heatingPhoto"
+                            accept="image/*"
+                            multiple
+                          />
+                          <div class="ms-2">
+                            <button
+                              type="button"
+                              class="btn btn-outline-primary"
+                              data-bs-toggle="modal"
+                              data-bs-target="#uploadPhotoModal"
+                            >
+                              Add Photo
+                            </button>
+                          </div>
+                          <p class="form-desc">
+                            Take photos minimum 3 maximum 5
+                          </p>
+                          <textarea
+                            name="heatingComment"
+                            class="form-control mt-2"
+                            placeholder="Enter your comments"
+                          ></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="wizard-step" data-title="Insulation">
+                  <h3 class="wizard-step__title">2. Insulation</h3>
+                  <p class="wizard-step__desc">
+                    A well-insulated property can help reduce the chances of
+                    mould and other nasties taking hold.
+                  </p>
+                  <div class="accordion mt-5 ms-2" id="accordion2">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button
+                          class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseOne"
+                          aria-expanded="true"
+                          aria-controls="collapseOne"
+                        >
+                          2.1 Does you rental have Insulation in the celling?
+                          <i
+                            class="fas fa-question-circle mx-2 align-self-baseline"
+                            data-bs-toggle="tooltip"
+                            data-bs-title="You should be able to check this by just poking your head into the ceiling space. Insulation is usually made out of product like polyester, wool or fibreglass. If you can't get into the ceiling to check because it's either impracticable or unsafe, check out the information on the Tenancy Services website: https://www.tenancy.govt.nz/healthy-homes/insulation-standard"
+                          ></i>
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseOne"
+                        class="accordion-collapse collapse show"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#accordion2"
+                      >
+                        <div class="accordion-body">
+                          <label class="form-label mt-2" for="insulationPhoto"
+                            >Photo</label
+                          >
+                          <input
+                            type="file"
+                            class="visually-hidden"
+                            name="insulationPhoto"
+                            id="insulationPhoto"
+                            accept="image/*"
+                            multiple
+                          />
+                          <div class="ms-2">
+                            <label
+                              for="insulationPhoto"
+                              class="btn btn-outline-primary"
+                            >
+                              Add Photo
+                            </label>
+                          </div>
+                          <p class="form-desc">
+                            Take photos minimum 3 maximum 5
+                          </p>
+                          <textarea
+                            name="insulationComment"
+                            class="form-control mt-2"
+                            id="descCampaign"
+                            placeholder="Enter your comments"
+                          ></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wizard-step" data-title="Ventilation">
+                  <h3 class="wizard-step__title">3. Ventilation</h3>
+                  <p class="wizard-step__desc">
+                    The ventilation standard is all about recognising that dry
+                    air is easier to heat and a well-ventilated rental is less
+                    likely to lead to property.
+                  </p>
+                  <h6 class="wizard-step__item">3.1 Open it up</h6>
+                  <div class="accordion ms-2" id="accordion3">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button
+                          class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseOne"
+                          aria-expanded="true"
+                          aria-controls="collapseOne"
+                        >
+                          3.1.1 Do all ‘liveable’ rooms have an openable window,
+                          door or skylight?
+                          <i
+                            class="fas fa-question-circle mx-2 align-self-baseline"
+                            data-bs-toggle="tooltip"
+                            data-bs-title="Bedrooms, living rooms, dining rooms, and kitchens are considered ‘liveable’ rooms. So don’t worry about the hallway. Windows, doors and skylights should open to the outdoors and allow a healthy flow of air in and out of the property. In each room, the size of the openable windows, doors and skylights together must be at least 5% of the floor area of that room."
+                          ></i>
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseOne"
+                        class="accordion-collapse collapse show"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#accordion3"
+                      >
+                        <div class="accordion-body">
+                          <label class="form-label mt-2" for="ventilationPhoto">
+                            Photo
+                          </label>
+                          <input
+                            type="file"
+                            class="visually-hidden"
+                            name="ventilationPhoto"
+                            id="ventilationPhoto"
+                            accept="image/*"
+                            multiple
+                          />
+                          <div class="ms-2">
+                            <label
+                              for="ventilationPhoto"
+                              class="btn btn-outline-primary"
+                            >
+                              Add Photo
+                            </label>
+                          </div>
+                          <p class="form-desc">
+                            Take photos minimum 3 maximum 5
+                          </p>
+                          <textarea
+                            name="ventilationComment"
+                            class="form-control mt-2"
+                            id="descCampaign"
+                            placeholder="Enter your comments"
+                          ></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wizard-step" data-title="Moisture & drainage">
+                  <h3 class="wizard-step__title">
+                    4. Moisture ingress & drainage
+                  </h3>
+                  <p class="wizard-step__desc">
+                    When it comes to moisture and damp, it’s often what you
+                    don’t see that can be the culprit. Making sure the water has
+                    a place to go, and that it can’t linger is an essential part
+                    of keeping your property dry.
+                  </p>
+                  <h6 class="wizard-step__item">4.1 Deny the damp</h6>
+                  <div class="accordion mt-5 ms-2" id="accordion4">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button
+                          class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseOne"
+                          aria-expanded="true"
+                          aria-controls="collapseOne"
+                        >
+                          4.1.1 If your property has an enclosed space under the
+                          floor, does it have a ‘polythene ground moisture
+                          barrier’ installed or an existing acceptable
+                          alternative ground moisture barrier?
+                          <i
+                            class="fas fa-question-circle mx-2 align-self-baseline"
+                            data-bs-toggle="tooltip"
+                            data-bs-title="A polythene ground moisture barrier sounds more technical than it is. It’s just there to block the moisture in the ground from rising into the property. If you have no existing ground moisture barrier and it is not reasonably practicable to install a polythene ground moisture barrier then you meet the standard until such time you can install a polythene ground moisture barrier."
+                          ></i>
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseOne"
+                        class="accordion-collapse collapse show"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#accordion4"
+                      >
+                        <div class="accordion-body">
+                          <label class="form-label mt-2" for="moistDrainPhoto">
+                            Photo
+                          </label>
+                          <input
+                            type="file"
+                            class="visually-hidden"
+                            name="moistDrainPhoto"
+                            id="moistDrainPhoto"
+                            accept="image/*"
+                            multiple
+                          />
+                          <div class="ms-2">
+                            <label
+                              for="moistDrainPhoto"
+                              class="btn btn-outline-primary"
+                            >
+                              Add Photo
+                            </label>
+                          </div>
+                          <p class="form-desc">
+                            Take photos minimum 3 maximum 5
+                          </p>
+                          <textarea
+                            name="moistDrainComment"
+                            class="form-control mt-2"
+                            id="descCampaign"
+                            placeholder="Enter your comments"
+                          ></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wizard-step" data-title="Draught stopping">
+                  <h3 class="wizard-step__title">5. Draught Stopping</h3>
+                  <p class="wizard-step__desc">
+                    A draught free home costs less to heat and will keep your
+                    tenants warm and happy. Become a draught detective and keep
+                    the breeze outside. As a rule of thumb, gaps or holes with a
+                    width greater than 3mm that let air into or out of the home
+                    will usually require blocking. This means that if the edge
+                    of a New Zealand $2 dollar coin can fit in the gap, then the
+                    gap needs to be sealed.
+                  </p>
+                  <div class="accordion mt-5 ms-2" id="accordion5">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button
+                          class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseOne"
+                          aria-expanded="true"
+                          aria-controls="collapseOne"
+                        >
+                          5.1. Can you feel a noticeable draught from an
+                          ‘unreasonable’ gap or hole in a wall, ceiling, window,
+                          skylight, floor or door?
+                          <i
+                            class="fas fa-question-circle mx-2 align-self-baseline"
+                            data-bs-toggle="tooltip"
+                            data-bs-title="A draught free home costs less to heat and will keep your tenants warm and happy. Become a draught detective and keep the breeze outside. As a rule of thumb, gaps or holes with a width greater than 3mm that let air into or out of the home will usually require blocking. This means that if the edge of a New Zealand $2 dollar coin can fit in the gap, then the gap needs to be sealed."
+                          ></i>
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseOne"
+                        class="accordion-collapse collapse show"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#accordion5"
+                      >
+                        <div class="accordion-body">
+                          <label class="form-label mt-2" for="draughtPhoto">
+                            Photo
+                          </label>
+                          <input
+                            type="file"
+                            class="visually-hidden"
+                            name="draughtPhoto"
+                            id="draughtPhoto"
+                            accept="image/*"
+                            multiple
+                          />
+                          <div class="ms-2">
+                            <label
+                              for="draughtPhoto"
+                              class="btn btn-outline-primary"
+                            >
+                              Add Photo
+                            </label>
+                          </div>
+                          <p class="form-desc">
+                            Take photos minimum 3 maximum 5
+                          </p>
+                          <textarea
+                            name="draughtComment"
+                            class="form-control mt-2"
+                            id="descCampaign"
+                            placeholder="Enter your comments"
+                          ></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </aside>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Modal Upload Photo -->
+<div
+  class="modal fade"
+  id="uploadPhotoModal"
+  tabindex="-1"
+  aria-labelledby="uploadPhotoModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="uploadPhotoModalLabel">Upload Photo</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input
+          type="text"
+          name="photoName"
+          class="form-control"
+          placeholder="Enter title"
+          required
+        />
+        <input
+          type="file"
+          name="photoFile"
+          id="photoFile"
+          class="visually-hidden"
+          accept="image/*"
+          onchange="imagePreview(this, 'photoPreview', 'btnPhotoFile');"
+        />
+        <div class="mt-4 text-center">
+          <div class="image-preview__wrapper">
+            <img id="photoPreview" alt="" class="image-preview" />
+          </div>
+          <label id="btnPhotoFile" for="photoFile" class="btn btn--select-file">
+            <i class="fas fa-plus"></i><br />
+            Choose File</label
+          >
+        </div>
+        <div class="mt-4 text-center">
+          <button id="btn-upload" type="button" class="btn btn-primary px-5">
+            Upload
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal View Photo -->
+<div
+  class="modal fade"
+  id="viewPhotoModal"
+  tabindex="-1"
+  aria-labelledby="viewPhotoModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="viewPhotoModalLabel">Windows</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="./assets/img/img-windows.webp" alt="" class="img-fluid" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script src="./assets/js/vendor/jquery.min.js"></script>
+    <script src="./assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/AdrianVillamayor/Wizard-JS@1.8/src/wizard.min.js"
+      integrity="sha256-vVk0T+7qGD5K2sLJywOcqKmnJerAFRaOI1FWJNH3YYg="
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./assets/js/main.js"></script>
+    
+<script>
+  let wz_class = ".wizard";
+
+  let args = {
+    wz_class: wz_class,
+    wz_nav_style: "dots", // dots, tabs, progress
+    wz_ori: "horizontal",
+    buttons: true,
+    navigation: "all", // buttons, nav, all
+    prev: "Back",
+    next: "Next Step",
+    finish: "Save",
+  };
+
+  const wizard = new Wizard(args);
+
+  wizard.init();
+
+  let $wz_doc = document.querySelector(wz_class);
+
+  $wz_doc.addEventListener("submitWizard", function (e) {
+    alert("Form Submit");
+  });
+
+  $wz_doc.addEventListener("endWizard", function (e) {
+    alert("Wizard End");
+  });
+
+  $wz_doc.addEventListener("errorFormValidatorWizard", function (e) {
+    alert("Some required field is empty or incorrectly formatted.");
+  });
+  $wz_doc.addEventListener("nextWizard", function (e) {
+    nextNavWizard();
+  });
+  $wz_doc.addEventListener("prevWizard", function (e) {
+    prevNavWizard();
+  });
+
+  let dots = document.querySelectorAll(".dot");
+  Array.from(dots).map((dot, index) => (dot.innerHTML = index + 1));
+
+  //Modal Image handler
+  function imagePreview(input, imgId, btnInputId) {
+    const reader = new FileReader();
+    const btnInput = document.getElementById(btnInputId);
+    const img = document.getElementById(imgId);
+    reader.onload = (e) => {
+      img.src = e.target.result;
+    };
+    if (input.files && input.files[0]) {
+      const f = input.files[0];
+      reader.readAsDataURL(f);
+      setTimeout(() => {
+        document.getElementById("uploadProgress").ariaValueNow = 100;
+        document.getElementById("uploadProgress").style.width = "100%";
+        setTimeout(() => {
+          btnInput.style.display = "none";
+          img.parentElement.classList.add("show");
+        }, 1000);
+      }, 1000);
+      btnInput.innerHTML = `
+      <span class="fw-normal">Uploading</span> <br/> <br/>
+      <div class="progress progress--sm mt-2">
+        <div id="uploadProgress" class="progress-bar bg-info" role="progressbar" aria-label="upload progress" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>`;
+    }
+  }
+
+  //Stepper in Mobile View
+  const stepItems = document.querySelectorAll(".wizard-content .wizard-step");
+  const countStep = stepItems.length;
+  let circularProgress = document.querySelector(".circular-progress");
+  let progressStartValue = 0,
+    speed = 50, intervalId = 0;
+
+  const updateProgress = (value) => {
+    const update = setInterval(() => {
+      if (progressStartValue > value) {
+        progressStartValue--;
+      } else if (progressStartValue < value) {
+        progressStartValue++;
+      }
+      //update progress circle from 0 to 100
+      circularProgress.style.background = `conic-gradient(#d62f0e ${
+        progressStartValue * 3.6
+      }deg, #ced4da 0deg)`;
+
+      if (progressStartValue == value) {
+        clearInterval(update);
+        return;
+      }
+    }, speed);
+    //Clear old interval when detect new interval
+    if (intervalId != update) {
+      clearInterval(intervalId);
+      intervalId = update;
+    }
+  };
+
+  const updateProgressValue = (value, countStep) => {
+    let progressValue = document.querySelector(".progress-value");
+    progressValue.innerHTML = `${value} of ${countStep}`;
+  };
+
+  const updateStepTitle = (value) => {
+    let title = document.querySelector(".wizard-step .wizard-step__title");
+    title.innerHTML = value;
+  };
+
+  const updateStepNextTitle = (value) => {
+    let nextTitle = document.querySelector(
+      ".wizard-step .wizard-step__next-step"
+    );
+    value == ""
+      ? (nextTitle.innerHTML = "")
+      : (nextTitle.innerHTML = `Next : ${value}`);
+  };
+
+  const nextNavWizard = () => {
+    let activeStep = document.querySelector(
+      ".wizard-content .wizard-step.active"
+    ).nextElementSibling;
+    let stepTitle = activeStep.dataset.title;
+    let currentStep = Number(activeStep.dataset.step) + 1;
+    let nextStep = activeStep.nextElementSibling;
+    let nextStepTitle = nextStep ? nextStep.dataset.title : "";
+    let nextValue = (currentStep / countStep) * 100;
+    updateStepTitle(stepTitle);
+    updateStepNextTitle(nextStepTitle);
+    updateProgress(nextValue);
+    updateProgressValue(currentStep, countStep);
+  };
+
+  const prevNavWizard = () => {
+    let activeStep = document.querySelector(
+      ".wizard-content .wizard-step.active"
+    ).previousElementSibling;
+    let stepTitle = activeStep.dataset.title;
+    let currentStep = Number(activeStep.dataset.step) + 1;
+    let prevStep = activeStep.nextElementSibling;
+    let prevStepTitle = prevStep ? prevStep.dataset.title : "";
+    let prevValue = (currentStep / countStep) * 100;
+
+    updateStepTitle(stepTitle);
+    updateStepNextTitle(prevStepTitle);
+    updateProgress(prevValue);
+    updateProgressValue(currentStep, countStep);
+  };
+
+  updateProgress((1 / 5) * 100);
+</script>
+
+  </body>
+</html>

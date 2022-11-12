@@ -1,0 +1,6 @@
+.accordion {
+    @extend .border-bottom, .pb-2;
+  &-button {
+    line-height: 22.5px;
+  }
+}

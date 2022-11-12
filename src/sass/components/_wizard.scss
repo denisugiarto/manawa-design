@@ -1,0 +1,150 @@
+.wizard {
+  aside.wizard-content {
+    padding: 2rem 0;
+    .wizard-step {
+      &__title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      &__desc {
+        font-size: 16px;
+        line-height: 22.5px;
+        color: $secondary;
+        margin-left: 24px;
+      }
+      &__item {
+        @extend .border-bottom;
+        margin: 32px 0 20px 10px;
+        font-weight: 700;
+        padding-bottom: 10px;
+      }
+    }
+  }
+  .wizard-nav.dots {
+    display: none;
+    padding-top: 28px;
+    @include media-breakpoint-up(md) {
+      display: flex;
+    }
+    div.wizard-step {
+      @extend .text-secondary;
+      font-size: 20px;
+
+      &::before {
+        background: $primary;
+      }
+      &::before,
+      &::after {
+        height: 1px;
+        top: -50%;
+        transform: translateY(-50%);
+      }
+      &.active::before {
+        background-color: $primary;
+      }
+
+      span {
+        position: relative;
+        z-index: 100;
+        font-size: 12px;
+        color: $primary;
+      }
+
+      span.dot {
+        color: $white;
+        width: 30px;
+        height: 30px;
+        border: 1px solid $primary;
+        top: -28px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $primary;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 700;
+      }
+      &.active {
+        span {
+          color: $primary;
+        }
+        span.dot {
+          background-color: $white;
+          box-shadow: none;
+        }
+
+        & ~ .wizard-step {
+          span {
+            color: $secondary;
+          }
+          span.dot {
+            background: $white;
+            border-color: $secondary;
+          }
+        }
+      }
+    }
+  }
+  aside.wizard-buttons {
+    .wizard-btn {
+      &.next,
+      &.finish {
+        @extend .btn, .btn-primary;
+      }
+
+      &.next:disabled {
+        display: none;
+      }
+      &.prev {
+        @extend .btn, .btn-outline-primary;
+      }
+    }
+  }
+}
+span.required {
+  color: $primary;
+}
+
+.wizard-nav--mobile {
+  display: flex;
+  align-items: center;
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+  .circular-progress {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: conic-gradient($primary 3.6deg, $color-secondary-400 0deg);
+    transition: all 1s ease-in-out;
+    position: relative;
+    padding: 5px;
+    .progress-value {
+      background: $white;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      z-index: 100;
+      font-weight: 400;
+      font-size: 0.875rem;
+      border-radius: 50%;
+    }
+  }
+  .wizard-step {
+    margin-left: 15px;
+    &__title {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 32px;
+      margin-bottom: 0;
+    }
+    &__next-step {
+      color: $color-secondary-600;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+  }
+}

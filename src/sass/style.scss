@@ -14,25 +14,20 @@
 @import "layout/header", "layout/footer", "layout/form", "layout/webapp";
 
 // 5. Components
-@import "components/badge", "components/bg-heading", "components/button",
-  "components/card", "components/carousel", "components/changes",
-  "components/chart", "components/datepicker", "components/flash",
-  "components/fontello", "components/high-low", "components/icon",
+@import "components/accordion", "components/badge", "components/bg-heading",
+  "components/button", "components/card", "components/carousel",
+  "components/changes", "components/chart", "components/datepicker",
+  "components/flash", "components/fontello", "components/form",
+  "components/high-low", "components/icon", "components/image-preview",
   "components/input", "components/leaflet", "components/marker-cluster",
-  "components/modal", "components/nav", "components/navbar",
+  "components/modal", "components/nav", "components/navbar", "components/progress-bar",
   "components/select2", "components/sidenav", "components/swiper",
-  "components/toggle-hide-show";
+  "components/toggle-hide-show", "components/tooltip", "components/wizard";
 
 // 6. Page-specific styles
-@import 
-"pages/auth", 
-"pages/home", 
-"pages/installation",
-"pages/outside-temp",
-"pages/report",
-"pages/step-guide", 
-"pages/webapp/add-whanau",
-"pages/whanau-maps";
+@import "pages/auth", "pages/home", "pages/installation", "pages/outside-temp",
+  "pages/report", "pages/step-guide", "pages/webapp/add-whanau",
+  "pages/whanau-maps";
 
 // 7. Themes
 @import "themes/default";

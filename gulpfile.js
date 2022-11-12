@@ -3,13 +3,15 @@ const source = require("./package.json");
 const { src, dest, parallel, series, watch, task } = require("gulp");
 const browsersync = require("browser-sync");
 const sourcemaps = require("gulp-sourcemaps");
+const rename = require("gulp-rename");
+const webp = require("gulp-webp");
 const date = new Date().toISOString().slice(0, 10);
 
-const ghPages = require('gulp-gh-pages');
+const ghPages = require("gulp-gh-pages");
 
 //deploy
-task('deploy', function () {
-  return src('./site/**/*').pipe(ghPages());
+task("deploy", function () {
+  return src("./site/**/*").pipe(ghPages());
 });
 
 // HTML-task variable
@@ -26,6 +28,8 @@ const uglify = require("gulp-uglify");
 
 //image-task variable
 const imagemin = require("gulp-imagemin");
+
+const purgecss = require("gulp-purgecss");
 
 //staging & delivery variable
 const copy = require("gulp-copy");
@@ -60,11 +64,7 @@ function scss() {
 
 // javascript task
 function js() {
-  return src("./src/js/**/*.js")
-    .pipe(sourcemaps.init())
-    .pipe(concat("script.min.js"))
-    .pipe(sourcemaps.write("../maps"))
-    .pipe(dest("./site/assets/js/"));
+  return src("./src/js/**/*.js").pipe(dest("./site/assets/js/"));
 }
 // template engine
 function njk() {
@@ -77,6 +77,14 @@ function njk() {
     .pipe(dest("./site"));
 }
 
+// css optimizing
+function cssOptimize() {
+  return src("./site/assets/css/style.min.css")
+    .pipe(purgecss({ content: ["./site/**/*.html"] }))
+    .pipe(rename("optimize-style.css"))
+    .pipe(dest("./site/assets/css"));
+}
+
 // image optimizing
 function img() {
   return src([
@@ -84,6 +92,7 @@ function img() {
     "./src/img/**/*.+(png|jpg|gif|svg)",
   ])
     .pipe(imagemin())
+    .pipe(webp())
     .pipe(dest("./site/assets/img"));
 }
 
@@ -139,6 +148,7 @@ task("optimize", function img() {
         verbose: true,
       })
     )
+    .pipe(webp())
     .pipe(dest("./site/assets/img"));
 });
 
@@ -159,5 +169,5 @@ const watching = parallel(watchFiles, browserSync);
 
 // exports.js = js;
 // exports.css = css;
-exports.default = parallel(img, scss, js, njk);
+exports.default = parallel(img, scss, js, njk, cssOptimize);
 exports.watch = watching;
