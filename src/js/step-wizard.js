@@ -56,7 +56,7 @@ const updateProgress = (targetValue) => {
 
     //update progress circle from 0 to 100 in PercentAGE
     circularProgress.style.background = `conic-gradient(#d62f0e ${
-      progressStartValue * PERCENT * FULL_CIRCLE_DEGREE
+      progressStartValue * PERCENTAGE * FULL_CIRCLE_DEGREE
     }deg, #ced4da 0deg)`;
 
     if (progressStartValue == targetValue) {
