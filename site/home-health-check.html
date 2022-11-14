@@ -719,10 +719,19 @@
           <div class="image-preview__wrapper">
             <img id="photoPreview" alt="" class="image-preview" />
           </div>
+          <label
+            id="btnPhotoFile"
+            for="photoFile"
+            class="btn btn--select-file d-md-none me-3 me-md-0"
+          >
+            <i class="fas fa-plus"></i><br />
+            Camera
+          </label>
           <label id="btnPhotoFile" for="photoFile" class="btn btn--select-file">
             <i class="fas fa-plus"></i><br />
-            Choose File</label
-          >
+            <span class="d-none d-md-inline">Choose File</span>
+            <span class="d-md-none">Galery</span>
+          </label>
         </div>
         <div class="mt-4 text-center">
           <button id="btn-upload" type="button" class="btn btn-primary px-5">
@@ -775,47 +784,8 @@
     ></script>
     <script defer src="./assets/js/main.js"></script>
     
-<script>
-  let wz_class = ".wizard";
-
-  let args = {
-    wz_class: wz_class,
-    wz_nav_style: "dots", // dots, tabs, progress
-    wz_ori: "horizontal",
-    buttons: true,
-    navigation: "all", // buttons, nav, all
-    prev: "Back",
-    next: "Next Step",
-    finish: "Save",
-  };
-
-  const wizard = new Wizard(args);
-
-  wizard.init();
-
-  let $wz_doc = document.querySelector(wz_class);
-
-  $wz_doc.addEventListener("submitWizard", function (e) {
-    alert("Form Submit");
-  });
-
-  $wz_doc.addEventListener("endWizard", function (e) {
-    alert("Wizard End");
-  });
-
-  $wz_doc.addEventListener("errorFormValidatorWizard", function (e) {
-    alert("Some required field is empty or incorrectly formatted.");
-  });
-  $wz_doc.addEventListener("nextWizard", function (e) {
-    nextNavWizard();
-  });
-  $wz_doc.addEventListener("prevWizard", function (e) {
-    prevNavWizard();
-  });
-
-  let dots = document.querySelectorAll(".dot");
-  Array.from(dots).map((dot, index) => (dot.innerHTML = index + 1));
-
+<script src="./assets/js/step-wizard.js"></script>
+<script> 
   //Modal Image handler
   function imagePreview(input, imgId, btnInputId) {
     const reader = new FileReader();
@@ -843,88 +813,6 @@
     }
   }
 
-  //Stepper in Mobile View
-  const stepItems = document.querySelectorAll(".wizard-content .wizard-step");
-  const countStep = stepItems.length;
-  let circularProgress = document.querySelector(".circular-progress");
-  let progressStartValue = 0,
-    speed = 50, intervalId = 0;
-
-  const updateProgress = (value) => {
-    const update = setInterval(() => {
-      if (progressStartValue > value) {
-        progressStartValue--;
-      } else if (progressStartValue < value) {
-        progressStartValue++;
-      }
-      //update progress circle from 0 to 100
-      circularProgress.style.background = `conic-gradient(#d62f0e ${
-        progressStartValue * 3.6
-      }deg, #ced4da 0deg)`;
-
-      if (progressStartValue == value) {
-        clearInterval(update);
-        return;
-      }
-    }, speed);
-    //Clear old interval when detect new interval
-    if (intervalId != update) {
-      clearInterval(intervalId);
-      intervalId = update;
-    }
-  };
-
-  const updateProgressValue = (value, countStep) => {
-    let progressValue = document.querySelector(".progress-value");
-    progressValue.innerHTML = `${value} of ${countStep}`;
-  };
-
-  const updateStepTitle = (value) => {
-    let title = document.querySelector(".wizard-step .wizard-step__title");
-    title.innerHTML = value;
-  };
-
-  const updateStepNextTitle = (value) => {
-    let nextTitle = document.querySelector(
-      ".wizard-step .wizard-step__next-step"
-    );
-    value == ""
-      ? (nextTitle.innerHTML = "")
-      : (nextTitle.innerHTML = `Next : ${value}`);
-  };
-
-  const nextNavWizard = () => {
-    let activeStep = document.querySelector(
-      ".wizard-content .wizard-step.active"
-    ).nextElementSibling;
-    let stepTitle = activeStep.dataset.title;
-    let currentStep = Number(activeStep.dataset.step) + 1;
-    let nextStep = activeStep.nextElementSibling;
-    let nextStepTitle = nextStep ? nextStep.dataset.title : "";
-    let nextValue = (currentStep / countStep) * 100;
-    updateStepTitle(stepTitle);
-    updateStepNextTitle(nextStepTitle);
-    updateProgress(nextValue);
-    updateProgressValue(currentStep, countStep);
-  };
-
-  const prevNavWizard = () => {
-    let activeStep = document.querySelector(
-      ".wizard-content .wizard-step.active"
-    ).previousElementSibling;
-    let stepTitle = activeStep.dataset.title;
-    let currentStep = Number(activeStep.dataset.step) + 1;
-    let prevStep = activeStep.nextElementSibling;
-    let prevStepTitle = prevStep ? prevStep.dataset.title : "";
-    let prevValue = (currentStep / countStep) * 100;
-
-    updateStepTitle(stepTitle);
-    updateStepNextTitle(prevStepTitle);
-    updateProgress(prevValue);
-    updateProgressValue(currentStep, countStep);
-  };
-
-  updateProgress((1 / 5) * 100);
 </script>
 
   </body>
