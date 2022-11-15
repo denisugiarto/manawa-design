@@ -46,6 +46,7 @@ let progressStartValue = 0,
   speed = 50,
   intervalId;
 
+//Update Progress Circle
 const updateProgress = (targetValue) => {
   const update = setInterval(() => {
     let FULL_CIRCLE_DEGREE = 360;
@@ -71,16 +72,19 @@ const updateProgress = (targetValue) => {
   }
 };
 
+//Update Step Content inside circle
 const updateProgressValue = (value, countStep) => {
   let progressValue = document.querySelector(".progress-value");
   progressValue.innerHTML = `${value} of ${countStep}`;
 };
 
+//Update Step title
 const updateStepTitle = (value) => {
   let title = document.querySelector(".wizard-step .wizard-step__title");
   title.innerHTML = value;
 };
 
+//Update Next Step Title
 const updateStepNextTitle = (value) => {
   let nextTitle = document.querySelector(
     ".wizard-step .wizard-step__next-step"
@@ -90,6 +94,8 @@ const updateStepNextTitle = (value) => {
     : (nextTitle.innerHTML = `Next : ${value}`);
 };
 
+
+//Change Step Function "Next" and "Prev"
 function changeStep(value) {
   let currentStep = document.querySelector(
     ".wizard-content .wizard-step.active"
@@ -118,4 +124,4 @@ function changeStep(value) {
 
 //Mobile Nav wizard step Init
 updateProgressValue(1, countStep);
-updateProgress(Math.floor((1 / countStep) * 100));
+updateProgress(Math.floor(1 / countStep * 100));
