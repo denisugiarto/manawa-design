@@ -27,7 +27,7 @@
       transition: transform 200ms ease-in-out;
       ~ .backdrop {
         @include fixed(top 0 left 0 right 0 bottom 0);
-        background: $bg-black;
+        background: $black;
         opacity: 75%;
         z-index: 2;
         pointer-events: none;
@@ -145,7 +145,7 @@
         padding: 0;
       }
       @include for-size(desktop) {
-        background-color: $bg-white;
+        background-color: $white;
         padding: 0;
         border-radius: 15px;
         border-bottom-left-radius: 0;
@@ -249,7 +249,7 @@
         justify-content: center;
         cursor: pointer;
         font-size: 20px;
-        color: $color-white;
+        color: $white
       }
     }
     &__bar {
@@ -267,8 +267,8 @@
       align-items: center;
       .button {
         padding: 0;
-        border: 1px solid $color-black;
-        background-color: $color-black;
+        border: 1px solid $black;
+        background-color: $black;
         width: 36px;
         height: 36px;
         display: flex;
@@ -282,13 +282,13 @@
         }        
         .icon.icon--nav {
           font-size: 20px;
-          color: $color-white;
+          color: $white
         }
         &.button--back {
-          background-color: $color-white;
+          background-color: $white;
           opacity: 1;
           .icon.icon--nav {
-            color: $color-black;
+            color: $black;
           }
         }
         &:focus {

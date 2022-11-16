@@ -1,0 +1,41 @@
+{% set pageTitle = 'Notifications Detail' %} {% import
+"../components/partials/webapp/aside.html" as aside %} {% import
+"../components/cards.html" as card %} {% import
+"../components/notification.html" as notif %} {% import "header-navigation.html"
+as HeaderNav %} {% extends "layout.html" %} {% block content %}
+
+<header>{% include "partials/webapp/nav.html" %}</header>
+<main class="webapp webapp--whare-page">
+  {{ aside.whanau() }}
+  <section class="section">
+    <div class="container-fluid">
+      <div class="content">
+        {{ HeaderNav.default("notification.html", "Notifications") }}
+        <div class="card card--no-border">
+          <div class="card-header">
+            <h4 class="notif-header-title">Mānawa Down</h4>
+          </div>
+          <div class="card-body p-4">
+            <p class="notif-content">Mānawa is no longer sending data</p>
+            <p class="notif-text mb-4">09/11/2022 10:44</p>
+            <p class="notif-text mt-2">Whare Name : 10 Silverstream Road</p>
+            <p class="notif-text mt-2">
+              Address : Whitemore St, Boulevard 99 0
+            </p>
+            <p class="notif-text mt-2">
+              Sensor MAC Address : 9C-35-5B-5F-4C-D7
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endblock %} {% block script %}
+<script>
+  window.onload = function () {
+    activeSidebarMenu("notifications");
+  };
+</script>
+{% endblock %}

@@ -85,7 +85,7 @@
     font-size: 16px;
     line-height: 23px;
     text-align: left;
-    color: $color-black;
+    color: $black;
     @include for-size (desktop) {
       font-size: 20px;
       line-height: 28px;
@@ -96,7 +96,7 @@
       position: relative;
       &::before {
         content: "";
-        background-color: $bg-white;
+        background-color: $white;
         height: 33.33%;
         position: absolute;
         width: 100%;
@@ -200,13 +200,13 @@
         font-size: 16px;
         line-height: 22px;
         text-align: left;
-        color: $color-black;
+        color: $black;
         @include for-size(tablet) {
           font-size: 24px;
           line-height: 34px;
         }
         @include for-size(desktop) {
-          color: $color-white;
+          color: $white;
           font-size: 24px;
           line-height: 34px;
         }        
@@ -225,7 +225,7 @@
           line-height: 28px;
         }
         @include for-size(desktop) {
-          color: $color-white;
+          color: $white;
           font-size: 20px;
           line-height: 28px;
         }        
@@ -276,9 +276,9 @@
           .step-btn {
             border-radius: 5px;
             padding: 5px;
-            background-color: $bg-black;
-            border: 1px solid $color-white;
-            color: $color-white;
+            background-color: $black;
+            border: 1px solid $white;
+            color: $white;
             font-family: Roboto;
             font-style: normal;
             font-weight: normal;
@@ -296,9 +296,9 @@
               padding: 10px;
             }
             &.button--black-outline {
-              background-color: $color-white;
-              color: $color-black;
-              border: 1px solid $color-black;
+              background-color: $white;
+              color: $black;
+              border: 1px solid $black;
             }
             &.icon--back {
               border: none;
@@ -357,7 +357,7 @@
     align-items: center;
   }
   &__content-wrapper {
-    background: $bg-white;
+    background: $white;
     border-radius: 10px;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0);
     padding: 0px;
@@ -377,7 +377,7 @@
     font-size: 18px;
     line-height: 24px;
     text-align: center;
-    color: $color-black;
+    color: $black;
     margin: 0 0 45px;
   }
   &__button-container {

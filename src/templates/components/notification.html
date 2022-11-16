@@ -1,0 +1,70 @@
+{% macro item(linkDetail, linkRead) %}
+<div class="notif-box">
+  <div class="d-flex justify-content-between">
+    <div class="me-auto">
+      <p class="notif-title">Mānawa Down</p>
+      <p class="notif-date">09/11/2022 10:44</p>
+    </div>
+    <div class="dropdown">
+      <button
+        class="btn btn-light-gray"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class="fas fa-ellipsis-v"></i>
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item" href="{{linkDetail}}"
+            ><i class="fas fa-info-circle me-2"></i>Detail</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" href="{{linkRead}}"
+            ><i class="fas fa-check me-2"></i>Mark as read</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <p class="notif-name">Whare Name : 10 Silverstream Road</p>
+  <p class="notif-sensor">Sensor MAC Address : 9C-35-5B-5F-4C-D7</p>
+</div>
+{% endmacro %} {% macro itemUnread(linkDetail, linkRead) %}
+<div class="notif-box">
+  <div class="d-flex justify-content-between">
+    <div class="notif-unread">
+      <span class="badge badge--unread">Unread</span>
+    </div>
+    <div class="me-auto">
+      <p class="notif-title">Mānawa Down</p>
+      <p class="notif-date">09/11/2022 10:44</p>
+    </div>
+    <div class="dropdown">
+      <button
+        class="btn btn-light-gray"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class="fas fa-ellipsis-v"></i>
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item" href="{{linkDetail}}"
+            ><i class="fas fa-info-circle me-2"></i>Detail</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" href="{{linkRead}}"
+            ><i class="fas fa-check me-2"></i>Mark as read</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <p class="notif-name">Whare Name : 10 Silverstream Road</p>
+  <p class="notif-sensor">Sensor MAC Address : 9C-35-5B-5F-4C-D7</p>
+</div>
+{% endmacro %}

@@ -1,6 +1,7 @@
 <!-- index.html -->
 {% import "../components/partials/webapp/aside.html" as aside %} {% import
-"../components/cards.html" as card %} {% extends "layout.html" %} {% block
+"../components/cards.html" as card %}
+{% import "header-navigation.html" as HeaderNav %} {% extends "layout.html" %} {% block
 content %}
 
 <header>{% include "partials/webapp/nav.html" %}</header>
@@ -9,14 +10,8 @@ content %}
   <section class="section">
     <div class="container-fluid">
       <div class="content">
-        <div class="d-flex align-items-center mt-5">
-          <a href="" role="button" class="btn border me-3">
-            <i class="fas fa-arrow-left"></i>
-          </a>
-          <div>
-            <span class="h5 fw-bold">Electricity Data</span> in Rudi’s House
-          </div>
-        </div>
+        {{ HeaderNav.electricity("index.html") }}
+        
         <div class="row g-3 mt-1">
           <div class="col-md-6">
             <div class="card card--info">

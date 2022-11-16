@@ -1,0 +1,15 @@
+{% macro default(link, title, desc) %}
+<div class="header-navigation">
+  <a href="{{link}}" class="btn btn--back">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+  <h4 class="title">{{title}} <span class="desc">{{desc}}</span></h4>
+</div>
+{% endmacro %} {% macro electricity(link) %}
+<div class="header-navigation">
+  <a href="{{link}}" role="button" class="btn btn--back">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+  <div><span class="h5 fw-bold">Electricity Data</span> in Rudi’s House</div>
+</div>
+{% endmacro %}

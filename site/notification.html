@@ -1,0 +1,400 @@
+<!-- layout.html -->
+<!DOCTYPE html>
+<!--[if lt IE 7]>      
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> 
+<![endif]-->
+<!--[if IE 7]>         
+<html class="no-js lt-ie9 lt-ie8" lang=""> 
+<![endif]-->
+<!--[if IE 8]>         
+<html class="no-js lt-ie9" lang=""> 
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Notifications</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="./assets/css/style.min.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Library Wizard-JS for Stepper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/AdrianVillamayor/Wizard-JS@1.8/styles/css/main.css"
+      integrity="sha256-btHibfSEWQ4O0dUO3Jo22dZVkFr4T75RU7+EU5SGS0A="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser</a> to improve
+        your experience.
+      </p>
+    <![endif]-->
+    
+
+<header><nav class="navbar navbar-webapp fixed-top navbar-light bg-light">
+  <div class="container-fluid navbar-header">
+    <a class="navbar-brand" href="/">
+      <img src="assets/img/ic-logo-red.svg" alt="" class="img-logo" />
+    </a>
+    <div class="nav-action">
+      <a href="notification.html" role="button" class="menu-icon"><i class="fas fa-bell"></i></a>
+      <div class="menu-button">
+        <span class="menu-text">MENU</span>
+        <span class="hamburger"></span>
+      </div>
+    </div>
+  </div>
+</nav>
+</header>
+<main class="webapp webapp--whare-page">
+  
+<aside class="aside">
+  <div class="sidenav">
+    <ul class="nav-menu">
+      <li class="menu-list">
+        <a href="list-of-whare.html" class="menu-title">
+          <div class="wrapper">
+            <i class="icon icon-fontello">&#xe806;</i>
+            <span class="title">Home</span>
+          </div>
+        </a>
+      </li>
+      <li class="menu-list menu-list--whare">
+        <div
+          class="menu-title collapsed"
+          data-bs-toggle="collapse"
+          data-bs-target="#whareContent"
+          aria-expanded="false"
+          aria-controls="whareContent"
+        >
+          <div class="wrapper">
+            <i class="icon icon-fontello">&#xe807;</i>
+            <span class="title">Whares</span>
+          </div>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="collapse" id="whareContent">
+          <ul class="menu-sublist">
+            <li class="menu-sublist__item active">
+              <a href="#" class="link">Rudi's House</a>
+            </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">10 Silverstream Road</a>
+            </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">Garys Home</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    <div class="nav-menu">
+      <div class="menu-list">
+        <a href="" class="menu-title">
+          <div class="wrapper">
+            <div class="icon">
+              <i class="fas fa-bell"></i>
+              <span class="icon-badge">4</span>
+            </div>
+            <div class="title">Notifications</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <ul class="nav-menu nav-menu--profile">
+      <li class="menu-list">
+        <div
+          class="menu-title collapsed"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseExample"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+        >
+          <div class="wrapper">
+            <i class="icon icon--circle-primary"> R </i>
+            <span class="title">admin@kaimahi.nz</span>
+          </div>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="collapse" id="collapseExample">
+          <ul class="menu-sublist">
+            <li class="menu-sublist__item menu-sublist__item--title">
+              <h6 class="title">Account</h6>
+            </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">
+                <i class="icon icon-fontello">&#xe804;</i>
+                <h6 class="subtitle">Account Setting</h6>
+              </a>
+            </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">
+                <i class="icon icon-fontello icon--logout">&#xe801;</i>
+                <h6 class="subtitle text--red">Logout</h6>
+              </a>
+            </li>
+            <li class="menu-sublist__item menu-sublist__item--title">
+              <h6 class="title">Admin</h6>
+            </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">
+                <i class="icon icon-fontello icon--back">&#xe802;</i>
+                <h6 class="subtitle">Admin Page</h6>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="backdrop"></div>
+</aside>
+
+  <section class="section">
+    <div class="container-fluid">
+      <div class="content">
+        
+<div class="header-navigation">
+  <a href="index.html" class="btn btn--back">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+  <h4 class="title">Notifications <span class="desc">01 out of 06
+        Unread</span></h4>
+</div>
+
+        <div class="card card--no-border">
+          <div class="card-header">
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a
+                  href=""
+                  role="button"
+                  class="nav-link active"
+                  data-bs-target="#allNotif"
+                  data-bs-toggle="tab"
+                  >All</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  href=""
+                  role="button"
+                  class="nav-link"
+                  data-bs-target="#unreadNotif"
+                  data-bs-toggle="tab"
+                  >Unread</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <div class="collapse show" id="allNotif">
+              <div class="d-flex flex-column gap-4">
+                
+<div class="notif-box">
+  <div class="d-flex justify-content-between">
+    <div class="notif-unread">
+      <span class="badge badge--unread">Unread</span>
+    </div>
+    <div class="me-auto">
+      <p class="notif-title">Mānawa Down</p>
+      <p class="notif-date">09/11/2022 10:44</p>
+    </div>
+    <div class="dropdown">
+      <button
+        class="btn btn-light-gray"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class="fas fa-ellipsis-v"></i>
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item" href="notification-detail.html"
+            ><i class="fas fa-info-circle me-2"></i>Detail</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" href=""
+            ><i class="fas fa-check me-2"></i>Mark as read</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <p class="notif-name">Whare Name : 10 Silverstream Road</p>
+  <p class="notif-sensor">Sensor MAC Address : 9C-35-5B-5F-4C-D7</p>
+</div>
+ 
+<div class="notif-box">
+  <div class="d-flex justify-content-between">
+    <div class="me-auto">
+      <p class="notif-title">Mānawa Down</p>
+      <p class="notif-date">09/11/2022 10:44</p>
+    </div>
+    <div class="dropdown">
+      <button
+        class="btn btn-light-gray"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class="fas fa-ellipsis-v"></i>
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item" href="notification-detail.html"
+            ><i class="fas fa-info-circle me-2"></i>Detail</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" href=""
+            ><i class="fas fa-check me-2"></i>Mark as read</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <p class="notif-name">Whare Name : 10 Silverstream Road</p>
+  <p class="notif-sensor">Sensor MAC Address : 9C-35-5B-5F-4C-D7</p>
+</div>
+ 
+<div class="notif-box">
+  <div class="d-flex justify-content-between">
+    <div class="me-auto">
+      <p class="notif-title">Mānawa Down</p>
+      <p class="notif-date">09/11/2022 10:44</p>
+    </div>
+    <div class="dropdown">
+      <button
+        class="btn btn-light-gray"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class="fas fa-ellipsis-v"></i>
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item" href="notification-detail.html"
+            ><i class="fas fa-info-circle me-2"></i>Detail</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" href=""
+            ><i class="fas fa-check me-2"></i>Mark as read</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <p class="notif-name">Whare Name : 10 Silverstream Road</p>
+  <p class="notif-sensor">Sensor MAC Address : 9C-35-5B-5F-4C-D7</p>
+</div>
+
+              </div>
+            </div>
+            <div class="collapse" id="unreadNotif">
+              
+<div class="notif-box">
+  <div class="d-flex justify-content-between">
+    <div class="notif-unread">
+      <span class="badge badge--unread">Unread</span>
+    </div>
+    <div class="me-auto">
+      <p class="notif-title">Mānawa Down</p>
+      <p class="notif-date">09/11/2022 10:44</p>
+    </div>
+    <div class="dropdown">
+      <button
+        class="btn btn-light-gray"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class="fas fa-ellipsis-v"></i>
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item" href="notification-detail.html"
+            ><i class="fas fa-info-circle me-2"></i>Detail</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" href=""
+            ><i class="fas fa-check me-2"></i>Mark as read</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <p class="notif-name">Whare Name : 10 Silverstream Road</p>
+  <p class="notif-sensor">Sensor MAC Address : 9C-35-5B-5F-4C-D7</p>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <script src="./assets/js/vendor/jquery.min.js"></script>
+    <script src="./assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/AdrianVillamayor/Wizard-JS@1.8/src/wizard.min.js"
+      integrity="sha256-vVk0T+7qGD5K2sLJywOcqKmnJerAFRaOI1FWJNH3YYg="
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./assets/js/main.js"></script>
+    
+<script>
+  window.onload = function () {
+    activeSidebarMenu("notifications");
+  };
+</script>
+
+  </body>
+</html>

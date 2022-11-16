@@ -426,7 +426,7 @@
           font-size: 16px;
           line-height: 140.62%;
           margin-bottom: 10px;
-          color: $color-black;
+          color: $black;
         }
 
         i.fas {
@@ -519,7 +519,7 @@
 
     .card-header {
       width: 100%;
-      background-color: $color-white;
+      background-color: $white;
       border: none;
       padding: 0;
 
@@ -528,7 +528,7 @@
         font-weight: bold;
         font-size: 16px;
         line-height: 140.62%;
-        color: $color-black;
+        color: $black;
         margin: 0;
       }
       .text {
@@ -584,7 +584,7 @@
     .card-footer {
       padding: 0;
       width: 100%;
-      background-color: $color-white;
+      background-color: $white;
       border: none;
       display: flex;
       justify-content: space-between;
@@ -620,7 +620,7 @@
               line-height: 140.62%;
 
               &--black {
-                color: $color-black;
+                color: $black;
               }
 
               &--red {
@@ -654,7 +654,7 @@
 
   &.card--room {
     padding: 0;
-    border: 1px solid $color-white;
+    border: 1px solid $white;
     display: flex;
     flex-direction: column;
     margin: 0 0 30px;
@@ -942,10 +942,10 @@
         font-weight: normal;
         font-size: 14px;
         line-height: 140.62%;
-        color: $color-white;
+        color: $white;
 
         &:hover {
-          color: $color-white;
+          color: $white;
         }
 
         i.fas {
@@ -959,7 +959,7 @@
 
   &.card--room-details {
     padding: 0;
-    border: 1px solid $color-white;
+    border: 1px solid $white;
     display: flex;
     flex-direction: column;
     margin: 0 0 30px;
@@ -1070,7 +1070,7 @@
     .card-footer {
       width: 100%;
       border: none;
-      background-color: $color-white;
+      background-color: $white;
       padding: 16px;
 
       .temperature-section {
@@ -1141,10 +1141,10 @@
         font-weight: normal;
         font-size: 14px;
         line-height: 140.62%;
-        color: $color-white;
+        color: $white;
 
         &:hover {
-          color: $color-white;
+          color: $white;
         }
 
         i.fas {
@@ -1158,7 +1158,7 @@
 
   &.card--room-line {
     padding: 0;
-    border: 1px solid $color-white;
+    border: 1px solid $white;
     display: flex;
     flex-direction: column;
     margin: 0 0 30px;
@@ -1167,7 +1167,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: $color-white;
+      background-color: $white;
       width: 100%;
       padding: 10px 20px;
       border: none;
@@ -1242,7 +1242,7 @@
     font-style: normal;
     font-size: 12px;
     line-height: 15px;
-    color: $color-black;
+    color: $black;
     margin: 0;
   }
   &.card--map {
@@ -1399,6 +1399,21 @@
         border-radius: 6px;
         object-fit: cover;
       }
+    }
+  }
+
+  &.card--no-border {
+    padding: 10px;
+    border: 0;
+    margin: 0;
+    flex-direction: column;
+    align-items: unset;
+    .card-header {
+      padding: 0;
+      border-bottom: 0;
+    }
+    .card-body {
+      padding: 10px;
     }
   }
 }

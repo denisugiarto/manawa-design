@@ -16,7 +16,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title></title>
+    <title>Outside Temperature</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -70,16 +70,18 @@
 <header><nav class="navbar navbar-webapp fixed-top navbar-light bg-light">
   <div class="container-fluid navbar-header">
     <a class="navbar-brand" href="/">
-      <img src="assets/img/ic-logo-red.svg" alt="" class="img-logo">      
+      <img src="assets/img/ic-logo-red.svg" alt="" class="img-logo" />
     </a>
     <div class="nav-action">
+      <a href="notification.html" role="button" class="menu-icon"><i class="fas fa-bell"></i></a>
       <div class="menu-button">
         <span class="menu-text">MENU</span>
         <span class="hamburger"></span>
       </div>
     </div>
-  </div>  
-</nav></header>
+  </div>
+</nav>
+</header>
 <main class="webapp outside-page">
   
 <aside class="aside">
@@ -87,24 +89,30 @@
     <ul class="nav-menu">
       <li class="menu-list menu-list--room active">
         <a href="#" class="menu-title">
-          <div class="wrapper">                        
-            <span class="title title--house">Rudi’s House</span> 
+          <div class="wrapper">
+            <span class="title title--house">Rudi’s House</span>
           </div>
-        </a>        
+        </a>
       </li>
       <li class="menu-list active">
         <a href="list-of-whare.html" class="menu-title">
-          <div class="wrapper">            
-            <i class="icon icon-fontello">&#xe806;</i>            
-            <span class="title">Home</span> 
+          <div class="wrapper">
+            <i class="icon icon-fontello">&#xe806;</i>
+            <span class="title">Home</span>
           </div>
-        </a>        
+        </a>
       </li>
       <li class="menu-list menu-list--whare active">
-        <div class="menu-title collapsed" data-bs-toggle="collapse" data-bs-target="#whareContent" aria-expanded="false" aria-controls="whareContent">        
-          <div class="wrapper">            
+        <div
+          class="menu-title collapsed"
+          data-bs-toggle="collapse"
+          data-bs-target="#whareContent"
+          aria-expanded="false"
+          aria-controls="whareContent"
+        >
+          <div class="wrapper">
             <i class="icon icon-fontello">&#xe807;</i>
-            <span class="title">Whare</span> 
+            <span class="title">Whare</span>
           </div>
           <i class="fas fa-chevron-down"></i>
         </div>
@@ -119,14 +127,20 @@
             <li class="menu-sublist__item">
               <a href="#" class="link">Garys Home</a>
             </li>
-          </ul>          
+          </ul>
         </div>
       </li>
       <li class="menu-list menu-list--room">
-        <div class="menu-title collapsed" data-bs-toggle="collapse" data-bs-target="#whareContent" aria-expanded="false" aria-controls="whareContent">
-          <div class="wrapper">            
+        <div
+          class="menu-title collapsed"
+          data-bs-toggle="collapse"
+          data-bs-target="#whareContent"
+          aria-expanded="false"
+          aria-controls="whareContent"
+        >
+          <div class="wrapper">
             <i class="icon icon-fontello">&#xe805;</i>
-            <span class="title">Rooms</span> 
+            <span class="title">Rooms</span>
           </div>
           <i class="fas fa-chevron-down"></i>
         </div>
@@ -144,61 +158,65 @@
             <li class="menu-sublist__item">
               <a href="#" class="link">Study Room</a>
             </li>
-          </ul>          
+          </ul>
         </div>
       </li>
       <li class="menu-list menu-list--room">
         <a href="javascript:void(0)" class="menu-title">
-          <div class="wrapper">            
+          <div class="wrapper">
             <i class="icon icon-fontello">&#xe803;</i>
-            <span class="title">Add Whānau</span> 
+            <span class="title">Add Whānau</span>
           </div>
-        </a>        
+        </a>
       </li>
       <li class="menu-list menu-list--room">
         <a href="edit-whare.html" class="menu-title">
           <div class="wrapper">
             <i class="icon icon-fontello">&#xe800;</i>
-            <span class="title">Edit Whare</span> 
+            <span class="title">Edit Whare</span>
           </div>
-        </a>        
+        </a>
       </li>
     </ul>
     <ul class="nav-menu nav-menu--profile">
       <li class="menu-list">
-        <div class="menu-title collapsed"  data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <div
+          class="menu-title collapsed"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseExample"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+        >
           <div class="wrapper">
-            <i class="icon icon--circle-primary">
-              R
-            </i>
-            <span class="title">RudiTabuti</span> 
+            <i class="icon icon--circle-primary"> R </i>
+            <span class="title">RudiTabuti</span>
           </div>
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="collapse" id="collapseExample">
           <ul class="menu-sublist">
             <li class="menu-sublist__item menu-sublist__item--title">
-             <h6 class="title">Account</h6>
+              <h6 class="title">Account</h6>
             </li>
             <li class="menu-sublist__item">
-              <a href="#" class="link">                                
+              <a href="#" class="link">
                 <i class="icon icon-fontello">&#xe804;</i>
-                <h6 class="subtitle">Account Setting</h6>                
+                <h6 class="subtitle">Account Setting</h6>
               </a>
             </li>
             <li class="menu-sublist__item">
-              <a href="#" class="link">                
+              <a href="#" class="link">
                 <i class="icon icon-fontello icon--logout">&#xe801;</i>
-                <h6 class="subtitle text--red">Logout</h6>                
+                <h6 class="subtitle text--red">Logout</h6>
               </a>
             </li>
             <li class="menu-sublist__item menu-sublist__item--title">
               <h6 class="title">Admin</h6>
-             </li>
+            </li>
             <li class="menu-sublist__item">
               <a href="#" class="link">
                 <i class="icon icon-fontello icon--back">&#xe802;</i>
-                <h6 class="subtitle">Admin Page</h6>                
+                <h6 class="subtitle">Admin Page</h6>
               </a>
             </li>
           </ul>
@@ -214,12 +232,14 @@
       <div class="content">
         <div class="row">
           <div class="col-md-12">
-            <div class="header-navigation">
-              <a href="list-of-whare.html" class="button button--grey-outline">
-                <i class="fas fa-arrow-left"></i>
-              </a>
-              <h4 class="title">Sensor : AC233FA5A255</h4>
-            </div>
+            
+<div class="header-navigation">
+  <a href="list-of-whare.html" class="btn btn--back">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+  <h4 class="title">Sensor : AC233FA5A255 <span class="desc"></span></h4>
+</div>
+
           </div>
           <div class="col-12">
             <div class="card card--room-details">

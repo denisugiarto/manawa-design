@@ -5,7 +5,7 @@
   &__container {
     position: relative;
     padding: 0;
-    background: $bg-white;
+    background: $white;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(0, 0, 0, 0);
     border-radius: 10px;
     @include for-size(desktop) {
@@ -21,7 +21,7 @@
     font-weight: bold;
     font-size: 20px;
     line-height: 23px;
-    color: $color-black;
+    color: $black;
     margin: 0 0 15px 0;
   }
   &__tab {
@@ -148,7 +148,7 @@
     font-size: 14px;
     line-height: 20px;
     margin: 0 0 10px 0;
-    color: $color-black;
+    color: $black;
     &--has-checkbox {
       display: flex;
       align-items: flex-start;
@@ -203,7 +203,7 @@
     }
   }
   &__input {
-    background: $bg-white;
+    background: $white;
     border: 1px solid #ced4da;
     box-sizing: border-box;
     border-radius: 4px;
@@ -214,7 +214,7 @@
     width: 100%;
     font-size: 16px;
     line-height: 22px;
-    color: $color-black;
+    color: $black;
     @include for-size(desktop) {
       font-size: 20px;
       line-height: 28px;
@@ -262,7 +262,7 @@
   &__custom-checkbox {
     cursor: pointer;
     position: relative;
-    background: $bg-white;
+    background: $white;
     border: 1px solid $primary;
     border-radius: 3px;
     width: 16px;
@@ -276,7 +276,7 @@
       content: "\f00c";
       display: none;
       font-weight: bold;
-      color: $color-white;
+      color: $white;
       font-size: 10px;
       @include absolute(top 50% left 50%);
       transform: translate3d(-50%, -50%, 0);
@@ -371,15 +371,15 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
-    color: $color-black;
+    color: $black;
     text-decoration: none;
     margin: 0 0 24px 0;
     &:hover {
-      color: $color-black;
+      color: $black;
     }
   }
   &__step-content {
-    background-color: $bg-white;
+    background-color: $white;
     padding: 0 0 82px;
     min-height: 450px;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
@@ -456,7 +456,7 @@
     font-weight: 300;
     font-size: 14px;
     line-height: 20px;
-    color: $color-black;
+    color: $black;
     margin: 0 0 24px 0;
   }
   &__bold {
@@ -509,7 +509,7 @@
       font-weight: normal;
       font-size: 14px;
       line-height: 20px;
-      color: $color-white;
+      color: $white;
       display: flex;
       align-items: center;
       padding: 5px 10px;

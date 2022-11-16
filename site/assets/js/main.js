@@ -510,3 +510,18 @@ const tooltipTriggerList = document.querySelectorAll(
 const tooltipList = [...tooltipTriggerList].map(
   (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
 );
+
+//Sidebar Menu Active function
+const activeSidebarMenu = (target) => {
+  const menuList = document.querySelectorAll(".menu-list");
+  let targetId = 0;
+  let index = 0;
+  for (const menu of menuList) {
+    let titleMenu = menu.getElementsByClassName("title")[0].textContent;
+    index++;
+    if (titleMenu.toLowerCase().includes(target)) {
+      targetId = index - 1;
+    }
+  }
+  menuList[targetId].classList.add("active");
+};

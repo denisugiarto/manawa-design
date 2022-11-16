@@ -1,5 +1,6 @@
-<!-- index.html -->
-{% extends "layout.html" %} {% import "partials/webapp/aside.html" as aside %}
+{% set pageTitle = 'Outside Temperature' %} {% extends "layout.html" %} 
+{% import "partials/webapp/aside.html" as aside %} 
+{% import "header-navigation.html" as HeaderNav %} 
 {% block content %}
 
 <header>{% include "partials/webapp/nav.html" %}</header>
@@ -10,12 +11,7 @@
       <div class="content">
         <div class="row">
           <div class="col-md-12">
-            <div class="header-navigation">
-              <a href="list-of-whare.html" class="button button--grey-outline">
-                <i class="fas fa-arrow-left"></i>
-              </a>
-              <h4 class="title">Sensor : AC233FA5A255</h4>
-            </div>
+            {{ HeaderNav.default("list-of-whare.html", "Sensor : AC233FA5A255") }}
           </div>
           <div class="col-12">
             <div class="card card--room-details">

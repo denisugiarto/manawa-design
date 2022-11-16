@@ -79,7 +79,7 @@
           font-weight: normal;
           font-size: 14px;
           line-height: 140.62%;
-          color: $color-black;
+          color: $black;
         }
       }
     }
@@ -93,42 +93,9 @@
           font-weight: normal;
           font-size: 14px;
           line-height: 140.62%;
-          color: $color-black;
+          color: $black;
         }
       }
-    }
-  }
-  .header-navigation {
-    display: flex;
-    align-items: center;
-    margin: 0 0 30px;
-    .button {
-      margin-right: 14px;
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex: 0 0 auto;
-      padding: 5px;
-    }
-    .title {
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 20px;
-      line-height: 140.62%;
-      color: $gray;
-      margin: 0;
-    }
-    .text {
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 140.62%;
-      color: $color-secondary-black;
-      margin: 4px 0 0;
     }
   }
   .page-title {
@@ -139,12 +106,12 @@
       font-weight: bold;
       font-size: 20px;
       line-height: 140.62%;
-      color: $color-black;
+      color: $black;
       margin: 0;
     }
   }
   .form.form--section {
-    background-color: $color-white;
+    background-color: $white;
     border-top: 6px solid $primary;
     padding: 20px;
     .form-group {
@@ -153,7 +120,7 @@
         margin-bottom: 30px;
         &--has-border {
           padding: 15px;
-          background: $color-white;
+          background: $white;
           border: 1px solid #d5d5d5;
           box-sizing: border-box;
           border-radius: 4px;

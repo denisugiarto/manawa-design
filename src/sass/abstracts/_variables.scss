@@ -68,32 +68,53 @@ $typi: (
   //   null: (ms(4), vr(2.5)),
   //   small: (ms(4), vr(2.5)),
   //   large: (ms(4), vr(2.5))
-  // ),,,,,
+  // ),,,,,,
 );
 
 $ms-base: 1em;
 $ms-ratio: 1.618;
 
+// Gray Colors
+$gray-100: #ffffff;
+$gray-200: #f3f3f4;
+$gray-300: #e7e8e9;
+$gray-400: #cfd1d4;
+$gray-500: #9fa3a9;
+$gray-600: #6f757e;
+$gray-700: #3f4753;
+$gray-800: #27303e;
+$gray-900: #0f1928;
+
+// gray-colors-map
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900,
+);
+
 // backgrounds
-$bg-white: #ffffff;
-$bg-black: #000000;
 $bg-gray: #d0d0d0;
 $bg-cream-white: #ececec;
 $bg-yellow: #fdff8c;
 
 // colors
-$color-white: #ffffff;
-$color-black: #000000;
+$primary-900: #660210;
 $color-secondary-black: #333333;
 $color-secondary-900: #101b37;
-$color-secondary-800: #27303e;
-$color-secondary-700: #3f4753;
-$color-secondary-600: #6f757e;
-$color-secondary-500: #9fa3a9;
-$color-secondary-400: #cfd1d4;
-$color-secondary-300: #e7e8e9;
-$color-secondary-200: #f3f3f4;
-$color-secondary-100: #ffffff;
+$color-secondary-800: #1b2842;
+$color-secondary-700: #2a3952;
+$color-secondary-600: #3e4d62;
+$color-secondary-500: #556373;
+$color-secondary-400: #899aab;
+$color-secondary-300: #b3c6d5;
+$color-secondary-200: #d7e7f0;
+$color-secondary-100: #ebf3f8;
 $gray: #777777;
 $color-green: #abcc75;
 $color-yellow: #fdff8c;
@@ -110,15 +131,17 @@ $color-damp: #59a2c9;
 $color-hot: #ea6720;
 $color-dry: #cd6276;
 $color-offline: #777777;
+$white: #ffffff;
+$black: #000000;
 
 $primary: $color-red;
 $secondary: $color-secondary-600;
-$danger: #DC3545;
-$light: $color-white;
-$light-gray: $color-secondary-200;
-$success: #28A745;
+$danger: #dc3545;
+$light: $white;
+$light-gray: $gray-200;
+$success: #28a745;
 $info: #0078ff;
-$warning: #FFC107;
+$warning: #ffc107;
 $dark: $color-secondary-900;
 
 $theme-colors: (
@@ -149,6 +172,33 @@ $accordion-padding-x: 0;
 $accordion-border-width: 0;
 $accordion-button-focus-box-shadow: none;
 
+//Badge
+$badge-border-radius: 0.25rem;
+
+//Border Radius
+$border-radius: 0.375rem;
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 0.5rem;
+
+//Card
+$card-cap-bg: $white;
+
+//Dropdown
+$dropdown-border-width: 0;
+
+//Link
+$link-color: $gray-900;
+
+//Modal
+$modal-header-padding: 1.625rem;
+
+//Nav
+$nav-tabs-border-width: 1px;
+$nav-link-padding-y: 0.625rem;
+$nav-link-padding-x: 1.25rem;
+$nav-link-color: $gray-900;
+$nav-tabs-link-active-color: $primary;
+
 // sizing
 $base-font-size: 16px;
 $grid-gutter-width: 1.5rem;
@@ -166,19 +216,6 @@ $spacers: (
   5: $spacer * 1.875,
   6: $spacer * 3,
 );
-
-//Border Radius
-$border-radius: 0.375rem;
-$border-radius-sm: 0.25rem;
-$border-radius-lg: 0.5rem;
-
-//Modal
-$modal-header-padding: 1.625rem;
-
-//Nav
-$nav-tabs-border-width: 0;
-$nav-link-padding-y: 0.625rem;
-$nav-link-padding-x: 0.625rem;
 
 //Tooltip
 $tooltip-max-width: 500px;

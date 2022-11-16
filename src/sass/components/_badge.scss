@@ -8,7 +8,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
-  color: $color-black;
+  color: $black;
   border-radius: 100px;
   width: max-content;
   &.badge--primary {
@@ -23,5 +23,14 @@
       color: $color-dark-grey;
       font-size: 12px;
     }
+  }
+
+  &--unread {
+    border-radius: 4px;
+    background-color: rgba($primary, 0.1);
+    font-size: 12px;
+    line-height: 24px;
+    padding: 0 5px;
+    color: $primary-900;
   }
 }

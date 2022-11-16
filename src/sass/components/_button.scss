@@ -8,16 +8,16 @@
   font-weight: bold;
   font-size: 16px;
   line-height: 19px;
-  color: $color-white;
+  color: $white;
   border-radius: 5px;
   &.button--black {
-    background-color: $bg-black;
-    border: 1px solid $bg-black;
+    background-color: $black;
+    border: 1px solid $black;
   }
   &.button--red {
     background-color: $danger;
     border: none;
-    color: $color-white;
+    color: $white
   }
   &.button--grey {
     background-color: $color-grey-button;
@@ -29,13 +29,13 @@
     border: 1px solid $color-secondary-black;
   }
   &.button--white {
-    background-color: $bg-white;
-    border: 1px solid $bg-white;
-    color: $color-black;
+    background-color: $white;
+    border: 1px solid $white;
+    color: $black;
   }
   &.button--primary {
     background-color: $primary;
-    color: $color-white;
+    color: $white;
     border: 1px solid $primary;
   }
   &.button--transparent {
@@ -49,9 +49,9 @@
     }
   }
   &.button--black-outline {
-    background-color: $color-white;
-    color: $color-black;
-    border: 1px solid $color-black;
+    background-color: $white;
+    color: $black;
+    border: 1px solid $black;
   }
   &.button--grey-outline {
     background-color: transparent;
@@ -94,8 +94,8 @@
 .btn {
   &.btn--back {
     @extend .btn--md;
-    border: 1px solid $gray-300;
-    color: $secondary;
+    border: 1px solid $gray-600;
+    color: $gray-600;
     margin-right: 16px;
     font-size: 18px;
     line-height: 28px;
