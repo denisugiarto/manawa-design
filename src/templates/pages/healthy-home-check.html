@@ -1,5 +1,5 @@
-{% set pageTitle = 'Home Health Check' %} {% import
-"../components/partials/webapp/aside.html" as aside %} {% import
+{% set cssStyle = "style" %} {% set pageTitle = 'Healthy Home Check' %} {%
+import "../components/partials/webapp/aside.html" as aside %} {% import
 "../components/cards.html" as card %} {% import "header-navigation.html" as
 HeaderNav %} {% extends "layout.html" %} {% block content %}
 
@@ -539,20 +539,24 @@ HeaderNav %} {% extends "layout.html" %} {% block content %}
         </button>
       </div>
       <div class="modal-body">
-        <input
+        <select
           type="text"
           name="photoName"
           class="form-control"
           placeholder="Enter title"
           required
-        />
+        >
+          <option value="sitting room">Sitting room</option>
+          <option value="bathroom">Bathroom</option>
+          <option value="kitchen">Kitchen</option>
+        </select>
         <input
           type="file"
           name="photoFile"
           id="photoFile"
           class="visually-hidden"
           accept="image/*"
-          onchange="imagePreview(this, 'photoPreview', 'btnPhotoFile');"
+          onchange="imagePreview(this, 'photoPreview', 'btn--select-file');"
         />
         <div class="mt-4 text-center">
           <div class="image-preview__wrapper">
@@ -614,13 +618,14 @@ HeaderNav %} {% extends "layout.html" %} {% block content %}
 <script src="./assets/js/step-wizard.js"></script>
 <script>
   //Modal Image handler
-  function imagePreview(input, imgId, btnInputId) {
+  function imagePreview(input, imgId, btnInput) {
     const reader = new FileReader();
-    const btnInput = document.getElementById(btnInputId);
+    const btnInputs = document.getElementsByClassName(btnInput);
     const img = document.getElementById(imgId);
     reader.onload = (e) => {
       img.src = e.target.result;
     };
+    console.log(btnInputs);
     if (input.files && input.files[0]) {
       const f = input.files[0];
       reader.readAsDataURL(f);
@@ -628,16 +633,22 @@ HeaderNav %} {% extends "layout.html" %} {% block content %}
         document.getElementById("uploadProgress").ariaValueNow = 100;
         document.getElementById("uploadProgress").style.width = "100%";
         setTimeout(() => {
-          btnInput.style.display = "none";
+          btnInputs[1].style.display = "none";
           img.parentElement.classList.add("show");
         }, 1000);
       }, 1000);
-      btnInput.innerHTML = `
+      btnInputs[0].style.display = "none";
+      btnInputs[1].innerHTML = `
       <span class="fw-normal">Uploading</span> <br/> <br/>
       <div class="progress progress--sm mt-2">
         <div id="uploadProgress" class="progress-bar bg-info" role="progressbar" aria-label="upload progress" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
       </div>`;
     }
   }
+  // End Image Handler
+
+  //ChoiceJs
+  const selectJs = document.getElementsByName("photoName")[0];
+  const selectTitle = new Choices(selectJs, {});
 </script>
 {% endblock %}

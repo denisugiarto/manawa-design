@@ -40,7 +40,7 @@ const zip = require("gulp-zip");
 // css task
 function scss() {
   return (
-    src("./src/sass/**/*.scss")
+    src("./src/sass/*.scss")
       .pipe(sourcemaps.init())
       .pipe(
         sass({ outputStyle: "expanded", errLogToConsole: true }).on(
@@ -54,7 +54,7 @@ function scss() {
           cascade: false,
         })
       )
-      .pipe(concat("style.min.css"))
+      // .pipe(concat("style.min.css"))
       // .pipe(csso({ autoprefixer: { browsers: browserslist, add: true } }))
       .pipe(csso())
       .pipe(sourcemaps.write("../maps"))
@@ -79,10 +79,14 @@ function njk() {
 
 // css optimizing
 function cssOptimize() {
-  return src("./site/assets/css/style.min.css")
-    .pipe(purgecss({ content: ["./site/**/*.html"] }))
-    .pipe(rename("optimize-style.css"))
-    .pipe(dest("./site/assets/css"));
+  return src("./site/assets/css/*.css")
+    .pipe(
+      purgecss({
+        content: ["./site/**/*.html"],
+        variables: true,
+      })
+    )
+    .pipe(dest("./site/assets/css/optimize"));
 }
 
 // image optimizing
@@ -168,6 +172,7 @@ task("reload", function browserReload() {
 const watching = parallel(watchFiles, browserSync);
 
 // exports.js = js;
-// exports.css = css;
+exports.css = scss;
+exports.scss = series(scss, cssOptimize);
 exports.default = parallel(img, scss, js, njk, cssOptimize);
 exports.watch = watching;

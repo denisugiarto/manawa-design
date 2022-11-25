@@ -1,0 +1,62 @@
+{% set cssStyle = "style" %}{% set pageTitle = 'Notifications Empty' %} {%
+import "../components/partials/webapp/aside.html" as aside %} {% import
+"../components/cards.html" as card %} {% import
+"../components/notification.html" as notif %} {% import "header-navigation.html"
+as HeaderNav %} {% extends "layout.html" %} {% block content %}
+
+<header>{% include "partials/webapp/nav.html" %}</header>
+<main class="webapp webapp--whare-page">
+  {{ aside.whanau() }}
+  <section class="section">
+    <div class="container-fluid">
+      <div class="content">
+        {{ HeaderNav.default("index.html", "Notifications", "01 out of 06
+        Unread") }}
+        <div class="card card--no-border">
+          <div class="card-header">
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a
+                  href=""
+                  role="button"
+                  class="nav-link active"
+                  data-bs-target="#allNotif"
+                  data-bs-toggle="tab"
+                  >All</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  href=""
+                  role="button"
+                  class="nav-link"
+                  data-bs-target="#unreadNotif"
+                  data-bs-toggle="tab"
+                  >Unread</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <div class="collapse show" id="allNotif">
+              <div class="d-flex flex-column gap-4">
+                {{ notif.itemUnread('notification-detail.html') }}
+              </div>
+            </div>
+            <div class="collapse" id="unreadNotif">
+              {{ notif.itemEmpty('notification-detail.html') }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endblock %} {% block script %}
+<script>
+  window.onload = function () {
+    activeSidebarMenu("notifications");
+  };
+</script>
+{% endblock %}
