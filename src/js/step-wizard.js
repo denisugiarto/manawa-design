@@ -94,7 +94,6 @@ const updateStepNextTitle = (value) => {
     : (nextTitle.innerHTML = `Next : ${value}`);
 };
 
-
 //Change Step Function "Next" and "Prev"
 function changeStep(value) {
   let currentStep = document.querySelector(
@@ -124,4 +123,4 @@ function changeStep(value) {
 
 //Mobile Nav wizard step Init
 updateProgressValue(1, countStep);
-updateProgress(Math.floor(1 / countStep * 100));
+updateProgress(Math.floor((1 / countStep) * 100));

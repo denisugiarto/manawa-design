@@ -1,3 +1,4 @@
+/*! purgecss start ignore */
 .wizard {
   aside.wizard-content {
     padding: 2rem 0;
@@ -87,16 +88,28 @@
   }
   aside.wizard-buttons {
     .wizard-btn {
+      padding: 0.375rem 0.75rem;
+      border-radius: 6px;
       &.next,
       &.finish {
-        @extend .btn, .btn-primary;
+        color: white;
+        background-color: $primary;
+        &:hover {
+          background-color: #ab260b;
+        }
       }
 
       &.next:disabled {
         display: none;
       }
       &.prev {
-        @extend .btn, .btn-outline-primary;
+        color: $primary;
+        background-color: white;
+        border: 1px solid $primary;
+        &:hover {
+          background-color: $primary;
+          color: white;
+        }
       }
     }
   }
@@ -148,3 +161,4 @@ span.required {
     }
   }
 }
+/*! purgecss end ignore */
