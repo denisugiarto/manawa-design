@@ -86,7 +86,52 @@ function cssOptimize() {
         variables: true,
       })
     )
-    .pipe(dest("./site/assets/css/optimize"));
+    .pipe(rename("style-optimize.css"))
+    .pipe(dest("./site/assets/css"));
+}
+
+function styleMapOptimize() {
+  return src("./site/assets/css/style-map.css")
+    .pipe(
+      purgecss({
+        content: ["./site/whanau-map.html"],
+        safelist: ["form-control", "card"],
+      })
+    )
+    .pipe(rename("style-map-optimize.css"))
+    .pipe(dest("./site/assets/css"));
+}
+
+function styleAuthOptimize() {
+  return src("./site/assets/css/style-authentication.css")
+    .pipe(
+      purgecss({
+        content: [
+          "./site/login.html",
+          "./site/sign_up.html",
+          "./site/confirm_instruction.html",
+          "./site/resend_email.html",
+          "./site/forgot_password.html",
+        ],
+      })
+    )
+    .pipe(rename("style-auth-optimize.css"))
+    .pipe(dest("./site/assets/css"));
+}
+
+function styleStepOptimize() {
+  return src("./site/assets/css/style-steps.css")
+    .pipe(
+      purgecss({
+        content: [
+          "./site/step_form.html",
+          "./site/step_form_finish.html",
+          "./site/installation_guide.html",
+        ],
+      })
+    )
+    .pipe(rename("style-step-optimize.css"))
+    .pipe(dest("./site/assets/css"));
 }
 
 // image optimizing
@@ -172,7 +217,16 @@ task("reload", function browserReload() {
 const watching = parallel(watchFiles, browserSync);
 
 // exports.js = js;
-exports.css = scss;
-exports.scss = series(scss, cssOptimize);
+exports.css = cssOptimize;
+exports.step = styleStepOptimize;
+exports.auth = styleAuthOptimize;
+exports.map = styleMapOptimize;
+exports.scss = series(
+  scss,
+  cssOptimize,
+  styleStepOptimize,
+  styleAuthOptimize,
+  styleMapOptimize
+);
 exports.default = parallel(img, scss, js, njk, cssOptimize);
 exports.watch = watching;
