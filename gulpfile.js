@@ -40,7 +40,7 @@ const zip = require("gulp-zip");
 // css task
 function scss() {
   return (
-    src("./src/sass/style.scss")
+    src("./src/sass/*.scss")
       .pipe(sourcemaps.init())
       .pipe(
         sass({ outputStyle: "expanded", errLogToConsole: true }).on(
@@ -54,7 +54,7 @@ function scss() {
           cascade: false,
         })
       )
-      .pipe(concat("style.min.css"))
+      // .pipe(concat("style.min.css"))
       // .pipe(csso({ autoprefixer: { browsers: browserslist, add: true } }))
       .pipe(csso())
       .pipe(sourcemaps.write("../maps"))
