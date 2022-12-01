@@ -18,7 +18,7 @@ task("deploy", function () {
 const nunjucksRender = require("gulp-nunjucks-render");
 
 //css-task variable
-const sass = require("gulp-sass");
+const sass = require('gulp-sass')(require('sass'));
 const csso = require("gulp-csso");
 const autoprefixer = require("gulp-autoprefixer");
 
@@ -79,7 +79,7 @@ function njk() {
 
 // css optimizing
 function cssOptimize() {
-  return src("./site/assets/css/*.css")
+  return src("./site/assets/css/style.css")
     .pipe(
       purgecss({
         content: ["./site/**/*.html"],
