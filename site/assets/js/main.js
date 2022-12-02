@@ -1,16 +1,12 @@
 $(document).ready(function () {
   function handleFormStep() {
-    if ($("#formStep").lenght != undefined) {
-      $("#formStep").steps();
-    }
+    $('#formStep').steps();
   }
 
   function handleGuideStep() {
-    if ($("#guideStep").lenght != undefined) {
-      $("#guideStep").steps({
-        transitionEffect: "slideLeft",
-      });
-    }
+    $("#guideStep").steps({
+      transitionEffect: "slideLeft"
+    });
   }
 
   function handleTogglePassword() {
@@ -26,51 +22,51 @@ $(document).ready(function () {
   }
 
   function handleReadMore() {
-    $(".button--read-more").click(function () {
-      if ($(this).closest(".card--attention").hasClass("expanded")) {
+    $('.button--read-more').click(function () {
+      if ($(this).closest(".card--attention").hasClass('expanded')) {
         $(this).html("Read More");
       } else {
         $(this).html("Less");
       }
-      $(this).closest(".card--attention").toggleClass("expanded");
-    });
+      $(this).closest(".card--attention").toggleClass('expanded');
+    })
   }
 
   function handleToggleNav() {
-    $(".toggle--nav").click(function () {
-      $(".sidebar").toggleClass("show--nav");
-    });
-    $(".sidebar__item").click(function () {
-      $(".sidebar").removeClass("show--nav");
-    });
-    $(".hamburger").click(function () {
-      $(".aside").toggleClass("show--nav");
-    });
+    $('.toggle--nav').click(function () {
+      $('.sidebar').toggleClass('show--nav');
+    })
+    $('.sidebar__item').click(function () {
+      $('.sidebar').removeClass('show--nav');
+    })
+    $('.hamburger').click(function () {
+      $('.aside').toggleClass('show--nav');
+    })
   }
 
   function handleVideo() {
-    var video = document.querySelector(".video-content__source");
-    $(".button--video").click(function () {
-      video.setAttribute("controls", "controls");
+    var video = document.querySelector('.video-content__source');
+    $('.button--video').click(function () {
+      video.setAttribute("controls", "controls")
       video.play();
-      $(".video-content").addClass("isPlaying");
-    });
-    $(".close--modal").click(function () {
-      video.removeAttribute("controls", "controls");
+      $('.video-content').addClass('isPlaying');
+    })
+    $('.close--modal').click(function () {
+      video.removeAttribute("controls", "controls")
       video.pause();
-      $(".video-content").removeClass("isPlaying");
-    });
+      $('.video-content').removeClass('isPlaying');
+    })
   }
 
   function handleAlert() {
-    $(".btn-close--alert").click(function () {
-      $(".alert-section").addClass("active");
-    });
+    $('.btn-close--alert').click(function () {
+      $('.alert-section').addClass('active');
+    })
   }
   function handleFlash() {
-    $(".icon--close-flash").click(function () {
-      $(".flash").addClass("close");
-    });
+    $('.icon--close-flash').click(function () {
+      $('.flash').addClass('close');
+    })
   }
 
   handleFormStep();
@@ -79,26 +75,8 @@ $(document).ready(function () {
   handleReadMore();
   handleToggleNav();
   handleVideo();
-  handleAlert();
-  handleFlash();
-
-  //Highlow Temp and Humidity
-  $("#temp-tab").click(function () {
-    $("#tempHighLow").toggleClass("show");
-    $("#humidityHighLow").toggleClass("show");
-  });
-  $("#humidity-tab").click(function () {
-    $("#tempHighLow").toggleClass("show");
-    $("#humidityHighLow").toggleClass("show");
-  });
-
-  if ($(".js-select").length != undefined && $(".js-select").length > 0) {
-    $(".js-select").select2({
-      placeholder: "Eg. dedekysf93@gmail.com",
-      allowClear: true,
-      width: "100%",
-    });
-  }
+  handleAlert()
+  handleFlash()
 });
 
 // temp chart
