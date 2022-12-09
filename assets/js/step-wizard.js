@@ -29,10 +29,10 @@ $wz_doc.addEventListener("errorFormValidatorWizard", function (e) {
   alert("Some required field is empty or incorrectly formatted.");
 });
 $wz_doc.addEventListener("nextWizard", function (e) {
-  changeStep("next");
+  handleChangeStep("next");
 });
 $wz_doc.addEventListener("prevWizard", function (e) {
-  changeStep("prev");
+  handleChangeStep("prev");
 });
 
 let dots = document.querySelectorAll(".dot");
@@ -78,39 +78,39 @@ const updateProgressValue = (value, countStep) => {
   progressValue.innerHTML = `${value} of ${countStep}`;
 };
 
-//Update Step title
-const updateStepTitle = (value) => {
-  let title = document.querySelector(".wizard-step .wizard-step__title");
-  title.innerHTML = value;
+const updateStepTitle = (title) => {
+  let stepTitle = document.querySelector(".wizard-step .wizard-step__title");
+  stepTitle.innerHTML = title;
 };
 
 //Update Next Step Title
-const updateStepNextTitle = (value) => {
+const updateStepNextTitle = (title) => {
   let nextTitle = document.querySelector(
     ".wizard-step .wizard-step__next-step"
   );
-  value == ""
+  title == ""
     ? (nextTitle.innerHTML = "")
-    : (nextTitle.innerHTML = `Next : ${value}`);
+    : (nextTitle.innerHTML = `Next : ${title}`);
 };
 
 //Change Step Function "Next" and "Prev"
-function changeStep(value) {
+function handleChangeStep(step) {
   let currentStep = document.querySelector(
     ".wizard-content .wizard-step.active"
   );
 
   let targetStep;
-  if (value === "prev") {
+  if (step == null) return console.log("define target step with next or prev");
+  if (step === "prev") {
     targetStep = currentStep.previousElementSibling;
     updateStepNextTitle(currentStep.dataset.title);
-  } else if (value === "next") {
+  }
+
+  if (step === "next") {
     targetStep = currentStep.nextElementSibling;
     let nextStep = targetStep.nextElementSibling;
     let nextStepTitle = nextStep ? nextStep.dataset.title : "";
     updateStepNextTitle(nextStepTitle);
-  } else {
-    console.log("define target step with next or prev");
   }
 
   let targetTitle = targetStep.dataset.title;
