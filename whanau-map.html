@@ -26,7 +26,7 @@ Homes by Map</title>
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
     />
-    <link href="./assets/css/style-map.css" rel="stylesheet" />
+    <link href="./assets/css/style-map-optimize.css" rel="stylesheet" />
     <script src="./assets/js/vendor/jquery.min.js"></script>
     <script src="./assets/js/vendor/bootstrap.bundle.min.js"></script>
     <link
@@ -652,12 +652,18 @@ Homes by Map</title>
         function addCardContent(roomStatus) {
           return `
             <h6 class="text-danger fw-bold border-bottom pb-2">${title}</h6>
-            <p class="fw-bold border-bottom pb-1 text-center">${roomStatusDescription != "offline" ? "Home is " + roomStatusDescription : "Offline Sensor" }</p>
+            <p class="fw-bold border-bottom pb-1 text-center">${
+              roomStatusDescription != "offline"
+                ? "Home is " + roomStatusDescription
+                : "Offline Sensor"
+            }</p>
             <div class="status-bar-wrapper ${temperatureStatus}">
               <div class="status-bar"></div>
               <div class="position-absolute start-0 top-0 w-100 p-1">
                 <div class="status-bar-value">
-                  Temperature <span class="fw-bold ms-auto">${temperature}°C</span>
+                  Temperature <span class="fw-bold ms-auto">${
+                    temperature != null ? temperature : ""
+                  }°C</span>
                 </div>
               </div>
             </div>
@@ -665,7 +671,9 @@ Homes by Map</title>
               <div class="status-bar"></div>
               <div class="position-absolute start-0 top-0 w-100 p-1">
                 <div class="status-bar-value">
-                  Humidity <span class="fw-bold ms-auto">${humidity}%</span>
+                  Humidity <span class="fw-bold ms-auto">${
+                    humidity != null ? humidity : ""
+                  }%</span>
                 </div>
               </div>
             </div>
