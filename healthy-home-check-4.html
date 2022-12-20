@@ -230,7 +230,7 @@
                   <span class="step-number">1</span>
                   <span class="step-title">Heating</span>
                 </div>
-                <div class="step active" data-step="1">
+                <div class="step" data-step="1">
                   <span class="step-number">2</span>
                   <span class="step-title">Insulation</span>
                 </div>
@@ -238,7 +238,7 @@
                   <span class="step-number">3</span>
                   <span class="step-title">Ventilation</span>
                 </div>
-                <div class="step" data-step="3">
+                <div class="step active" data-step="3">
                   <span class="step-number">4</span>
                   <span class="step-title">Moisture &amp; drainage</span>
                 </div>
@@ -253,28 +253,30 @@
                   class="circular-progress"
                   style="
                     background: conic-gradient(
-                      rgb(214, 47, 14) 144deg,
+                      rgb(214, 47, 14) 296deg,
                       rgb(206, 212, 218) 0deg
                     );
                   "
                 >
-                  <div class="progress-value">2 of 5</div>
+                  <div class="progress-value">4 of 5</div>
                 </div>
                 <!-- data -->
                 <div class="step">
-                  <h5 class="step__title">Insulation</h5>
-                  <p class="step__next-step">Next : Ventilation</p>
+                  <h5 class="step__title">Moisture &amp; drainage</h5>
+                  <p class="step__next-step">Next : Draught stopping</p>
                 </div>
               </aside>
               <div class="form-content">
-                <div
-                  class="form-content--active"
-                >
-                  <h3 class="content-title">2. Insulation</h3>
+                <div class="form-content--active">
+                  <h3 class="content-title">4. Moisture ingress & drainage</h3>
                   <p class="content-subtitle">
-                    A well-insulated property can help reduce the chances of mould and other nasties taking hold.
+                    When it comes to moisture and damp, it’s often what you
+                    don’t see that can be the culprit. Making sure the water has
+                    a place to go, and that it can’t linger is an essential part
+                    of keeping your property dry.
                   </p>
-                  <div class="accordion mt-5 ms-2" id="accordion1">
+                  <h6 class="content-item">4.1 Deny the damp</h6>
+                  <div class="accordion ms-2" id="accordion1">
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingOne">
                         <button
@@ -285,11 +287,14 @@
                           aria-expanded="true"
                           aria-controls="collapseOne"
                         >
-                        2.1 Does you rental have Insulation in the celling?
+                          4.1.1 If your property has an enclosed space under the
+                          floor, does it have a ‘polythene ground moisture
+                          barrier’ installed or an existing acceptable
+                          alternative ground moisture barrier?
                           <i
                             class="fas fa-question-circle mx-2 align-self-baseline"
                             data-bs-toggle="tooltip"
-                            data-bs-title="You should be able to check this by just poking your head into the ceiling space. Insulation is usually made out of product like polyester, wool or fibreglass. If you can't get into the ceiling to check because it's either impracticable or unsafe, check out the information on the Tenancy Services website: https://www.tenancy.govt.nz/healthy-homes/insulation-standard"
+                            data-bs-title="A polythene ground moisture barrier sounds more technical than it is. It’s just there to block the moisture in the ground from rising into the property. If you have no existing ground moisture barrier and it is not reasonably practicable to install a polythene ground moisture barrier then you meet the standard until such time you can install a polythene ground moisture barrier."
                           ></i>
                         </button>
                       </h2>
@@ -464,10 +469,15 @@
                 </div>
               </div>
               <aside class="d-flex justify-content-end gap-3">
-                <a href="/healthy-home-check-1.html" class="btn btn-outline-danger">
+                <a
+                  href="/healthy-home-check-3.html"
+                  class="btn btn-outline-danger"
+                >
                   Back
                 </a>
-                <a href="/healthy-home-check-3.html" class="btn btn-danger">Next Step</a>
+                <a href="/healthy-home-check-5.html" class="btn btn-danger">
+                  Next Step
+                </a>
               </aside>
             </form>
           </div>

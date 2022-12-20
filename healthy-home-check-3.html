@@ -230,11 +230,11 @@
                   <span class="step-number">1</span>
                   <span class="step-title">Heating</span>
                 </div>
-                <div class="step active" data-step="1">
+                <div class="step" data-step="1">
                   <span class="step-number">2</span>
                   <span class="step-title">Insulation</span>
                 </div>
-                <div class="step" data-step="2">
+                <div class="step active" data-step="2">
                   <span class="step-number">3</span>
                   <span class="step-title">Ventilation</span>
                 </div>
@@ -253,28 +253,29 @@
                   class="circular-progress"
                   style="
                     background: conic-gradient(
-                      rgb(214, 47, 14) 144deg,
+                      rgb(214, 47, 14) 218deg,
                       rgb(206, 212, 218) 0deg
                     );
                   "
                 >
-                  <div class="progress-value">2 of 5</div>
+                  <div class="progress-value">3 of 5</div>
                 </div>
                 <!-- data -->
                 <div class="step">
-                  <h5 class="step__title">Insulation</h5>
-                  <p class="step__next-step">Next : Ventilation</p>
+                  <h5 class="step__title">Ventilation</h5>
+                  <p class="step__next-step">Next : Moisture &amp; drainage</p>
                 </div>
               </aside>
               <div class="form-content">
-                <div
-                  class="form-content--active"
-                >
-                  <h3 class="content-title">2. Insulation</h3>
+                <div class="form-content--active">
+                  <h3 class="content-title">3. Ventilation</h3>
                   <p class="content-subtitle">
-                    A well-insulated property can help reduce the chances of mould and other nasties taking hold.
+                    The ventilation standard is all about recognising that dry
+                    air is easier to heat and a well-ventilated rental is less
+                    likely to lead to property.
                   </p>
-                  <div class="accordion mt-5 ms-2" id="accordion1">
+                  <h6 class="content-item">3.1 Open it up</h6>
+                  <div class="accordion ms-2" id="accordion1">
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingOne">
                         <button
@@ -285,11 +286,12 @@
                           aria-expanded="true"
                           aria-controls="collapseOne"
                         >
-                        2.1 Does you rental have Insulation in the celling?
+                          3.1.1 Do all ‘liveable’ rooms have an openable window,
+                          door or skylight?
                           <i
                             class="fas fa-question-circle mx-2 align-self-baseline"
                             data-bs-toggle="tooltip"
-                            data-bs-title="You should be able to check this by just poking your head into the ceiling space. Insulation is usually made out of product like polyester, wool or fibreglass. If you can't get into the ceiling to check because it's either impracticable or unsafe, check out the information on the Tenancy Services website: https://www.tenancy.govt.nz/healthy-homes/insulation-standard"
+                            data-bs-title="Bedrooms, living rooms, dining rooms, and kitchens are considered ‘liveable’ rooms. So don’t worry about the hallway. Windows, doors and skylights should open to the outdoors and allow a healthy flow of air in and out of the property. In each room, the size of the openable windows, doors and skylights together must be at least 5% of the floor area of that room."
                           ></i>
                         </button>
                       </h2>
@@ -464,10 +466,15 @@
                 </div>
               </div>
               <aside class="d-flex justify-content-end gap-3">
-                <a href="/healthy-home-check-1.html" class="btn btn-outline-danger">
+                <a
+                  href="/healthy-home-check-2.html"
+                  class="btn btn-outline-danger"
+                >
                   Back
                 </a>
-                <a href="/healthy-home-check-3.html" class="btn btn-danger">Next Step</a>
+                <a href="/healthy-home-check-4.html" class="btn btn-danger">
+                  Next Step
+                </a>
               </aside>
             </form>
           </div>
