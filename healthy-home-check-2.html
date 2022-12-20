@@ -214,11 +214,11 @@
             <p class="text-secondary fw-light">Turanga Health</p>
             <form class="form-step" id="formWizard" style="display: block">
               <header class="form-header">
-                <div class="step active" data-step="0">
+                <div class="step" data-step="0">
                   <span class="step-number">1</span>
                   <span class="step-title">Heating</span>
                 </div>
-                <div class="step" data-step="1">
+                <div class="step active" data-step="1">
                   <span class="step-number">2</span>
                   <span class="step-title">Insulation</span>
                 </div>
@@ -235,38 +235,32 @@
                   <span class="step-title">Draught stopping</span>
                 </div>
               </header>
-              <header class="form-header-mobile">
+              <aside class="form-header-mobile">
                 <!-- progress -->
                 <div
                   class="circular-progress"
                   style="
                     background: conic-gradient(
-                      rgb(214, 47, 14) 72deg,
+                      rgb(214, 47, 14) 144deg,
                       rgb(206, 212, 218) 0deg
                     );
                   "
                 >
-                  <div class="progress-value">1 of 5</div>
+                  <div class="progress-value">2 of 5</div>
                 </div>
                 <!-- data -->
                 <div class="step">
-                  <h5 class="step__title">Heating</h5>
-                  <p class="step__next-step">Next : Insulation</p>
+                  <h5 class="step__title">Insulation</h5>
+                  <p class="step__next-step">Next : Ventilation</p>
                 </div>
-              </header>
+              </aside>
               <div class="form-content">
-                <!-- Step 1 -->
                 <div
                   class="form-content--active"
-                  data-title="Heating"
-                  data-step="0"
                 >
-                  <h3 class="content-title">1. Heating</h3>
+                  <h3 class="content-title">2. Insulation</h3>
                   <p class="content-subtitle">
-                    Your rental will need one or more direct heating fixed
-                    heating the main living room. Heating must be acceptable
-                    type, and must meet the minimum heating capacity, up to 18℃
-                    for your living room.
+                    A well-insulated property can help reduce the chances of mould and other nasties taking hold.
                   </p>
                   <div class="accordion mt-5 ms-2" id="accordion1">
                     <div class="accordion-item">
@@ -279,11 +273,11 @@
                           aria-expanded="true"
                           aria-controls="collapseOne"
                         >
-                          1. Does the ‘main living room’ have a heater in it?
+                        2.1 Does you rental have Insulation in the celling?
                           <i
                             class="fas fa-question-circle mx-2 align-self-baseline"
                             data-bs-toggle="tooltip"
-                            data-bs-title="If you have a rental property with more than one living room, only the largest living room needs to have a heating device under the healthy homes standards. A ‘living room’ includes any connected spaces that cannot be closed off from the room e.g., open-plan kitchen or dining room, hallway or staircase"
+                            data-bs-title="You should be able to check this by just poking your head into the ceiling space. Insulation is usually made out of product like polyester, wool or fibreglass. If you can't get into the ceiling to check because it's either impracticable or unsafe, check out the information on the Tenancy Services website: https://www.tenancy.govt.nz/healthy-homes/insulation-standard"
                           ></i>
                         </button>
                       </h2>
@@ -458,13 +452,10 @@
                 </div>
               </div>
               <aside class="d-flex justify-content-end gap-3">
-                <button class="btn btn-outline-danger" disabled="true">
+                <a href="/healthy-home-check-1.html" class="btn btn-outline-danger">
                   Back
-                </button>
-                <a href="/healthy-home-check-2.html" class="btn btn-danger">Next Step</a>
-                <button class="btn btn-danger" style="display: none">
-                  Save
-                </button>
+                </a>
+                <a href="/healthy-home-check-3.html" class="btn btn-danger">Next Step</a>
               </aside>
             </form>
           </div>
