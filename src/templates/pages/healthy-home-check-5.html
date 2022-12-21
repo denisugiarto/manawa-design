@@ -1,5 +1,5 @@
-{% set cssStyle = "style-optimize" %} {% set pageTitle = 'Healthy Home Check' %} {%
-import "../components/partials/webapp/aside.html" as aside %} {% import
+{% set cssStyle = "style-optimize" %} {% set pageTitle = 'Healthy Home Check' %}
+{% import "../components/partials/webapp/aside.html" as aside %} {% import
 "../components/cards.html" as card %} {% import "header-navigation.html" as
 HeaderNav %} {% extends "layout.html" %} {% block content %}
 
@@ -21,26 +21,46 @@ HeaderNav %} {% extends "layout.html" %} {% block content %}
             <p class="text-secondary fw-light">Turanga Health</p>
             <form class="form-step" id="formWizard" style="display: block">
               <header class="form-header">
-                <div class="step" data-step="0">
+                <a
+                  href="./healthy-home-check-1.html"
+                  class="step"
+                  data-step="0"
+                >
                   <span class="step-number">1</span>
                   <span class="step-title">Heating</span>
-                </div>
-                <div class="step" data-step="1">
+                </a>
+                <a
+                  href="./healthy-home-check-2.html"
+                  class="step"
+                  data-step="1"
+                >
                   <span class="step-number">2</span>
                   <span class="step-title">Insulation</span>
-                </div>
-                <div class="step" data-step="2">
+                </a>
+                <a
+                  href="./healthy-home-check-3.html"
+                  class="step"
+                  data-step="2"
+                >
                   <span class="step-number">3</span>
                   <span class="step-title">Ventilation</span>
-                </div>
-                <div class="step" data-step="3">
+                </a>
+                <a
+                  href="./healthy-home-check-4.html"
+                  class="step"
+                  data-step="3"
+                >
                   <span class="step-number">4</span>
                   <span class="step-title">Moisture &amp; drainage</span>
-                </div>
-                <div class="step active" data-step="4">
+                </a>
+                <a
+                  href="./healthy-home-check-5.html"
+                  class="step active"
+                  data-step="4"
+                >
                   <span class="step-number">5</span>
                   <span class="step-title">Draught stopping</span>
-                </div>
+                </a>
               </header>
               <aside class="form-header-mobile">
                 <!-- progress -->
