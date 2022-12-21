@@ -18,7 +18,7 @@ task("deploy", function () {
 const nunjucksRender = require("gulp-nunjucks-render");
 
 //css-task variable
-const sass = require('gulp-sass')(require('sass'));
+const sass = require('gulp-sass');
 const csso = require("gulp-csso");
 const autoprefixer = require("gulp-autoprefixer");
 

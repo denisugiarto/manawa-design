@@ -1,0 +1,143 @@
+/*! purgecss start ignore */
+.form-step {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  .form-header {
+    padding-top: 28px;
+    display: none;
+    text-align: center;
+    @include media-breakpoint-up(md) {
+      display: flex;
+    }
+    .step {
+      position: relative;
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+      transition: all 0.3s ease-in;
+      color: $danger;
+      line-height: 28px;
+      cursor: pointer;
+      &::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        top: -50%;
+        left: 50%;
+        z-index: 1;
+        transform: translateY(-50%);
+        background: $danger;
+      }
+      &:not(:last-child)::after {
+        width: 100%;
+      }
+      &-number {
+        color: $white;
+        width: 30px;
+        height: 30px;
+        border: 1px solid $danger;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 700;
+        background-color: $danger;
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        z-index: 3;
+      }
+      &-title {
+        font-size: 12px;
+      }
+      &.active {
+        color: $danger;
+        &::after {
+          background: $danger;
+        }
+        .step-number {
+          background-color: $white;
+          color: inherit;
+        }
+        & ~ {
+          .step {
+            color: $secondary;
+            &::after {
+              background: $gray-400;
+            }
+            .step-number {
+              background-color: $white;
+              border-color: $secondary;
+              color: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+  .form-header-mobile {
+    display: flex;
+    align-items: center;
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+    .circular-progress {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: conic-gradient($primary 3.6deg, $color-secondary-400 0deg);
+      transition: all 1s ease-in-out;
+      position: relative;
+      padding: 5px;
+      .progress-value {
+        background: $white;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        z-index: 100;
+        font-weight: 400;
+        font-size: 0.875rem;
+        border-radius: 50%;
+      }
+    }
+    .step {
+      margin-left: 15px;
+      &__title {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 32px;
+        margin-bottom: 0;
+      }
+      &__next-step {
+        color: $color-secondary-600;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.4;
+      }
+    }
+  }
+  .form-content {
+    padding: 2rem 0;
+
+    .content-title {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .content-subtitle {
+      margin-left: 24px;
+      color: $secondary;
+    }
+
+    .content-item {
+      @extend .border-bottom;
+      margin: 32px 0 20px 10px;
+      font-weight: 700;
+      padding-bottom: 10px;
+    }
+  }
+}
+/*! purgecss end ignore */

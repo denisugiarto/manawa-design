@@ -16,5 +16,8 @@
       opacity: 0.8;
     }
   }
+  .leaflet-popup-content {
+    min-width: 180px;
+  }
 }
 /*! purgecss end ignore */

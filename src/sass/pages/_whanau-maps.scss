@@ -1,3 +1,4 @@
+/*! purgecss start ignore */
 .logo-big {
   @extend .img-fluid;
 }
@@ -41,12 +42,19 @@
     position: relative;
     margin-top: 15px;
 
-    &.dry {
+    &.dry, &.hot {
       border-color: #f3d8dd;
       background-color: #eabbc3;
       .status-bar {
         background-color: $color-dry;
-      }
+      } 
+    }
+    &.offline {
+      border-color: #e1e1e1;
+      background-color: #BABABA;
+      .status-bar {
+        background-color: $color-offline;
+      } 
     }
     &.cold {
       border-color: #ccdaec;
@@ -95,3 +103,5 @@
     bottom: 15px;
   }
 }
+
+/*! purgecss end ignore */

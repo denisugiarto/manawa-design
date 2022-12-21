@@ -1,0 +1,419 @@
+{% set cssStyle = "style-optimize" %} {% set pageTitle = 'Healthy Home Check' %} {%
+import "../components/partials/webapp/aside.html" as aside %} {% import
+"../components/cards.html" as card %} {% import "header-navigation.html" as
+HeaderNav %} {% extends "layout.html" %} {% block content %}
+
+<header>{% include "partials/webapp/nav.html" %}</header>
+<main class="webapp webapp--whare-page">
+  {{ aside.whanau() }}
+  <section class="section">
+    <div class="container-fluid">
+      <div class="content">
+        {{ HeaderNav.default("index.html", "Back") }}
+        <div class="card m-0 mt-5 p-0">
+          <div class="card-body p-3 p-md-4">
+            <h3 class="fs-5 fw-bold mb-2">Rudi’s House</h3>
+            <p class="text-secondary fw-light mb-4">
+              <i class="fas fa-map-marker-alt me-1 fs-5"></i>Whitemore St,
+              Boulevard 99 O
+            </p>
+            <h6 class="fw-bold mb-1">Health Organization</h6>
+            <p class="text-secondary fw-light">Turanga Health</p>
+            <form class="form-step" id="formWizard" style="display: block">
+              <header class="form-header">
+                <div class="step" data-step="0">
+                  <span class="step-number">1</span>
+                  <span class="step-title">Heating</span>
+                </div>
+                <div class="step" data-step="1">
+                  <span class="step-number">2</span>
+                  <span class="step-title">Insulation</span>
+                </div>
+                <div class="step" data-step="2">
+                  <span class="step-number">3</span>
+                  <span class="step-title">Ventilation</span>
+                </div>
+                <div class="step active" data-step="3">
+                  <span class="step-number">4</span>
+                  <span class="step-title">Moisture &amp; drainage</span>
+                </div>
+                <div class="step" data-step="4">
+                  <span class="step-number">5</span>
+                  <span class="step-title">Draught stopping</span>
+                </div>
+              </header>
+              <aside class="form-header-mobile">
+                <!-- progress -->
+                <div
+                  class="circular-progress"
+                  style="
+                    background: conic-gradient(
+                      rgb(214, 47, 14) 296deg,
+                      rgb(206, 212, 218) 0deg
+                    );
+                  "
+                >
+                  <div class="progress-value">4 of 5</div>
+                </div>
+                <!-- data -->
+                <div class="step">
+                  <h5 class="step__title">Moisture &amp; drainage</h5>
+                  <p class="step__next-step">Next : Draught stopping</p>
+                </div>
+              </aside>
+              <div class="form-content">
+                <div class="form-content--active">
+                  <h3 class="content-title">4. Moisture ingress & drainage</h3>
+                  <p class="content-subtitle">
+                    When it comes to moisture and damp, it’s often what you
+                    don’t see that can be the culprit. Making sure the water has
+                    a place to go, and that it can’t linger is an essential part
+                    of keeping your property dry.
+                  </p>
+                  <h6 class="content-item">4.1 Deny the damp</h6>
+                  <div class="accordion ms-2" id="accordion1">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button
+                          class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseOne"
+                          aria-expanded="true"
+                          aria-controls="collapseOne"
+                        >
+                          4.1.1 If your property has an enclosed space under the
+                          floor, does it have a ‘polythene ground moisture
+                          barrier’ installed or an existing acceptable
+                          alternative ground moisture barrier?
+                          <i
+                            class="fas fa-question-circle mx-2 align-self-baseline"
+                            data-bs-toggle="tooltip"
+                            data-bs-title="A polythene ground moisture barrier sounds more technical than it is. It’s just there to block the moisture in the ground from rising into the property. If you have no existing ground moisture barrier and it is not reasonably practicable to install a polythene ground moisture barrier then you meet the standard until such time you can install a polythene ground moisture barrier."
+                          ></i>
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseOne"
+                        class="accordion-collapse collapse show"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#accordion1"
+                      >
+                        <div class="accordion-body">
+                          <label class="form-label mt-2" for="heatingPhoto">
+                            Photo
+                          </label>
+                          <!-- Image Preview List -->
+                          <div class="row row-cols-md-4 row-cols-2 g-2 mb-2">
+                            <div class="col">
+                              <div class="card card--image">
+                                <div class="card-body">
+                                  <p class="image-title text-center">Windows</p>
+                                  <a
+                                    role="button"
+                                    class="mb-1"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#viewPhotoModal"
+                                  >
+                                    <img
+                                      src="./assets/img/img-windows.webp"
+                                      class="image-wrapper"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div class="action-box">
+                                    <a role="button" class="btn__edit">Edit</a>
+                                    <a role="button" class="btn__remove">
+                                      Remove
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card card--image">
+                                <div class="card-body">
+                                  <p class="image-title text-center">Windows</p>
+                                  <a
+                                    role="button"
+                                    class="mb-1"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#viewPhotoModal"
+                                  >
+                                    <img
+                                      src="./assets/img/img-windows.webp"
+                                      class="image-wrapper"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div class="action-box">
+                                    <a role="button" class="btn__edit">Edit</a>
+                                    <a role="button" class="btn__remove">
+                                      Remove
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card card--image">
+                                <div class="card-body">
+                                  <p class="image-title text-center">Windows</p>
+                                  <a
+                                    role="button"
+                                    class="mb-1"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#viewPhotoModal"
+                                  >
+                                    <img
+                                      src="./assets/img/img-windows.webp"
+                                      class="image-wrapper"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div class="action-box">
+                                    <a role="button" class="btn__edit">Edit</a>
+                                    <a role="button" class="btn__remove">
+                                      Remove
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card card--image">
+                                <div class="card-body">
+                                  <p class="image-title text-center">Windows</p>
+                                  <a
+                                    role="button"
+                                    class="mb-1"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#viewPhotoModal"
+                                  >
+                                    <img
+                                      src="./assets/img/img-windows.webp"
+                                      class="image-wrapper"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div class="action-box">
+                                    <a role="button" class="btn__edit">Edit</a>
+                                    <a role="button" class="btn__remove">
+                                      Remove
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="card card--image">
+                                <div class="card-body">
+                                  <p class="image-title text-center">Windows</p>
+                                  <a
+                                    role="button"
+                                    class="mb-1"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#viewPhotoModal"
+                                  >
+                                    <img
+                                      src="./assets/img/img-windows.webp"
+                                      class="image-wrapper"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div class="action-box">
+                                    <a role="button" class="btn__edit">Edit</a>
+                                    <a role="button" class="btn__remove">
+                                      Remove
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <input
+                            type="file"
+                            class="visually-hidden"
+                            name="heatingPhoto"
+                            id="heatingPhoto"
+                            accept="image/*"
+                            multiple=""
+                          />
+                          <div class="ms-2">
+                            <button
+                              type="button"
+                              class="btn btn-outline-primary"
+                              data-bs-toggle="modal"
+                              data-bs-target="#uploadPhotoModal"
+                            >
+                              Add Photo
+                            </button>
+                          </div>
+                          <p class="form-desc">
+                            Take photos minimum 3 maximum 5
+                          </p>
+                          <textarea
+                            name="heatingComment"
+                            class="form-control mt-2"
+                            placeholder="Enter your comments"
+                          ></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <aside class="d-flex justify-content-end gap-3">
+                <a
+                  href="/healthy-home-check-3.html"
+                  class="btn btn-outline-danger"
+                >
+                  Back
+                </a>
+                <a href="/healthy-home-check-5.html" class="btn btn-danger">
+                  Next Step
+                </a>
+              </aside>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Modal Upload Photo -->
+<div
+  class="modal fade"
+  id="uploadPhotoModal"
+  tabindex="-1"
+  aria-labelledby="uploadPhotoModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="uploadPhotoModalLabel">Upload Photo</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <select
+          type="text"
+          name="photoName"
+          class="form-control"
+          placeholder="Enter title"
+          required
+        >
+          <option value="sitting room">Sitting room</option>
+          <option value="bathroom">Bathroom</option>
+          <option value="kitchen">Kitchen</option>
+        </select>
+        <input
+          type="file"
+          name="photoFile"
+          id="photoFile"
+          class="visually-hidden"
+          accept="image/*"
+          onchange="imagePreview(this, 'photoPreview', 'btn--select-file');"
+        />
+        <div class="mt-4 text-center">
+          <div class="image-preview__wrapper">
+            <img id="photoPreview" alt="" class="image-preview" />
+          </div>
+          <label
+            id="btnPhotoFile"
+            for="photoFile"
+            class="btn btn--select-file d-md-none me-3 me-md-0"
+          >
+            <i class="fas fa-plus"></i><br />
+            Camera
+          </label>
+          <label id="btnPhotoFile" for="photoFile" class="btn btn--select-file">
+            <i class="fas fa-plus"></i><br />
+            <span class="d-none d-md-inline">Choose File</span>
+            <span class="d-md-none">Galery</span>
+          </label>
+        </div>
+        <div class="mt-4 text-center">
+          <button id="btn-upload" type="button" class="btn btn-primary px-5">
+            Upload
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal View Photo -->
+<div
+  class="modal fade"
+  id="viewPhotoModal"
+  tabindex="-1"
+  aria-labelledby="viewPhotoModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="viewPhotoModalLabel">Windows</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="./assets/img/img-windows.webp" alt="" class="img-fluid" />
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block script %}
+<script src="./assets/js/step-wizard.js"></script>
+<script>
+  //Modal Image handler
+  function imagePreview(input, imgId, btnInput) {
+    const reader = new FileReader();
+    const btnInputs = document.getElementsByClassName(btnInput);
+    const img = document.getElementById(imgId);
+    reader.onload = (e) => {
+      img.src = e.target.result;
+    };
+    console.log(btnInputs);
+    if (input.files && input.files[0]) {
+      const f = input.files[0];
+      reader.readAsDataURL(f);
+      setTimeout(() => {
+        document.getElementById("uploadProgress").ariaValueNow = 100;
+        document.getElementById("uploadProgress").style.width = "100%";
+        setTimeout(() => {
+          btnInputs[1].style.display = "none";
+          img.parentElement.classList.add("show");
+        }, 1000);
+      }, 1000);
+      btnInputs[0].style.display = "none";
+      btnInputs[1].innerHTML = `
+      <span class="fw-normal">Uploading</span> <br/> <br/>
+      <div class="progress progress--sm mt-2">
+        <div id="uploadProgress" class="progress-bar bg-info" role="progressbar" aria-label="upload progress" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>`;
+    }
+  }
+  // End Image Handler
+
+  //ChoiceJs
+  const selectJs = document.getElementsByName("photoName")[0];
+  const selectTitle = new Choices(selectJs, {});
+</script>
+{% endblock %}

@@ -224,29 +224,58 @@
             </p>
             <h6 class="fw-bold mb-1">Health Organization</h6>
             <p class="text-secondary fw-light">Turanga Health</p>
-            <form class="wizard mt-5" id="formWizard">
-              <aside class="wizard-nav--mobile">
+            <form class="form-step" id="formWizard" style="display: block">
+              <header class="form-header">
+                <div class="step" data-step="0">
+                  <span class="step-number">1</span>
+                  <span class="step-title">Heating</span>
+                </div>
+                <div class="step" data-step="1">
+                  <span class="step-number">2</span>
+                  <span class="step-title">Insulation</span>
+                </div>
+                <div class="step active" data-step="2">
+                  <span class="step-number">3</span>
+                  <span class="step-title">Ventilation</span>
+                </div>
+                <div class="step" data-step="3">
+                  <span class="step-number">4</span>
+                  <span class="step-title">Moisture &amp; drainage</span>
+                </div>
+                <div class="step" data-step="4">
+                  <span class="step-number">5</span>
+                  <span class="step-title">Draught stopping</span>
+                </div>
+              </header>
+              <aside class="form-header-mobile">
                 <!-- progress -->
-                <div class="circular-progress">
-                  <div class="progress-value">1 of 5</div>
+                <div
+                  class="circular-progress"
+                  style="
+                    background: conic-gradient(
+                      rgb(214, 47, 14) 218deg,
+                      rgb(206, 212, 218) 0deg
+                    );
+                  "
+                >
+                  <div class="progress-value">3 of 5</div>
                 </div>
                 <!-- data -->
-                <div class="wizard-step">
-                  <h5 class="wizard-step__title">Heating</h5>
-                  <p class="wizard-step__next-step">Next : Insulation</p>
+                <div class="step">
+                  <h5 class="step__title">Ventilation</h5>
+                  <p class="step__next-step">Next : Moisture &amp; drainage</p>
                 </div>
               </aside>
-              <aside class="wizard-content">
-                <!-- Step 1 -->
-                <div class="wizard-step" data-title="Heating">
-                  <h3 class="wizard-step__title">1. Heating</h3>
-                  <p class="wizard-step__desc">
-                    Your rental will need one or more direct heating fixed
-                    heating the main living room. Heating must be acceptable
-                    type, and must meet the minimum heating capacity, up to 18℃
-                    for your living room.
+              <div class="form-content">
+                <div class="form-content--active">
+                  <h3 class="content-title">3. Ventilation</h3>
+                  <p class="content-subtitle">
+                    The ventilation standard is all about recognising that dry
+                    air is easier to heat and a well-ventilated rental is less
+                    likely to lead to property.
                   </p>
-                  <div class="accordion mt-5 ms-2" id="accordion1">
+                  <h6 class="content-item">3.1 Open it up</h6>
+                  <div class="accordion ms-2" id="accordion1">
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingOne">
                         <button
@@ -257,11 +286,12 @@
                           aria-expanded="true"
                           aria-controls="collapseOne"
                         >
-                          1. Does the ‘main living room’ have a heater in it?
+                          3.1.1 Do all ‘liveable’ rooms have an openable window,
+                          door or skylight?
                           <i
                             class="fas fa-question-circle mx-2 align-self-baseline"
                             data-bs-toggle="tooltip"
-                            data-bs-title="If you have a rental property with more than one living room, only the largest living room needs to have a heating device under the healthy homes standards. A ‘living room’ includes any connected spaces that cannot be closed off from the room e.g., open-plan kitchen or dining room, hallway or staircase"
+                            data-bs-title="Bedrooms, living rooms, dining rooms, and kitchens are considered ‘liveable’ rooms. So don’t worry about the hallway. Windows, doors and skylights should open to the outdoors and allow a healthy flow of air in and out of the property. In each room, the size of the openable windows, doors and skylights together must be at least 5% of the floor area of that room."
                           ></i>
                         </button>
                       </h2>
@@ -409,7 +439,7 @@
                             name="heatingPhoto"
                             id="heatingPhoto"
                             accept="image/*"
-                            multiple
+                            multiple=""
                           />
                           <div class="ms-2">
                             <button
@@ -434,285 +464,17 @@
                     </div>
                   </div>
                 </div>
-
-                <div class="wizard-step" data-title="Insulation">
-                  <h3 class="wizard-step__title">2. Insulation</h3>
-                  <p class="wizard-step__desc">
-                    A well-insulated property can help reduce the chances of
-                    mould and other nasties taking hold.
-                  </p>
-                  <div class="accordion mt-5 ms-2" id="accordion2">
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingOne">
-                        <button
-                          class="accordion-button"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseOne"
-                          aria-expanded="true"
-                          aria-controls="collapseOne"
-                        >
-                          2.1 Does you rental have Insulation in the celling?
-                          <i
-                            class="fas fa-question-circle mx-2 align-self-baseline"
-                            data-bs-toggle="tooltip"
-                            data-bs-title="You should be able to check this by just poking your head into the ceiling space. Insulation is usually made out of product like polyester, wool or fibreglass. If you can't get into the ceiling to check because it's either impracticable or unsafe, check out the information on the Tenancy Services website: https://www.tenancy.govt.nz/healthy-homes/insulation-standard"
-                          ></i>
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseOne"
-                        class="accordion-collapse collapse show"
-                        aria-labelledby="headingOne"
-                        data-bs-parent="#accordion2"
-                      >
-                        <div class="accordion-body">
-                          <label class="form-label mt-2" for="insulationPhoto">
-                            Photo
-                          </label>
-                          <input
-                            type="file"
-                            class="visually-hidden"
-                            name="insulationPhoto"
-                            id="insulationPhoto"
-                            accept="image/*"
-                            multiple
-                          />
-                          <div class="ms-2">
-                            <label
-                              for="insulationPhoto"
-                              class="btn btn-outline-primary"
-                            >
-                              Add Photo
-                            </label>
-                          </div>
-                          <p class="form-desc">
-                            Take photos minimum 3 maximum 5
-                          </p>
-                          <textarea
-                            name="insulationComment"
-                            class="form-control mt-2"
-                            id="descCampaign"
-                            placeholder="Enter your comments"
-                          ></textarea>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="wizard-step" data-title="Ventilation">
-                  <h3 class="wizard-step__title">3. Ventilation</h3>
-                  <p class="wizard-step__desc">
-                    The ventilation standard is all about recognising that dry
-                    air is easier to heat and a well-ventilated rental is less
-                    likely to lead to property.
-                  </p>
-                  <h6 class="wizard-step__item">3.1 Open it up</h6>
-                  <div class="accordion ms-2" id="accordion3">
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingOne">
-                        <button
-                          class="accordion-button"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseOne"
-                          aria-expanded="true"
-                          aria-controls="collapseOne"
-                        >
-                          3.1.1 Do all ‘liveable’ rooms have an openable window,
-                          door or skylight?
-                          <i
-                            class="fas fa-question-circle mx-2 align-self-baseline"
-                            data-bs-toggle="tooltip"
-                            data-bs-title="Bedrooms, living rooms, dining rooms, and kitchens are considered ‘liveable’ rooms. So don’t worry about the hallway. Windows, doors and skylights should open to the outdoors and allow a healthy flow of air in and out of the property. In each room, the size of the openable windows, doors and skylights together must be at least 5% of the floor area of that room."
-                          ></i>
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseOne"
-                        class="accordion-collapse collapse show"
-                        aria-labelledby="headingOne"
-                        data-bs-parent="#accordion3"
-                      >
-                        <div class="accordion-body">
-                          <label class="form-label mt-2" for="ventilationPhoto">
-                            Photo
-                          </label>
-                          <input
-                            type="file"
-                            class="visually-hidden"
-                            name="ventilationPhoto"
-                            id="ventilationPhoto"
-                            accept="image/*"
-                            multiple
-                          />
-                          <div class="ms-2">
-                            <label
-                              for="ventilationPhoto"
-                              class="btn btn-outline-primary"
-                            >
-                              Add Photo
-                            </label>
-                          </div>
-                          <p class="form-desc">
-                            Take photos minimum 3 maximum 5
-                          </p>
-                          <textarea
-                            name="ventilationComment"
-                            class="form-control mt-2"
-                            id="descCampaign"
-                            placeholder="Enter your comments"
-                          ></textarea>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="wizard-step" data-title="Moisture & drainage">
-                  <h3 class="wizard-step__title">
-                    4. Moisture ingress & drainage
-                  </h3>
-                  <p class="wizard-step__desc">
-                    When it comes to moisture and damp, it’s often what you
-                    don’t see that can be the culprit. Making sure the water has
-                    a place to go, and that it can’t linger is an essential part
-                    of keeping your property dry.
-                  </p>
-                  <h6 class="wizard-step__item">4.1 Deny the damp</h6>
-                  <div class="accordion mt-5 ms-2" id="accordion4">
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingOne">
-                        <button
-                          class="accordion-button"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseOne"
-                          aria-expanded="true"
-                          aria-controls="collapseOne"
-                        >
-                          4.1.1 If your property has an enclosed space under the
-                          floor, does it have a ‘polythene ground moisture
-                          barrier’ installed or an existing acceptable
-                          alternative ground moisture barrier?
-                          <i
-                            class="fas fa-question-circle mx-2 align-self-baseline"
-                            data-bs-toggle="tooltip"
-                            data-bs-title="A polythene ground moisture barrier sounds more technical than it is. It’s just there to block the moisture in the ground from rising into the property. If you have no existing ground moisture barrier and it is not reasonably practicable to install a polythene ground moisture barrier then you meet the standard until such time you can install a polythene ground moisture barrier."
-                          ></i>
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseOne"
-                        class="accordion-collapse collapse show"
-                        aria-labelledby="headingOne"
-                        data-bs-parent="#accordion4"
-                      >
-                        <div class="accordion-body">
-                          <label class="form-label mt-2" for="moistDrainPhoto">
-                            Photo
-                          </label>
-                          <input
-                            type="file"
-                            class="visually-hidden"
-                            name="moistDrainPhoto"
-                            id="moistDrainPhoto"
-                            accept="image/*"
-                            multiple
-                          />
-                          <div class="ms-2">
-                            <label
-                              for="moistDrainPhoto"
-                              class="btn btn-outline-primary"
-                            >
-                              Add Photo
-                            </label>
-                          </div>
-                          <p class="form-desc">
-                            Take photos minimum 3 maximum 5
-                          </p>
-                          <textarea
-                            name="moistDrainComment"
-                            class="form-control mt-2"
-                            id="descCampaign"
-                            placeholder="Enter your comments"
-                          ></textarea>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="wizard-step" data-title="Draught stopping">
-                  <h3 class="wizard-step__title">5. Draught Stopping</h3>
-                  <p class="wizard-step__desc">
-                    A draught free home costs less to heat and will keep your
-                    tenants warm and happy. Become a draught detective and keep
-                    the breeze outside. As a rule of thumb, gaps or holes with a
-                    width greater than 3mm that let air into or out of the home
-                    will usually require blocking. This means that if the edge
-                    of a New Zealand $2 dollar coin can fit in the gap, then the
-                    gap needs to be sealed.
-                  </p>
-                  <div class="accordion mt-5 ms-2" id="accordion5">
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingOne">
-                        <button
-                          class="accordion-button"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseOne"
-                          aria-expanded="true"
-                          aria-controls="collapseOne"
-                        >
-                          5.1. Can you feel a noticeable draught from an
-                          ‘unreasonable’ gap or hole in a wall, ceiling, window,
-                          skylight, floor or door?
-                          <i
-                            class="fas fa-question-circle mx-2 align-self-baseline"
-                            data-bs-toggle="tooltip"
-                            data-bs-title="A draught free home costs less to heat and will keep your tenants warm and happy. Become a draught detective and keep the breeze outside. As a rule of thumb, gaps or holes with a width greater than 3mm that let air into or out of the home will usually require blocking. This means that if the edge of a New Zealand $2 dollar coin can fit in the gap, then the gap needs to be sealed."
-                          ></i>
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseOne"
-                        class="accordion-collapse collapse show"
-                        aria-labelledby="headingOne"
-                        data-bs-parent="#accordion5"
-                      >
-                        <div class="accordion-body">
-                          <label class="form-label mt-2" for="draughtPhoto">
-                            Photo
-                          </label>
-                          <input
-                            type="file"
-                            class="visually-hidden"
-                            name="draughtPhoto"
-                            id="draughtPhoto"
-                            accept="image/*"
-                            multiple
-                          />
-                          <div class="ms-2">
-                            <label
-                              for="draughtPhoto"
-                              class="btn btn-outline-primary"
-                            >
-                              Add Photo
-                            </label>
-                          </div>
-                          <p class="form-desc">
-                            Take photos minimum 3 maximum 5
-                          </p>
-                          <textarea
-                            name="draughtComment"
-                            class="form-control mt-2"
-                            id="descCampaign"
-                            placeholder="Enter your comments"
-                          ></textarea>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              </div>
+              <aside class="d-flex justify-content-end gap-3">
+                <a
+                  href="/healthy-home-check-2.html"
+                  class="btn btn-outline-danger"
+                >
+                  Back
+                </a>
+                <a href="/healthy-home-check-4.html" class="btn btn-danger">
+                  Next Step
+                </a>
               </aside>
             </form>
           </div>

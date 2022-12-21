@@ -18,12 +18,12 @@
   "components/button", "components/card", "components/carousel",
   "components/changes", "components/chart", "components/datepicker",
   "components/dropdown", "components/flash", "components/fontello",
-  "components/form", "components/header-navigation", "components/high-low", "components/icon",
-  "components/image-preview", "components/input", "components/modal",
-  "components/nav", "components/notification", "components/navbar",
-  "components/progress-bar", "components/select2", "components/sidenav",
-  "components/swiper", "components/toggle-hide-show", "components/tooltip",
-  "components/wizard";
+  "components/form", "components/form-step.scss", "components/header-navigation",
+  "components/high-low", "components/icon", "components/image-preview",
+  "components/input", "components/modal", "components/nav",
+  "components/notification", "components/navbar", "components/progress-bar",
+  "components/select2", "components/sidenav", "components/swiper",
+  "components/toggle-hide-show", "components/tooltip";
 
 // 6. Page-specific styles
 @import "pages/home", "pages/installation", "pages/outside-temp", "pages/report",
