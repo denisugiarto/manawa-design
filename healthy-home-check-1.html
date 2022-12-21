@@ -68,11 +68,11 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script
+    <!-- <script
       src="https://cdn.jsdelivr.net/gh/AdrianVillamayor/Wizard-JS@1.8/src/wizard.min.js"
       integrity="sha256-vVk0T+7qGD5K2sLJywOcqKmnJerAFRaOI1FWJNH3YYg="
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
   </head>
   
   <body>
@@ -226,23 +226,43 @@
             <p class="text-secondary fw-light">Turanga Health</p>
             <form class="form-step" id="formWizard" style="display: block">
               <header class="form-header">
-                <a href="./healthy-home-check-1.html" class="step active" data-step="0">
+                <a
+                  href="./healthy-home-check-1.html"
+                  class="step active"
+                  data-step="0"
+                >
                   <span class="step-number">1</span>
                   <span class="step-title">Heating</span>
                 </a>
-                <a href="./healthy-home-check-2.html" class="step" data-step="1">
+                <a
+                  href="./healthy-home-check-2.html"
+                  class="step"
+                  data-step="1"
+                >
                   <span class="step-number">2</span>
                   <span class="step-title">Insulation</span>
                 </a>
-                <a href="./healthy-home-check-3.html" class="step" data-step="2">
+                <a
+                  href="./healthy-home-check-3.html"
+                  class="step"
+                  data-step="2"
+                >
                   <span class="step-number">3</span>
                   <span class="step-title">Ventilation</span>
                 </a>
-                <a href="./healthy-home-check-4.html" class="step" data-step="3">
+                <a
+                  href="./healthy-home-check-4.html"
+                  class="step"
+                  data-step="3"
+                >
                   <span class="step-number">4</span>
                   <span class="step-title">Moisture &amp; drainage</span>
                 </a>
-                <a href="./healthy-home-check-5.html" class="step" data-step="4">
+                <a
+                  href="./healthy-home-check-5.html"
+                  class="step"
+                  data-step="4"
+                >
                   <span class="step-number">5</span>
                   <span class="step-title">Draught stopping</span>
                 </a>
@@ -473,7 +493,9 @@
                 <button class="btn btn-outline-primary" disabled="true">
                   Back
                 </button>
-                <a href="/healthy-home-check-2.html" class="btn btn-primary">Next Step</a>
+                <a href="/healthy-home-check-2.html" class="btn btn-primary"
+                  >Next Step</a
+                >
                 <button class="btn btn-primary" style="display: none">
                   Save
                 </button>
@@ -586,7 +608,6 @@
  
       <script src="./assets/js/main.js"></script>
       
-<script src="./assets/js/step-wizard.js"></script>
 <script>
   //Modal Image handler
   function imagePreview(input, imgId, btnInput) {
