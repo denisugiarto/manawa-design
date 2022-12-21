@@ -48,8 +48,8 @@ HeaderNav %} {% extends "layout.html" %} {% block content %}
                   class="circular-progress"
                   style="
                     background: conic-gradient(
-                      rgb(214, 47, 14) 72deg,
-                      rgb(206, 212, 218) 0deg
+                      var(--bs-primary) 72deg,
+                      var(--bs-gray-400) 0deg
                     );
                   "
                 >
@@ -265,11 +265,11 @@ HeaderNav %} {% extends "layout.html" %} {% block content %}
                 </div>
               </div>
               <aside class="d-flex justify-content-end gap-3">
-                <button class="btn btn-outline-danger" disabled="true">
+                <button class="btn btn-outline-primary" disabled="true">
                   Back
                 </button>
-                <a href="/healthy-home-check-2.html" class="btn btn-danger">Next Step</a>
-                <button class="btn btn-danger" style="display: none">
+                <a href="/healthy-home-check-2.html" class="btn btn-primary">Next Step</a>
+                <button class="btn btn-primary" style="display: none">
                   Save
                 </button>
               </aside>

@@ -16,7 +16,7 @@
       flex-grow: 1;
       max-width: 100%;
       transition: all 0.3s ease-in;
-      color: $danger;
+      color: $primary;
       line-height: 28px;
       cursor: pointer;
       &::after {
@@ -27,7 +27,7 @@
         left: 50%;
         z-index: 1;
         transform: translateY(-50%);
-        background: $danger;
+        background: $primary;
       }
       &:not(:last-child)::after {
         width: 100%;
@@ -36,11 +36,11 @@
         color: $white;
         width: 30px;
         height: 30px;
-        border: 1px solid $danger;
+        border: 1px solid $primary;
         font-size: 20px;
         line-height: 28px;
         font-weight: 700;
-        background-color: $danger;
+        background-color: $primary;
         position: absolute;
         top: -30px;
         left: 50%;
@@ -52,9 +52,9 @@
         font-size: 12px;
       }
       &.active {
-        color: $danger;
+        color: $primary;
         &::after {
-          background: $danger;
+          background: $primary;
         }
         .step-number {
           background-color: $white;
