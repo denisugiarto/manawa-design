@@ -18,7 +18,7 @@ task("deploy", function () {
 const nunjucksRender = require("gulp-nunjucks-render");
 
 //css-task variable
-const sass = require('gulp-sass');
+const sass = require("gulp-sass");
 const csso = require("gulp-csso");
 const autoprefixer = require("gulp-autoprefixer");
 
@@ -84,7 +84,7 @@ function cssOptimize() {
       purgecss({
         content: ["./site/**/*.html"],
         safelist: [
-          "wizard, next, finish, prev, btn-outline-primary, btn-primary",
+          "modal-backdrop",
         ],
       })
     )
