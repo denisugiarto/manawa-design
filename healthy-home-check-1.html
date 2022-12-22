@@ -342,7 +342,7 @@
                                     data-bs-target="#viewPhotoModal"
                                   >
                                     <img
-                                      src="./assets/img/img-windows.webp"
+                                      src="./assets/img/poster.webp"
                                       class="image-wrapper"
                                       alt=""
                                     />
@@ -392,7 +392,7 @@
                                     data-bs-target="#viewPhotoModal"
                                   >
                                     <img
-                                      src="./assets/img/img-windows.webp"
+                                      src="./assets/img/sleep.webp"
                                       class="image-wrapper"
                                       alt=""
                                     />
@@ -493,12 +493,9 @@
                 <button class="btn btn-outline-primary" disabled="true">
                   Back
                 </button>
-                <a href="/healthy-home-check-2.html" class="btn btn-primary"
-                  >Next Step</a
+                <a href="/healthy-home-check-2.html" class="btn btn-primary">
+                  Next Step</a
                 >
-                <button class="btn btn-primary" style="display: none">
-                  Save
-                </button>
               </aside>
             </form>
           </div>
@@ -507,6 +504,7 @@
     </div>
   </section>
 </main>
+
 
 <!-- Modal Upload Photo -->
 <div
@@ -550,8 +548,12 @@
           onchange="imagePreview(this, 'photoPreview', 'btn--select-file');"
         />
         <div class="mt-4 text-center">
-          <div class="image-preview__wrapper">
+          <div class="image-preview__wrapper position-relative">
             <img id="photoPreview" alt="" class="image-preview" />
+            <label class="action__change" for="photoFile">
+              Change <br />
+              Photo
+            </label>
           </div>
           <label
             id="btnPhotoFile"
@@ -576,8 +578,7 @@
     </div>
   </div>
 </div>
-
-<!-- Modal View Photo -->
+ 
 <div
   class="modal fade"
   id="viewPhotoModal"
@@ -604,8 +605,7 @@
     </div>
   </div>
 </div>
-
- 
+  
       <script src="./assets/js/main.js"></script>
       
 <script>
