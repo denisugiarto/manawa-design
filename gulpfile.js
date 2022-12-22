@@ -83,9 +83,7 @@ function cssOptimize() {
     .pipe(
       purgecss({
         content: ["./site/**/*.html"],
-        safelist: [
-          "modal-backdrop",
-        ],
+        safelist: ["modal-backdrop", "tooltip", "tooltip-inner"],
       })
     )
     .pipe(rename("style-optimize.css"))
