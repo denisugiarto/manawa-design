@@ -504,6 +504,7 @@
   </section>
 </main>
 
+
 <!-- Modal Upload Photo -->
 <div
   class="modal fade"
@@ -546,8 +547,12 @@
           onchange="imagePreview(this, 'photoPreview', 'btn--select-file');"
         />
         <div class="mt-4 text-center">
-          <div class="image-preview__wrapper">
+          <div class="image-preview__wrapper position-relative">
             <img id="photoPreview" alt="" class="image-preview" />
+            <label class="action__change" for="photoFile">
+              Change <br />
+              Photo
+            </label>
           </div>
           <label
             id="btnPhotoFile"
@@ -572,8 +577,7 @@
     </div>
   </div>
 </div>
-
-<!-- Modal View Photo -->
+ 
 <div
   class="modal fade"
   id="viewPhotoModal"
@@ -600,8 +604,7 @@
     </div>
   </div>
 </div>
-
- 
+  
       <script src="./assets/js/main.js"></script>
       
 <script>
