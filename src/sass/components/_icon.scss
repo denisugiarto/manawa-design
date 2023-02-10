@@ -96,6 +96,11 @@
       background-color: $color-damp;
     }
   }
+  &--xs {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+  }
 }
 
 .fa-arrow-up {
