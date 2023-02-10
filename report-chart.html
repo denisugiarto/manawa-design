@@ -206,52 +206,44 @@
   <section class="section">
     <div class="container-fluid">
       <div class="content">
-        <div class="card">
-          <div class="card-body">
-            <h3 class="fw-bold fs-4 mb-5">
-              Humidity Tairawhiti rooms vs Tairawhiti Covid cases
-            </h3>
-            <p class="mb-3 fs-8">Period 2022</p>
-            <div class="chart-wrapper">
-              <canvas id="billChart"></canvas>
-              <div class="legends legends--small">
-                <div class="row mx-6">
-                  <div class="col">
-                    <p>
-                      <span
-                        class="me-1 border border-success border-2 d-inline-block"
-                        style="width: 10px; height: 10px"
-                      ></span>
-                      All Tairawhiti rooms
-                    </p>
-                  </div>
-                  <div class="col">
-                    <p>
-                      <span
-                        class="me-1 border border-danger border-2 d-inline-block"
-                        style="width: 8px; height: 8px"
-                      ></span>
-                      All bedrooms
-                    </p>
-                  </div>
-                  <div class="col">
-                    <p>
-                      <span
-                        class="me-1 border border-dark-blue border-2 d-inline-block"
-                        style="width: 8px; height: 8px"
-                      ></span>
-                      All lounge's
-                    </p>
-                  </div>
-                  <div class="col">
-                    <p>
-                      <span
-                        class="me-1 bg-light-blue border-2 d-inline-block"
-                        style="width: 8px; height: 8px"
-                      ></span>
-                      Tairawhiti COVID cases
-                    </p>
-                  </div>
+        <div class="card flex-column p-2 p-md-y-4 p-md-x-3 p-lg-4">
+          <h3 class="fw-bold fs-6 fs-md-4 mb-3 mb-md-5">
+            Humidity Tairawhiti rooms vs Tairawhiti Covid cases
+          </h3>
+          <p class="mb-2 mb-md-3 fs-7">Period 2022</p>
+          <div class="chart-wrapper pb-lg-5">
+            <canvas id="covidHumidityChart"></canvas>
+            <div class="legends legends--small bg-white py-1">
+              <div class="row gy-1 row-cols-2 row-cols-md-4 mx-0 mx-md-6">
+                <div class="col">
+                  <p>
+                    <span
+                      class="icon--xs me-1 border border-success border-2"
+                    ></span>
+                    All Tairawhiti rooms
+                  </p>
+                </div>
+                <div class="col">
+                  <p>
+                    <span
+                      class="icon--xs me-1 border border-danger border-2"
+                    ></span>
+                    All bedrooms
+                  </p>
+                </div>
+                <div class="col">
+                  <p>
+                    <span
+                      class="icon--xs me-1 border border-dark-blue border-2"
+                    ></span>
+                    All lounge's
+                  </p>
+                </div>
+                <div class="col">
+                  <p>
+                    <span class="icon--xs me-1 bg-light-blue border-2"></span>
+                    Tairawhiti COVID cases
+                  </p>
                 </div>
               </div>
             </div>
@@ -263,6 +255,8 @@
 </main>
  
       <script src="./assets/js/main.js"></script>
-       
+      
+<script src="./assets/js/covidHumidityChart.js"></script>
+
   </body>
 </html>
