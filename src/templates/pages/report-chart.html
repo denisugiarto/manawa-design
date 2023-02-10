@@ -1,0 +1,66 @@
+{% set cssStyle = "style" %} {% set pageTitle = 'Report Chart' %} {% import
+"../components/partials/webapp/aside.html" as aside %} {% import
+"../components/cards.html" as card %} {% import "header-navigation.html" as
+HeaderNav %} {% extends "layout.html" %} {% block content %}
+<header>{% include "partials/webapp/nav.html" %}</header>
+<main class="webapp webapp--whare-page">
+  {{ aside.whanau() }}
+  <section class="section">
+    <div class="container-fluid">
+      <div class="content">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="fw-bold fs-4 mb-5">
+              Humidity Tairawhiti rooms vs Tairawhiti Covid cases
+            </h3>
+            <p class="mb-3 fs-8">Period 2022</p>
+            <div class="chart-wrapper">
+              <canvas id="billChart"></canvas>
+              <div class="legends legends--small">
+                <div class="row mx-6">
+                  <div class="col">
+                    <p>
+                      <span
+                        class="me-1 border border-success border-2 d-inline-block"
+                        style="width: 10px; height: 10px"
+                      ></span>
+                      All Tairawhiti rooms
+                    </p>
+                  </div>
+                  <div class="col">
+                    <p>
+                      <span
+                        class="me-1 border border-danger border-2 d-inline-block"
+                        style="width: 8px; height: 8px"
+                      ></span>
+                      All bedrooms
+                    </p>
+                  </div>
+                  <div class="col">
+                    <p>
+                      <span
+                        class="me-1 border border-dark-blue border-2 d-inline-block"
+                        style="width: 8px; height: 8px"
+                      ></span>
+                      All lounge's
+                    </p>
+                  </div>
+                  <div class="col">
+                    <p>
+                      <span
+                        class="me-1 bg-light-blue border-2 d-inline-block"
+                        style="width: 8px; height: 8px"
+                      ></span>
+                      Tairawhiti COVID cases
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock content %}

@@ -4,13 +4,13 @@
 
 /// Regular font family
 /// @type List
-$text-font-stack: "Open Sans", "Helvetica Neue Light", "Helvetica Neue",
-  "Helvetica", "Arial", sans-serif !default;
+$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue',
+  'Helvetica', 'Arial', sans-serif !default;
 
 /// Code (monospace) font family
 /// @type List
-$code-font-stack: "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
-  "Monaco", monospace !default;
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+  'Monaco', monospace !default;
 
 /// Copy text color
 /// @type Color
@@ -40,16 +40,16 @@ $max-width: 1180px !default;
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
-  "small": 576px,
-  "medium": 768px,
-  "large": 1024px,
+  'small': 576px,
+  'medium': 768px,
+  'large': 1024px
 ) !default;
 
 /// Relative or absolute URL where all assets are served from
 /// @type String
 /// @example scss - When using a CDN
 ///   $base-url: 'http://cdn.example.com/assets/';
-$base-url: "/assets/" !default;
+$base-url: '/assets/' !default;
 
 // Responsive typography map
 // null: iphone5
@@ -59,10 +59,10 @@ $typi: (
   base: (
     null: (
       12px,
-      1.4,
+      1.4
     ),
     small: 14px,
-    large: 16px,
+    large: 16px
   ),
   // h1: (
   //   null: (ms(4), vr(2.5)),
@@ -87,15 +87,15 @@ $gray-900: #0f1928;
 
 // gray-colors-map
 $grays: (
-  "100": $gray-100,
-  "200": $gray-200,
-  "300": $gray-300,
-  "400": $gray-400,
-  "500": $gray-500,
-  "600": $gray-600,
-  "700": $gray-700,
-  "800": $gray-800,
-  "900": $gray-900,
+  '100': $gray-100,
+  '200': $gray-200,
+  '300': $gray-300,
+  '400': $gray-400,
+  '500': $gray-500,
+  '600': $gray-600,
+  '700': $gray-700,
+  '800': $gray-800,
+  '900': $gray-900
 );
 
 // backgrounds
@@ -143,22 +143,26 @@ $success: #28a745;
 $info: #0078ff;
 $warning: #ffc107;
 $dark: $color-secondary-900;
+$light-blue: $color-damp;
+$dark-blue: $color-cold;
 
 $theme-colors: (
-  "primary": $primary,
-  "secondary": $secondary,
-  "success": $success,
-  "info": $info,
-  "warning": $warning,
-  "danger": $danger,
-  "light": $light,
-  "dark": $dark,
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark
 );
 
 // Add custom color map
 $custom-colors: (
-  "light-gray": $light-gray,
-  "gray": $gray,
+  'light-gray': $light-gray,
+  'gray': $gray,
+  'light-blue': $light-blue,
+  'dark-blue': $dark-blue
 );
 
 // Merge the maps
@@ -214,7 +218,7 @@ $spacers: (
   3: $spacer * 0.9375,
   4: $spacer * 1.25,
   5: $spacer * 1.875,
-  6: $spacer * 3,
+  6: $spacer * 3
 );
 
 //Tooltip

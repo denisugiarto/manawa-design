@@ -1,15 +1,11 @@
-{% set cssStyle = "style-optimize"  %}{% set pageTitle = 'Room Details' %}
-{% extends "layout.html" %}
+{% set cssStyle = "style" %}{% set pageTitle = 'Room Details' %} {% extends
+"layout.html" %} {% block content %}
 
-{% block content %}
-
-<header>
-  {% include "partials/webapp/nav.html" %}  
-</header>
+<header>{% include "partials/webapp/nav.html" %}</header>
 <main class="webapp webapp--room-page">
   {% include "partials/webapp/aside.html" %}
   <section class="section">
-    <div class="container-fluid">      
+    <div class="container-fluid">
       <div class="content">
         <div class="row">
           <div class="col-md-12">
@@ -18,7 +14,7 @@
                 <i class="fas fa-arrow-left"></i>
               </a>
               <h4 class="title">Sensor : AC243FA5A250</h4>
-            </div> 
+            </div>
           </div>
           <div class="col-12">
             <div class="card card--room-details">
@@ -32,11 +28,17 @@
                 </a>
               </div>
               <div class="card-body">
-                <div class="summary-content">                  
+                <div class="summary-content">
                   <div class="row mb-0">
-                    <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-3 mb-4 mb-sm-0">
+                    <div
+                      class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-3 mb-4 mb-sm-0"
+                    >
                       <figure class="image-wrapper">
-                        <img src="assets/img/comfortable.png" alt="" class="img img-fluid">
+                        <img
+                          src="assets/img/comfortable.png"
+                          alt=""
+                          class="img img-fluid"
+                        />
                       </figure>
                     </div>
                     <div class="col-12 col-sm-8 col-md-9 col-lg-8 col-xl-9">
@@ -56,7 +58,9 @@
                           </li>
                           <li class="list-item">
                             <i class="fas fa-check-circle"></i>
-                            <span class="text">Temp is well above dewpoint</span>
+                            <span class="text"
+                              >Temp is well above dewpoint</span
+                            >
                           </li>
                         </ul>
                       </div>
@@ -72,7 +76,7 @@
                 <div class="temperature-section">
                   <div class="temperature-column temperature--comfortable">
                     <div class="d-flex align-items-center">
-                      <i class="icon icon--temperature"></i>                    
+                      <i class="icon icon--temperature"></i>
                       <div class="text-wrapper">
                         <h6 class="title title--celcius">22.2°C</h6>
                         <p class="text">Temperature</p>
@@ -90,7 +94,7 @@
                 <div class="temperature-section">
                   <div class="temperature-column temperature--cold">
                     <div class="d-flex align-items-center">
-                      <i class="icon icon--temperature"></i>                    
+                      <i class="icon icon--temperature"></i>
                       <div class="text-wrapper">
                         <h6 class="title title--celcius">22.2°C</h6>
                         <p class="text">Temperature</p>
@@ -108,7 +112,7 @@
                 <div class="temperature-section">
                   <div class="temperature-column temperature--damp">
                     <div class="d-flex align-items-center">
-                      <i class="icon icon--temperature"></i>                    
+                      <i class="icon icon--temperature"></i>
                       <div class="text-wrapper">
                         <h6 class="title title--celcius">22.2°C</h6>
                         <p class="text">Temperature</p>
@@ -131,9 +135,11 @@
                 </div>
               </div>
               <div class="card-body">
-               <div class="text-wrapper">
-                 <div class="text">This can cause asthma, allergies and respiratory illness. </div>
-               </div>
+                <div class="text-wrapper">
+                  <div class="text">
+                    This can cause asthma, allergies and respiratory illness.
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -145,9 +151,9 @@
                 </div>
               </div>
               <div class="card-body">
-               <div class="text-wrapper">
-                 <div class="text">Mould growth and dustmites</div>
-               </div>
+                <div class="text-wrapper">
+                  <div class="text">Mould growth and dust mites</div>
+                </div>
               </div>
             </div>
           </div>
@@ -159,9 +165,12 @@
                 </div>
               </div>
               <div class="card-body">
-               <div class="text-wrapper">
-                 <div class="text">Open windows and doors for 2mins to remove damp air then heat the room</div>
-               </div>
+                <div class="text-wrapper">
+                  <div class="text">
+                    Open windows and doors for 2mins to remove damp air then
+                    heat the room
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -169,49 +178,42 @@
 
           <div class="chart-filter">
             <div class="left">
-
-            <div class="sd-container input-group date datepicker">
-              <input class="sd form-control" type="date" name="selected_date" />
-              <span class="open-button">
-                <button type="button icon">
-                  <i class="fas fa-calendar-day"></i>
-                </button>
-              </span>
-            </div>
-
-              <!-- <div class="input-group date datepicker" id="datepicker">
-                <input type="date" class="form-control" value="12-02-2021" />
-                <span class="input-group-text">
-                  <i class="fas fa-calendar-day"></i>
-                </span>
-            </div> -->
-
-            <!-- <input id="datepicker" width="276" /> -->
-            <!-- <div class="input-group date datepicker" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
-              <input class="form-control" type="text" value="12-02-2012">
-              <span class="add-on">
-                <i class="fas fa-calendar-day"></i>
-              </span>
-            </div> -->
-              <select class="form-select" aria-label="Select Time">
-                <option selected>Select Time</option>
-                <option value="1">00:00 - 05:00</option>
-                <option value="2">06:00 - 11:00</option>
-                <option value="3">12:00 - 17:00</option>
-                <option value="3">18:00 - 23:00</option>
-              </select>
+              <div class="col">
+                <input class="form-control" type="date" name="selected_date" placeholder="Select your date"  aria-label="Select your date" />
+              </div>
+              <div class="col">
+                <select class="form-select" aria-label="Select Time">
+                  <option selected>Select Time</option>
+                  <option value="1">00:00 - 05:00</option>
+                  <option value="2">06:00 - 11:00</option>
+                  <option value="3">12:00 - 17:00</option>
+                  <option value="3">18:00 - 23:00</option>
+                </select>
+              </div>
             </div>
             <div class="right">
-              <div class="dropdown">
-                <button class="button button--white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fas fa-download"></i>
+              <div class="dropdown h-100">
+                <button
+                  class="btn btn-light dropdown-toggle h-100"
+                  type="button"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-download me-1"></i>
                   <span>Report</span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Report by Filter</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Report by Filter</a>
+                  </li>
                   <li><a class="dropdown-item" href="#">Today’s report</a></li>
-                  <li><a class="dropdown-item" href="#">Last 7 days report</a></li>
-                  <li><a class="dropdown-item" href="#">last 30 days  report</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Last 7 days report</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">last 30 days report</a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -241,7 +243,7 @@
                       <span class="text">Hot</span>
                     </span>
                   </div>
-                 </div>
+                </div>
               </div>
             </div>
           </div>
@@ -269,7 +271,7 @@
                       <span class="text">Damp</span>
                     </span>
                   </div>
-                 </div>
+                </div>
               </div>
             </div>
           </div>
@@ -281,34 +283,34 @@
                 </div>
               </div>
               <div class="card-body">
-               <div class="sensor-wrapper">
-                 <div class="row">
-                   <div class="col-sm-3">
-                     <div class="item">
-                       <h3 class="label">FIRST DETECTED</h3>
-                       <h4 class="text">2021-05-29</h4>
-                     </div>
-                   </div>
-                   <div class="col-sm-3">
-                    <div class="item">
-                      <h3 class="label">LAST READING</h3>
-                      <h4 class="text">5 minutes ago</h4>
+                <div class="sensor-wrapper">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <div class="item">
+                        <h3 class="label">FIRST DETECTED</h3>
+                        <h4 class="text">2021-05-29</h4>
+                      </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="item">
+                        <h3 class="label">LAST READING</h3>
+                        <h4 class="text">5 minutes ago</h4>
+                      </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="item">
+                        <h3 class="label">BATTERY LEVEL</h3>
+                        <h4 class="text">100%</h4>
+                      </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="item">
+                        <h3 class="label">SOFTWARE</h3>
+                        <h4 class="text">Unknown</h4>
+                      </div>
                     </div>
                   </div>
-                  <div class="col-sm-3">
-                    <div class="item">
-                      <h3 class="label">BATTERY LEVEL</h3>
-                      <h4 class="text">100%</h4>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="item">
-                      <h3 class="label">SOFTWARE</h3>
-                      <h4 class="text">Unkknown</h4>
-                    </div>
-                  </div>
-                 </div>
-               </div>
+                </div>
               </div>
             </div>
           </div>

@@ -210,7 +210,7 @@
   }
 
   &.card--all-report {
-    @extend .flex-column;
+    flex-direction: column;
     padding: 15px;
 
     @include media-breakpoint-up(md) {
@@ -219,7 +219,8 @@
 
     > .card {
       &-header {
-        @extend .w-100, .bg-white;
+        width: 100%;
+        background-color: $white;
         padding: 0 0 15px;
         @include media-breakpoint-up(md) {
           padding: 0 0 30px;
@@ -233,14 +234,14 @@
         }
       }
       &-body {
-        @extend .w-100;
+        width: 100%;
         padding: 15px 0 0;
         @include media-breakpoint-up(md) {
           padding: 30px 0 0;
         }
 
         .search-wrapper {
-          @extend .text-center;
+          text-align: center;
         }
 
         .room {
@@ -1321,7 +1322,7 @@
     }
 
     &__data-wrapper {
-      @extend .d-flex;
+      display: flex;
       background-color: $color-white-grey;
       padding: 10px 13px;
       gap: 15px;

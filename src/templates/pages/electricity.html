@@ -1,105 +1,108 @@
 {% set cssStyle = "style-optimize"  %}
-{% import "../components/partials/webapp/aside.html" as aside %} {% import
+{% import "../components/partials/webapp/aside.html" as aside %}
+{% import
 "../components/cards.html" as card %}
-{% import "header-navigation.html" as HeaderNav %} {% extends "layout.html" %} {% block
+{% import "header-navigation.html" as HeaderNav %}
+{% extends "layout.html" %}
+{% block
 content %}
 
-<header>{% include "partials/webapp/nav.html" %}</header>
-<main class="webapp webapp--whare-page">
-  {{ aside.whanau() }}
-  <section class="section">
-    <div class="container-fluid">
-      <div class="content">
-        {{ HeaderNav.electricity("index.html") }}
-        
-        <div class="row g-3 mt-1">
-          <div class="col-md-6">
-            <div class="card card--info">
-              <div class="card-title">The power company you use</div>
-              <div class="card-content">ECNZ</div>
+  <header>{% include "partials/webapp/nav.html" %}</header>
+  <main class="webapp webapp--whare-page">
+    {{ aside.whanau() }}
+    <section class="section">
+      <div class="container-fluid">
+        <div class="content">
+          {{ HeaderNav.electricity("index.html") }}
+
+          <div class="row g-3 mt-1">
+            <div class="col-md-6">
+              <div class="card card--info">
+                <div class="card-title">The power company you use</div>
+                <div class="card-content">ECNZ</div>
+              </div>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card card--info">
-              <div class="card-title">Current electricity tariffs</div>
-              <div class="card-content">
+            <div class="col-md-6">
+              <div class="card card--info">
+                <div class="card-title">Current electricity tariffs</div>
+                <div class="card-content">
                 $3,00
                 <span class="card-content__label">/ Kilowatt </span>
-                <div class="changes-wrapper changes-wrapper--up">+1%</div>
+                  <div class="changes-wrapper changes-wrapper--up">+1%</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="card card--chart-electricity">
-          <div class="card-body">
-            <div class="card-title">Report your electricity usage</div>
-            <div id="chart-filter" class="bg-light-gray p-4 w-100 rounded">
-              <div class="row g-3">
-                <div class="col-md-4">
-                  <select
+          <div class="card card--chart-electricity">
+            <div class="card-body">
+              <div class="card-title">Report your electricity usage</div>
+              <div id="chart-filter" class="bg-light-gray p-4 w-100 rounded">
+                <div class="row g-3">
+                  <div class="col-md-4">
+                    <select
                     name="date-filter"
                     class="form-select"
                     onchange="dateFilterHandler()"
                   >
-                    <option value="date">Day</option>
-                    <option value="week">Week</option>
-                    <option value="month">Month</option>
-                  </select>
-                </div>
-                <div class="col-md-4">
-                  <input
+                      <option value="date">Day</option>
+                      <option value="week">Week</option>
+                      <option value="month">Month</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <input
                     type="date"
                     class="form-control date-filter"
                     placeholder="select your date"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="card card--chart">
-              <div class="card-body">
-                <div class="chart-wrapper">
-                  <canvas id="electricChart"></canvas>
-                  <div class="legends legends--small">
-                    Total electricity usage :
-                    <span class="fw-bold">42 watt</span>
+/>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="card card--chart">
-              <div class="card-body">
-                <div class="chart-wrapper">
-                  <canvas id="billChart"></canvas>
-                  <div class="legends legends--small">
+              <div class="card card--chart">
+                <div class="card-body">
+                  <div class="chart-wrapper">
+                    <canvas id="electricChart"></canvas>
+                    <div class="legends legends--small">
+                    Total electricity usage :
+                    <span class="fw-bold">42 watt</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card card--chart">
+                <div class="card-body">
+                  <div class="chart-wrapper">
+                    <canvas id="billChart"></canvas>
+                    <div class="legends legends--small">
                     Total electricity bill :
                     <span class="fw-bold">$32,00</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="card card--list">
-          <div class="card-body">
-            <div class="card-title">Other companies' electricity costs</div>
-            <div class="swiper">
-              <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide">{{ card.company() }}</div>
-                <div class="swiper-slide">{{ card.company() }}</div>
-                <div class="swiper-slide">{{ card.company() }}</div>
-                <div class="swiper-slide">{{ card.company() }}</div>
-                <div class="swiper-slide">{{ card.company() }}</div>
-                <div class="swiper-slide">{{ card.company() }}</div>
+          <div class="card card--list">
+            <div class="card-body">
+              <div class="card-title">Other companies' electricity costs</div>
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">{{ card.company() }}</div>
+                  <div class="swiper-slide">{{ card.company() }}</div>
+                  <div class="swiper-slide">{{ card.company() }}</div>
+                  <div class="swiper-slide">{{ card.company() }}</div>
+                  <div class="swiper-slide">{{ card.company() }}</div>
+                  <div class="swiper-slide">{{ card.company() }}</div>
+                </div>
               </div>
+              <div class="swiper-button-prev d-none d-lg-flex"></div>
+              <div class="swiper-button-next d-none d-lg-flex"></div>
             </div>
-            <div class="swiper-button-prev d-none d-lg-flex"></div>
-            <div class="swiper-button-next d-none d-lg-flex"></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
 
 {% endblock %}

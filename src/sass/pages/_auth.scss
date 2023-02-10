@@ -21,7 +21,7 @@
       text-align: left;
       font-size: 50px;
       line-height: 59px;
-    }    
+    }
   }
   &__sub-title {
     font-family: Roboto;
@@ -38,7 +38,7 @@
       text-align: left;
       font-size: 27px;
       line-height: 32px;
-    }    
+    }
   }
   &__section {
     height: 100%;
@@ -52,7 +52,7 @@
       }
       @include for-size(desktop) {
         height: 100%;
-      }      
+      }
     }
     .button {
       width: 100%;
@@ -66,7 +66,7 @@
       }
       @include for-size(desktop) {
         width: 100%;
-      }      
+      }
     }
   }
   &__row {
@@ -84,7 +84,7 @@
       }
       @include for-size(desktop) {
         width: 66.66667%;
-      }      
+      }
     }
     &--form {
       width: 100%;
@@ -94,9 +94,9 @@
       @include for-size(tablet-landscape) {
         width: 50%;
       }
-      @include for-size(desktop) {        
+      @include for-size(desktop) {
         width: 33.33333%;
-      }      
+      }
     }
   }
   &__form {
@@ -110,9 +110,9 @@
     }
     @include for-size(desktop) {
       height: 100%;
-    }    
+    }
   }
-  &__content {    
+  &__content {
     display: flex;
     align-items: center;
     margin: 23px auto 30px;
@@ -124,11 +124,11 @@
     @include for-size(desktop) {
       margin: 0 auto;
       height: 100%;
-    }    
+    }
   }
-  &__content-wrapper { 
+  &__content-wrapper {
     width: 100%;
-   }
+  }
   &__helper {
     display: flex;
     align-items: center;
@@ -139,7 +139,7 @@
     }
     @include for-size(desktop) {
       margin: 0;
-    }    
+    }
   }
   &__text-helper {
     font-family: Roboto;
@@ -149,7 +149,7 @@
     line-height: 16px;
     color: $black;
     margin: 0;
-  }  
+  }
   &__link {
     font-family: Roboto;
     font-style: normal;
@@ -160,6 +160,16 @@
     text-decoration: none;
     &:hover {
       color: $color-soft-red;
+    }
+    &.active::after {
+      content: 'New';
+      padding: 4px;
+      border-radius: 8px;
+      vertical-align: super;
+      background-color: $danger;
+      color: $white;
+      font-size: 10px;
+      margin-left: 5px;
     }
   }
 }
