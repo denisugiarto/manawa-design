@@ -339,12 +339,12 @@ HeaderNav %} {% extends "layout.html" %} {% block content %}
                 ? ''
                 : `
             
-            <div class="mb-1">  <span class="circle-status ${temperatureStatus}"></span>
+            <div class="mb-1">  <span class="circle-status ${temperatureStatus} me-1"></span>
               Temperature <span class="fw-bold float-end">${
                 temperature != null ? temperature : ''
               }°C</span>
             </div>
-            <div class="mb-1"> <span class="circle-status ${humidityStatus}"></span> 
+            <div class="mb-1"> <span class="circle-status ${humidityStatus} me-1"></span> 
               Humidity <span class="fw-bold float-end">${
                 humidity != null ? humidity : ''
               }%</span>
