@@ -1,0 +1,365 @@
+{% set cssStyle = "style-map" %}{% set pageTitle = 'List of Whanau Homes by Map'
+%} {% import "../components/cards.html" as card %} {% import
+"../components/partials/webapp/aside.html" as aside %} {% import
+"../components/cards.html" as card %} {% import "header-navigation.html" as
+HeaderNav %} {% extends "layout.html" %} {% block content %}
+<header>{% include "partials/webapp/nav.html" %}</header>
+<main class="webapp webapp--whare-page">
+  {{ aside.whanau() }}
+  <section class="section">
+    <div class="container-fluid">
+      <div class="content">
+        <div class="card card--map">
+          <div class="card-body position-relative">
+            <h4 class="fw-bold fs-4">
+              Find Tairawhiti Homes by Email or Suburb
+            </h4>
+            <div id="map-wrapper" class="collapse show">
+              <div id="map" class="maps-wrapper"></div>
+            </div>
+            {% include '../components/map/header.html' %}
+            <div id="list-wrapper" class="whanau-list-wrapper">
+              <div
+                class="whanau-items row row-cols-md-2 row-cols-xl-3 gy-3 gy-md-5 gy-xxl-2"
+              >
+                <div class="col">
+                  {{ card.roomWhanau('Airah’s house', 'airah92@gmail.com',
+                  'cold.png', 'Home is too Cold and Dry', 'temperature--cold',
+                  '24.2', 'humidity--dry', '26.3' ) }}
+                </div>
+                <div class="col">
+                  {{ card.roomWhanau('Airah’s parent house',
+                  'airah92@gmail.com', 'comfortable.png', 'Comfortable Room',
+                  'temperature--comfortable', '27.1', 'humidity--comfortable',
+                  '50.6' ) }}
+                </div>
+                <div class="col">
+                  {{ card.roomWhanau('Bambam’s house', 'bams3802@gmail.com',
+                  'cold.png', 'Home is too Cold and Damp', 'temperature--cold',
+                  '22.1', 'humidity--damp', '63.5' ) }}
+                </div>
+                <div class="col">
+                  {{ card.roomWhanau('Rudi’s house', 'dedekyusuf93@gmail.com',
+                  'cold.png', 'Home is too Cold and Dry', 'temperature--cold',
+                  '24.2', 'humidity--dry', '26.3' ) }}
+                </div>
+                <div class="col">
+                  {{ card.roomWhanau('Parent house', 'dedekyusuf93@gmail.com',
+                  'comfortable.png', 'Comfortable Room',
+                  'temperature--comfortable', '27.1', 'humidity--comfortable',
+                  '50.6' ) }}
+                </div>
+                <div class="col">
+                  {{ card.roomWhanau('Eno’s house', 'eno9090@gmail.com',
+                  'cold.png', 'Home is too Cold and Damp', 'temperature--cold',
+                  '22.1', 'humidity--damp', '63.5' ) }}
+                </div>
+              </div>
+            </div>
+            <div class="form--float footer">
+              <div class="form-control">
+                <a
+                  href="#dataMarker"
+                  data-bs-toggle="collapse"
+                  class="toggle-hide-show"
+                >
+                  <span class="toggle-hide-show__label">
+                    Marker Information
+                  </span>
+                  <span class="text--show">
+                    <i class="fas fa-chevron-down ms-auto me-2"></i>
+                    show
+                  </span>
+                  <span class="text--hide">
+                    <i class="fas fa-chevron-up ms-auto me-2"></i>
+                    hide
+                  </span>
+                </a>
+                <div class="collapse" id="dataMarker">
+                  <div class="d-flex border-top mt-2 pt-2">
+                    <div class="col">
+                      <p class="mb-2">Temperature</p>
+                      <ul>
+                        <li class="d-flex ps-0 pe-2 px-md-3 gap-2 gap-md-3">
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            name=""
+                            id=""
+                          />
+                          <label class="form-label" for="">&gt; 30 °C</label>
+                          <div class="icon--small dry ms-auto"></div>
+                        </li>
+                        <li class="d-flex ps-0 pe-2 px-md-3 gap-2 gap-md-3">
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            name=""
+                            id=""
+                          />
+                          <label class="form-label" for="">18 - 29 °C</label>
+                          <div class="icon--small comfortable ms-auto"></div>
+                        </li>
+                        <li class="d-flex ps-0 pe-2 px-md-3 gap-2 gap-md-3">
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            name=""
+                            id=""
+                          />
+                          <label class="form-label" for="">&lt; 18 °C</label>
+                          <div class="icon--small cold ms-auto"></div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col border-start ps-2 ps-md-3">
+                      <p class="mb-2">Humidity</p>
+                      <ul>
+                        <li class="d-flex px-0 px-md-3 gap-2 gap-md-3">
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            name=""
+                            id=""
+                          />
+                          <label class="form-label" for="">&gt; 60%</label>
+                          <div class="icon--small damp ms-auto"></div>
+                        </li>
+                        <li class="d-flex px-0 px-md-3 gap-2 gap-md-3">
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            name=""
+                            id=""
+                          />
+                          <label class="form-label" for="">30 - 60%</label>
+                          <div class="icon--small comfortable ms-auto"></div>
+                        </li>
+                        <li class="d-flex px-0 px-md-3 gap-2 gap-md-3">
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            name=""
+                            id=""
+                          />
+                          <label class="form-label" for="">&lt; 30%</label>
+                          <div class="icon--small dry ms-auto"></div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock content %} {% block script %}
+<script src="./assets/js/mapMarker.js"></script>
+<script>
+  var addressPoints = [
+    {
+      latitute: -37.8839,
+      longitute: 175.3745188667,
+      title: 'Rudi’s House',
+      temperature: 17,
+      humidity: 55
+    },
+    {
+      latitute: -37.8869090667,
+      longitute: 175.3657417333,
+      title: 'Rudi’s House',
+      temperature: 31,
+      humidity: 50
+    },
+    {
+      latitute: -37.8894207167,
+      longitute: 175.4015351167,
+      title: 'Rudi’s House',
+      temperature: 17,
+      humidity: 25
+    },
+    {
+      latitute: -37.8927369333,
+      longitute: 175.4087452333,
+      title: 'Rudi’s House',
+      temperature: 15,
+      humidity: 65
+    },
+    {
+      latitute: -37.90585105,
+      longitute: 175.4453463833,
+      title: 'Rudi’s House',
+      temperature: 23,
+      humidity: 70
+    },
+    {
+      latitute: -37.9064188833,
+      longitute: 175.4441556833,
+      title: 'Rudi’s House',
+      temperature: 20,
+      humidity: 25
+    },
+    {
+      latitute: -37.90584715,
+      longitute: 175.4463564333,
+      title: 'Rudi’s House',
+      temperature: 35,
+      humidity: 65
+    },
+    {
+      latitute: -37.9033391333,
+      longitute: 175.4244005667,
+      title: 'Rudi’s House',
+      temperature: 32,
+      humidity: 20
+    },
+    {
+      latitute: -37.9061991333,
+      longitute: 175.4492620333,
+      title: 'Rudi’s House',
+      temperature: 28,
+      humidity: 50
+    },
+    {
+      latitute: -37.9061991333,
+      longitute: 175.4392620333,
+      title: 'Deni House',
+      temperature: null,
+      humidity: null
+    }
+  ];
+
+  function searchTypeHandle(type) {
+    if (type === 'email') {
+      $('.search-type-label').text('By email');
+      $('.search-type-email').addClass('show');
+      $('.search-type-suburb').removeClass('show');
+    } else {
+      $('.search-type-label').text('By suburb');
+      $('.search-type-email').removeClass('show');
+      $('.search-type-suburb').addClass('show');
+    }
+  }
+
+  $(document).ready(function () {
+    $('.view-type').change(function () {
+      $('#list-wrapper').toggleClass('show');
+      $('#map-wrapper').toggleClass('show');
+      $('.form--float.header').toggleClass('no-float');
+      if ($(this)[0].value === 'list') {
+        $('.toggle-hide-show__label').text('Filter Conditions');
+      } else {
+        $('.toggle-hide-show__label').text('Marker Information');
+      }
+    });
+    $('.search-type').change(function () {
+      $('.search-type-list').toggleClass('show');
+    });
+    $('.js-select').select2({
+      placeholder: 'Eg. dedekysf93@gmail.com',
+      allowClear: true,
+      dropdownAutoWidth: true,
+      width: '100%'
+    });
+    $('.toggle-hide-show').click(function () {
+      $(this).toggleClass('active');
+    });
+
+    var tiles = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+          maxZoom: 18,
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ'
+        }
+      ),
+      latlng = L.latLng(-37.89, 175.46);
+
+    var map = L.map('map', {
+      center: latlng,
+      zoomControl: false,
+      zoom: 13,
+      layers: [tiles]
+    });
+
+    var markers = L.markerClusterGroup({ chunkedLoading: true });
+
+    for (var i = 0; i < addressPoints.length; i++) {
+      let addressPoint = addressPoints[i];
+      let { latitute, longitute, title, temperature, humidity } = addressPoint;
+
+      let roomStatus = getRoomStatus(temperature, humidity);
+      let temperatureStatus = getTemperatureStatus(temperature).toLowerCase();
+      let humidityStatus = getHumidityStatus(humidity).toLowerCase();
+      let isComfortable =
+        temperatureStatus === 'comfortable' && humidityStatus === 'comfortable';
+      console.log('isComfortable: ', isComfortable);
+
+      function getRoomStatusDescription(roomStatus) {
+        if (!roomStatus == null || roomStatus === 'offline') return 'offline';
+        let roomStatusDescription = `${roomStatus
+          .split(/(?=[A-Z])/)
+          .join(' and ')}`;
+        if (roomStatus != 'Comfortable') return `too ${roomStatusDescription}`;
+        return roomStatusDescription;
+      }
+
+      let roomStatusDescription = getRoomStatusDescription(roomStatus);
+      console.log('roomStatusDescription: ', roomStatusDescription);
+
+      var myIcon = L.icon({
+        iconUrl: `/assets/img/MapMarker/${roomStatus}.svg`,
+        iconSize: [24, 28],
+        iconAnchor: [12, 14],
+        popupAnchor: [0, -10]
+      });
+      var marker = L.marker(L.latLng(latitute, longitute), {
+        icon: myIcon,
+        title: title,
+        maxWidth: '180px'
+      });
+
+      function addCardContent(roomStatus) {
+        return `
+            <h6 class="fw-bold fs-7 mb-1">${title}</h6>
+            <p class="my-1 text-secondary fs-9"><i class="far fa-envelope me-1"></i>andyshandy@xtra.co.nz</p>
+            <hr class="my-2 opacity-50 border-secondary" />
+            <p class="fw-bold my-2 fs-8">${
+              roomStatusDescription != 'offline'
+                ? 'Home is ' + roomStatusDescription
+                : 'Sensor Offline'
+            }
+            </p>
+            ${
+              roomStatusDescription === 'offline'
+                ? ''
+                : `
+            
+            <div class="mb-1">  <span class="circle-status ${temperatureStatus}"></span>
+              Temperature <span class="fw-bold float-end">${
+                temperature != null ? temperature : ''
+              }°C</span>
+            </div>
+            <div class="mb-1"> <span class="circle-status ${humidityStatus}"></span> 
+              Humidity <span class="fw-bold float-end">${
+                humidity != null ? humidity : ''
+              }%</span>
+            </div>`
+            }
+                  
+                  <a class="d-block mt-2 fw-bold text-success text-decoration-underline">See Detail Room</a>
+            `;
+      }
+
+      marker.bindPopup(addCardContent(roomStatus));
+      markers.addLayer(marker);
+    }
+
+    map.addLayer(markers);
+  });
+</script>
+{% endblock script %}

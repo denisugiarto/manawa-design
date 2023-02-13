@@ -1,0 +1,22 @@
+.circle-status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  &.dry,
+  &.hot {
+    background-color: $color-dry;
+  }
+  &.offline {
+    background-color: $color-offline;
+  }
+  &.cold {
+    background-color: $color-cold;
+  }
+  &.comfortable {
+    background-color: $color-comfortable;
+  }
+  &.damp {
+    background-color: $color-damp;
+  }
+}

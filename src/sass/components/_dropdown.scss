@@ -1,5 +1,10 @@
 .dropdown {
   &-menu {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    &.bordered {
+      & .dropdown-item:not(:first-child) {
+        border-top: 1px solid rgba(#000, 0.1);
+      }
+    }
   }
 }

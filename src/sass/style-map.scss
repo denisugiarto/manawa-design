@@ -1,26 +1,27 @@
 @charset 'UTF-8';
 
 // 1. Configuration and helpers
-@import "abstracts/variables", "abstracts/functions", "abstracts/mixins",
-  "abstracts/_placeholders";
+@import 'abstracts/variables', 'abstracts/utilities', 'abstracts/functions',
+  'abstracts/mixins', 'abstracts/_placeholders';
 
 // 2. Vendors
-@import "../../node_modules/bootstrap/scss/bootstrap";
+@import '../../node_modules/bootstrap/scss/bootstrap';
 
 // 3. Base stuff
-@import "base/base", "base/fonts", "base/typography", "base/helpers";
+@import 'base/base', 'base/fonts', 'base/typography', 'base/helpers';
 
 // 4. Layout-related sections
-@import "layout/header", "layout/footer", "layout/form", "layout/webapp";
+@import 'layout/header', 'layout/footer', 'layout/form', 'layout/webapp';
 
 // 5. Components
-@import "components/button", "components/card", "components/dropdown",
-  "components/form", "components/select2", "components/icon",
-  "components/toggle-hide-show", "components/leaflet",
-  "components/marker-cluster";
+@import 'components/button', 'components/card', 'components/circle-status',
+  'components/dropdown', 'components/fontello', 'components/form',
+  'components/icon', 'components/leaflet', 'components/marker-cluster',
+  'components/map-header', 'components/select2', 'components/toggle-hide-show',
+  'components/sidenav';
 
 // 6. Page-specific styles
-@import "pages/whanau-maps";
+@import 'pages/whanau-maps';
 
 // 7. Themes
-@import "themes/default";
+@import 'themes/default';

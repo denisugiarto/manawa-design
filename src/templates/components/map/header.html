@@ -1,0 +1,52 @@
+<div class="form--float header">
+  <div class="col-auto">
+    <div class="dropdown h-100">
+      <button
+        class="form-select h-100"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class="fas fa-envelope me-1 lh-base d-md-none"></i>
+        <span class="search-type-label">By email</span>
+      </button>
+      <ul class="dropdown-menu bordered">
+        <li class="dropdown-item">
+          <a role="button" onclick="searchTypeHandle('email')"> By email </a>
+        </li>
+        <li class="dropdown-item">
+          <a role="button" onclick="searchTypeHandle('suburb')"> By suburb </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col col-md position-relative">
+    <div class="collapse show search-type-email">
+      <select class="js-select">
+        <optgroup label="airah92@gmail.com">
+          <option value="airah">Airah’s house</option>
+          <option value="airah-parent">Airah’s parent house</option>
+        </optgroup>
+        <optgroup label="bams3802@gmail.com">
+          <option value="bambam">Bambam’s house</option>
+        </optgroup>
+        <optgroup label="dedekyusuf93@gmail.com">
+          <option value="airah">Rudi’s house</option>
+          <option value="airah-parent">Parent house</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="collapse search-type-suburb">
+      <select class="js-select">
+        <option>Tauranga Central</option>
+        <option>Tauranga South</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-12 col-md-auto ms-auto">
+    <select class="form-select view-type">
+      <option value="map" selected>View by map</option>
+      <option value="list">View by list</option>
+    </select>
+  </div>
+</div>
