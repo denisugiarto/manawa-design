@@ -1,0 +1,828 @@
+<!-- layout.html -->
+<!DOCTYPE html>
+<!--[if lt IE 7]>      
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> 
+<![endif]-->
+<!--[if IE 7]>         
+<html class="no-js lt-ie9 lt-ie8" lang=""> 
+<![endif]-->
+<!--[if IE 8]>         
+<html class="no-js lt-ie9" lang=""> 
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>List of Whanau Homes by Map</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="./assets/css/style-map.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Library Wizard-JS for Stepper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/AdrianVillamayor/Wizard-JS@1.8/styles/css/main.css"
+      integrity="sha256-btHibfSEWQ4O0dUO3Jo22dZVkFr4T75RU7+EU5SGS0A="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link href="./assets/css/jquery-steps.css" rel="stylesheet" />
+    <script src="./assets/js/vendor/jquery.min.js"></script>
+    <script src="./assets/js/vendor/jquery-steps.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css"
+    />
+    <!-- Include Choices JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
+    <script src="./assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+      crossorigin=""
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+      crossorigin=""
+    />
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  </head>
+
+  <body>
+    
+<header><nav class="navbar navbar-webapp fixed-top navbar-light bg-light">
+  <div class="container-fluid navbar-header">
+    <a class="navbar-brand" href="/">
+      <img src="assets/img/ic-logo-red.svg" alt="" class="img-logo" />
+    </a>
+    <div class="nav-action">
+      <a href="notification.html" role="button" class="menu-icon"><i class="fas fa-bell"></i></a>
+      <div class="menu-button">
+        <span class="menu-text">MENU</span>
+        <span class="hamburger"></span>
+      </div>
+    </div>
+  </div>
+</nav>
+</header>
+<main class="webapp webapp--whare-page">
+  
+<aside class="aside">
+  <div class="sidenav">
+    <ul class="nav-menu">
+      <li class="menu-list">
+        <a href="list-of-whare.html" class="menu-title">
+          <div class="wrapper">
+            <i class="icon icon-fontello">&#xe806;</i>
+            <span class="title">Home</span>
+          </div>
+        </a>
+      </li>
+      <li class="menu-list menu-list--whare">
+        <div
+          class="menu-title collapsed"
+          data-bs-toggle="collapse"
+          data-bs-target="#whareContent"
+          aria-expanded="false"
+          aria-controls="whareContent"
+        >
+          <div class="wrapper">
+            <i class="icon icon-fontello">&#xe807;</i>
+            <span class="title">Whares</span>
+          </div>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="collapse" id="whareContent">
+          <ul class="menu-sublist">
+            <li class="menu-sublist__item active">
+              <a href="#" class="link">Rudi's House</a>
+            </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">10 Silverstream Road</a>
+            </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">Garys Home</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    <div class="nav-menu">
+      <div class="menu-list">
+        <a href="" class="menu-title">
+          <div class="wrapper">
+            <div class="icon">
+              <i class="fas fa-bell"></i>
+              <span class="icon-badge">4</span>
+            </div>
+            <div class="title">Notifications</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <ul class="nav-menu nav-menu--profile">
+      <li class="menu-list">
+        <div
+          class="menu-title collapsed"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseExample"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+        >
+          <div class="wrapper">
+            <i class="icon icon--circle-primary"> R </i>
+            <span class="title">admin@kaimahi.nz</span>
+          </div>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="collapse" id="collapseExample">
+          <ul class="menu-sublist">
+            <li class="menu-sublist__item menu-sublist__item--title">
+              <h6 class="title">Account</h6>
+            </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">
+                <i class="icon icon-fontello">&#xe804;</i>
+                <h6 class="subtitle">Account Setting</h6>
+              </a>
+            </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">
+                <i class="icon icon-fontello icon--logout">&#xe801;</i>
+                <h6 class="subtitle text--red">Logout</h6>
+              </a>
+            </li>
+            <li class="menu-sublist__item menu-sublist__item--title">
+              <h6 class="title">Admin</h6>
+            </li>
+            <li class="menu-sublist__item">
+              <a href="#" class="link">
+                <i class="icon icon-fontello icon--back">&#xe802;</i>
+                <h6 class="subtitle">Admin Page</h6>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="backdrop"></div>
+</aside>
+
+  <section class="section">
+    <div class="container-fluid">
+      <div class="content">
+        <div class="card card--map">
+          <div class="card-body position-relative">
+            <h4 class="fw-bold fs-4">
+              Find Tairawhiti Homes by Email or Suburb
+            </h4>
+            <div id="map-wrapper" class="collapse show">
+              <div id="map" class="maps-wrapper"></div>
+            </div>
+            <div class="form--float header">
+  <div class="col-auto">
+    <div class="dropdown h-100">
+      <button
+        class="form-select h-100"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <i class="fas fa-envelope me-1 lh-base d-md-none"></i>
+        <span class="search-type-label">By email</span>
+      </button>
+      <ul class="dropdown-menu bordered">
+        <li class="dropdown-item">
+          <a role="button" onclick="searchTypeHandle('email')"> By email </a>
+        </li>
+        <li class="dropdown-item">
+          <a role="button" onclick="searchTypeHandle('suburb')"> By suburb </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col col-md position-relative">
+    <div class="collapse show search-type-email">
+      <select class="js-select">
+        <optgroup label="airah92@gmail.com">
+          <option value="airah">Airah’s house</option>
+          <option value="airah-parent">Airah’s parent house</option>
+        </optgroup>
+        <optgroup label="bams3802@gmail.com">
+          <option value="bambam">Bambam’s house</option>
+        </optgroup>
+        <optgroup label="dedekyusuf93@gmail.com">
+          <option value="airah">Rudi’s house</option>
+          <option value="airah-parent">Parent house</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="collapse search-type-suburb">
+      <select class="js-select">
+        <option>Tauranga Central</option>
+        <option>Tauranga South</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-12 col-md-auto ms-auto">
+    <select class="form-select view-type">
+      <option value="map" selected>View by map</option>
+      <option value="list">View by list</option>
+    </select>
+  </div>
+</div>
+
+            <div id="list-wrapper" class="whanau-list-wrapper">
+              <div
+                class="whanau-items row row-cols-md-2 row-cols-xl-3 gy-3 gy-md-5 gy-xxl-2"
+              >
+                <div class="col">
+                  
+<div class="card card--room-whanau m-0">
+  <div class="card-body">
+    <h4 class="room-item__title">Airah’s house</h4>
+    <h6 class="room-item__subtitle">airah92@gmail.com</h6>
+    <div class="d-flex align-items-center mb-2">
+      <figure class="room-item__image-wrapper">
+        <img src="assets/img/cold.png" alt="" class="img-fluid" />
+      </figure>
+      <p class="room-item__description">Home is too Cold and Dry</p>
+    </div>
+    <div class="room-item__data-wrapper">
+      <div class="temperature-column temperature--cold">
+        <i class="icon icon--temperature"></i>
+        <div class="text-wrapper">
+          <div class="title">Temperature</div>
+          <div class="value">24.2°C</div>
+        </div>
+      </div>
+      <div class="temperature-column humidity--dry">
+        <i class="icon icon--temperature"></i>
+        <div class="text-wrapper">
+          <div class="title">Humidity</div>
+          <div class="value">26.3%</div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-2">
+      <a
+        href="#"
+        class="btn bg-primary text-white w-100 d-flex align-items-center"
+      >
+        <span class="ms-auto">See Detail Room</span>
+        <i class="fas fa-chevron-right ms-auto"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+                </div>
+                <div class="col">
+                  
+<div class="card card--room-whanau m-0">
+  <div class="card-body">
+    <h4 class="room-item__title">Airah’s parent house</h4>
+    <h6 class="room-item__subtitle">airah92@gmail.com</h6>
+    <div class="d-flex align-items-center mb-2">
+      <figure class="room-item__image-wrapper">
+        <img src="assets/img/comfortable.png" alt="" class="img-fluid" />
+      </figure>
+      <p class="room-item__description">Comfortable Room</p>
+    </div>
+    <div class="room-item__data-wrapper">
+      <div class="temperature-column temperature--comfortable">
+        <i class="icon icon--temperature"></i>
+        <div class="text-wrapper">
+          <div class="title">Temperature</div>
+          <div class="value">27.1°C</div>
+        </div>
+      </div>
+      <div class="temperature-column humidity--comfortable">
+        <i class="icon icon--temperature"></i>
+        <div class="text-wrapper">
+          <div class="title">Humidity</div>
+          <div class="value">50.6%</div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-2">
+      <a
+        href="#"
+        class="btn bg-primary text-white w-100 d-flex align-items-center"
+      >
+        <span class="ms-auto">See Detail Room</span>
+        <i class="fas fa-chevron-right ms-auto"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+                </div>
+                <div class="col">
+                  
+<div class="card card--room-whanau m-0">
+  <div class="card-body">
+    <h4 class="room-item__title">Bambam’s house</h4>
+    <h6 class="room-item__subtitle">bams3802@gmail.com</h6>
+    <div class="d-flex align-items-center mb-2">
+      <figure class="room-item__image-wrapper">
+        <img src="assets/img/cold.png" alt="" class="img-fluid" />
+      </figure>
+      <p class="room-item__description">Home is too Cold and Damp</p>
+    </div>
+    <div class="room-item__data-wrapper">
+      <div class="temperature-column temperature--cold">
+        <i class="icon icon--temperature"></i>
+        <div class="text-wrapper">
+          <div class="title">Temperature</div>
+          <div class="value">22.1°C</div>
+        </div>
+      </div>
+      <div class="temperature-column humidity--damp">
+        <i class="icon icon--temperature"></i>
+        <div class="text-wrapper">
+          <div class="title">Humidity</div>
+          <div class="value">63.5%</div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-2">
+      <a
+        href="#"
+        class="btn bg-primary text-white w-100 d-flex align-items-center"
+      >
+        <span class="ms-auto">See Detail Room</span>
+        <i class="fas fa-chevron-right ms-auto"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+                </div>
+                <div class="col">
+                  
+<div class="card card--room-whanau m-0">
+  <div class="card-body">
+    <h4 class="room-item__title">Rudi’s house</h4>
+    <h6 class="room-item__subtitle">dedekyusuf93@gmail.com</h6>
+    <div class="d-flex align-items-center mb-2">
+      <figure class="room-item__image-wrapper">
+        <img src="assets/img/cold.png" alt="" class="img-fluid" />
+      </figure>
+      <p class="room-item__description">Home is too Cold and Dry</p>
+    </div>
+    <div class="room-item__data-wrapper">
+      <div class="temperature-column temperature--cold">
+        <i class="icon icon--temperature"></i>
+        <div class="text-wrapper">
+          <div class="title">Temperature</div>
+          <div class="value">24.2°C</div>
+        </div>
+      </div>
+      <div class="temperature-column humidity--dry">
+        <i class="icon icon--temperature"></i>
+        <div class="text-wrapper">
+          <div class="title">Humidity</div>
+          <div class="value">26.3%</div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-2">
+      <a
+        href="#"
+        class="btn bg-primary text-white w-100 d-flex align-items-center"
+      >
+        <span class="ms-auto">See Detail Room</span>
+        <i class="fas fa-chevron-right ms-auto"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+                </div>
+                <div class="col">
+                  
+<div class="card card--room-whanau m-0">
+  <div class="card-body">
+    <h4 class="room-item__title">Parent house</h4>
+    <h6 class="room-item__subtitle">dedekyusuf93@gmail.com</h6>
+    <div class="d-flex align-items-center mb-2">
+      <figure class="room-item__image-wrapper">
+        <img src="assets/img/comfortable.png" alt="" class="img-fluid" />
+      </figure>
+      <p class="room-item__description">Comfortable Room</p>
+    </div>
+    <div class="room-item__data-wrapper">
+      <div class="temperature-column temperature--comfortable">
+        <i class="icon icon--temperature"></i>
+        <div class="text-wrapper">
+          <div class="title">Temperature</div>
+          <div class="value">27.1°C</div>
+        </div>
+      </div>
+      <div class="temperature-column humidity--comfortable">
+        <i class="icon icon--temperature"></i>
+        <div class="text-wrapper">
+          <div class="title">Humidity</div>
+          <div class="value">50.6%</div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-2">
+      <a
+        href="#"
+        class="btn bg-primary text-white w-100 d-flex align-items-center"
+      >
+        <span class="ms-auto">See Detail Room</span>
+        <i class="fas fa-chevron-right ms-auto"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+                </div>
+                <div class="col">
+                  
+<div class="card card--room-whanau m-0">
+  <div class="card-body">
+    <h4 class="room-item__title">Eno’s house</h4>
+    <h6 class="room-item__subtitle">eno9090@gmail.com</h6>
+    <div class="d-flex align-items-center mb-2">
+      <figure class="room-item__image-wrapper">
+        <img src="assets/img/cold.png" alt="" class="img-fluid" />
+      </figure>
+      <p class="room-item__description">Home is too Cold and Damp</p>
+    </div>
+    <div class="room-item__data-wrapper">
+      <div class="temperature-column temperature--cold">
+        <i class="icon icon--temperature"></i>
+        <div class="text-wrapper">
+          <div class="title">Temperature</div>
+          <div class="value">22.1°C</div>
+        </div>
+      </div>
+      <div class="temperature-column humidity--damp">
+        <i class="icon icon--temperature"></i>
+        <div class="text-wrapper">
+          <div class="title">Humidity</div>
+          <div class="value">63.5%</div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-2">
+      <a
+        href="#"
+        class="btn bg-primary text-white w-100 d-flex align-items-center"
+      >
+        <span class="ms-auto">See Detail Room</span>
+        <i class="fas fa-chevron-right ms-auto"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+                </div>
+              </div>
+            </div>
+            <div class="form--float footer">
+              <div class="form-control">
+                <a
+                  href="#dataMarker"
+                  data-bs-toggle="collapse"
+                  class="toggle-hide-show"
+                >
+                  <span class="toggle-hide-show__label">
+                    Marker Information
+                  </span>
+                  <span class="text--show">
+                    <i class="fas fa-chevron-down ms-auto me-2"></i>
+                    show
+                  </span>
+                  <span class="text--hide">
+                    <i class="fas fa-chevron-up ms-auto me-2"></i>
+                    hide
+                  </span>
+                </a>
+                <div class="collapse" id="dataMarker">
+                  <div class="d-flex border-top mt-2 pt-2">
+                    <div class="col">
+                      <p class="mb-2">Temperature</p>
+                      <ul>
+                        <li class="d-flex ps-0 pe-2 px-md-3 gap-2 gap-md-3">
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            name=""
+                            id=""
+                          />
+                          <label class="form-label" for="">&gt; 30 °C</label>
+                          <div class="icon--small dry ms-auto"></div>
+                        </li>
+                        <li class="d-flex ps-0 pe-2 px-md-3 gap-2 gap-md-3">
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            name=""
+                            id=""
+                          />
+                          <label class="form-label" for="">18 - 29 °C</label>
+                          <div class="icon--small comfortable ms-auto"></div>
+                        </li>
+                        <li class="d-flex ps-0 pe-2 px-md-3 gap-2 gap-md-3">
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            name=""
+                            id=""
+                          />
+                          <label class="form-label" for="">&lt; 18 °C</label>
+                          <div class="icon--small cold ms-auto"></div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col border-start ps-2 ps-md-3">
+                      <p class="mb-2">Humidity</p>
+                      <ul>
+                        <li class="d-flex px-0 px-md-3 gap-2 gap-md-3">
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            name=""
+                            id=""
+                          />
+                          <label class="form-label" for="">&gt; 60%</label>
+                          <div class="icon--small damp ms-auto"></div>
+                        </li>
+                        <li class="d-flex px-0 px-md-3 gap-2 gap-md-3">
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            name=""
+                            id=""
+                          />
+                          <label class="form-label" for="">30 - 60%</label>
+                          <div class="icon--small comfortable ms-auto"></div>
+                        </li>
+                        <li class="d-flex px-0 px-md-3 gap-2 gap-md-3">
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            name=""
+                            id=""
+                          />
+                          <label class="form-label" for="">&lt; 30%</label>
+                          <div class="icon--small dry ms-auto"></div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+    <script src="./assets/js/main.js"></script>
+    
+<script src="./assets/js/mapMarker.js"></script>
+<script>
+  var addressPoints = [
+    {
+      latitute: -37.8839,
+      longitute: 175.3745188667,
+      title: 'Rudi’s House',
+      temperature: 17,
+      humidity: 55
+    },
+    {
+      latitute: -37.8869090667,
+      longitute: 175.3657417333,
+      title: 'Rudi’s House',
+      temperature: 31,
+      humidity: 50
+    },
+    {
+      latitute: -37.8894207167,
+      longitute: 175.4015351167,
+      title: 'Rudi’s House',
+      temperature: 17,
+      humidity: 25
+    },
+    {
+      latitute: -37.8927369333,
+      longitute: 175.4087452333,
+      title: 'Rudi’s House',
+      temperature: 15,
+      humidity: 65
+    },
+    {
+      latitute: -37.90585105,
+      longitute: 175.4453463833,
+      title: 'Rudi’s House',
+      temperature: 23,
+      humidity: 70
+    },
+    {
+      latitute: -37.9064188833,
+      longitute: 175.4441556833,
+      title: 'Rudi’s House',
+      temperature: 20,
+      humidity: 25
+    },
+    {
+      latitute: -37.90584715,
+      longitute: 175.4463564333,
+      title: 'Rudi’s House',
+      temperature: 35,
+      humidity: 65
+    },
+    {
+      latitute: -37.9033391333,
+      longitute: 175.4244005667,
+      title: 'Rudi’s House',
+      temperature: 32,
+      humidity: 20
+    },
+    {
+      latitute: -37.9061991333,
+      longitute: 175.4492620333,
+      title: 'Rudi’s House',
+      temperature: 28,
+      humidity: 50
+    },
+    {
+      latitute: -37.9061991333,
+      longitute: 175.4392620333,
+      title: 'Deni House',
+      temperature: null,
+      humidity: null
+    }
+  ];
+
+  function searchTypeHandle(type) {
+    if (type === 'email') {
+      $('.search-type-label').text('By email');
+      $('.search-type-email').addClass('show');
+      $('.search-type-suburb').removeClass('show');
+    } else {
+      $('.search-type-label').text('By suburb');
+      $('.search-type-email').removeClass('show');
+      $('.search-type-suburb').addClass('show');
+    }
+  }
+
+  $(document).ready(function () {
+    $('.view-type').change(function () {
+      $('#list-wrapper').toggleClass('show');
+      $('#map-wrapper').toggleClass('show');
+      $('.form--float.header').toggleClass('no-float');
+      if ($(this)[0].value === 'list') {
+        $('.toggle-hide-show__label').text('Filter Conditions');
+      } else {
+        $('.toggle-hide-show__label').text('Marker Information');
+      }
+    });
+    $('.search-type').change(function () {
+      $('.search-type-list').toggleClass('show');
+    });
+    $('.js-select').select2({
+      placeholder: 'Eg. dedekysf93@gmail.com',
+      allowClear: true,
+      dropdownAutoWidth: true,
+      width: '100%'
+    });
+    $('.toggle-hide-show').click(function () {
+      $(this).toggleClass('active');
+    });
+
+    var tiles = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+          maxZoom: 18,
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ'
+        }
+      ),
+      latlng = L.latLng(-37.89, 175.46);
+
+    var map = L.map('map', {
+      center: latlng,
+      zoomControl: false,
+      zoom: 13,
+      layers: [tiles]
+    });
+
+    var markers = L.markerClusterGroup({ chunkedLoading: true });
+
+    for (var i = 0; i < addressPoints.length; i++) {
+      let addressPoint = addressPoints[i];
+      let { latitute, longitute, title, temperature, humidity } = addressPoint;
+
+      let roomStatus = getRoomStatus(temperature, humidity);
+      let temperatureStatus = getTemperatureStatus(temperature).toLowerCase();
+      let humidityStatus = getHumidityStatus(humidity).toLowerCase();
+      let isComfortable =
+        temperatureStatus === 'comfortable' && humidityStatus === 'comfortable';
+      console.log('isComfortable: ', isComfortable);
+
+      function getRoomStatusDescription(roomStatus) {
+        if (!roomStatus == null || roomStatus === 'offline') return 'offline';
+        let roomStatusDescription = `${roomStatus
+          .split(/(?=[A-Z])/)
+          .join(' and ')}`;
+        if (roomStatus != 'Comfortable') return `too ${roomStatusDescription}`;
+        return roomStatusDescription;
+      }
+
+      let roomStatusDescription = getRoomStatusDescription(roomStatus);
+      console.log('roomStatusDescription: ', roomStatusDescription);
+
+      var myIcon = L.icon({
+        iconUrl: `/assets/img/MapMarker/${roomStatus}.svg`,
+        iconSize: [24, 28],
+        iconAnchor: [12, 14],
+        popupAnchor: [0, -10]
+      });
+      var marker = L.marker(L.latLng(latitute, longitute), {
+        icon: myIcon,
+        title: title,
+        maxWidth: '180px'
+      });
+
+      function addCardContent(roomStatus) {
+        return `
+            <h6 class="fw-bold fs-7 mb-1">${title}</h6>
+            <p class="my-1 text-secondary fs-9"><i class="far fa-envelope me-1"></i>andyshandy@xtra.co.nz</p>
+            <hr class="my-2 opacity-50 border-secondary" />
+            <p class="fw-bold my-2 fs-8">${
+              roomStatusDescription != 'offline'
+                ? 'Home is ' + roomStatusDescription
+                : 'Offline Sensor'
+            }</p>
+                <div class="${temperatureStatus}">
+                    Temperature <span class="fw-bold ms-auto">${
+                      temperature != null ? temperature : ''
+                    }°C</span>
+                </div>
+                <div class="${humidityStatus}">
+                      Humidity <span class="fw-bold ms-auto">${
+                        humidity != null ? humidity : ''
+                      }%</span>
+                </div>
+            <a class="d-block mt-2 fw-bold text-success text-decoration-underscore">See Detail Room</a>
+            `;
+      }
+
+      marker.bindPopup(addCardContent(roomStatus));
+      markers.addLayer(marker);
+    }
+
+    map.addLayer(markers);
+  });
+</script>
+
+  </body>
+</html>

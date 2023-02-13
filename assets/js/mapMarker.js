@@ -14,10 +14,10 @@ function getRoomStatus(temperature, humidity) {
 
 function getTemperatureStatus(temperature) {
   const LOW_TEMPERATURE_THRESHOLD = 18;
-  const HIGH_TEMPERATUR_THRESHOLD = 29;
+  const HIGH_TEMPERATURE_THRESHOLD = 29;
 
   const isCold = temperature < LOW_TEMPERATURE_THRESHOLD;
-  const isHot = temperature > HIGH_TEMPERATUR_THRESHOLD;
+  const isHot = temperature > HIGH_TEMPERATURE_THRESHOLD;
 
   if (temperature == null) return "offline";
   if (isCold) return "Cold";
