@@ -442,25 +442,6 @@ function dateFilterHandler() {
   document.getElementsByClassName("date-filter")[0].type = dateFilter;
 }
 
-// //Carousel List
-// let items = document.querySelectorAll(".carousel .carousel-item");
-// console.log("items: ", items);
-
-// items.forEach((el) => {
-//   const minPerSlide = 3;
-//   let next = el.nextElementSibling;
-//   console.log("next: ", next);
-//   for (var i = 0; i < minPerSlide; i++) {
-//     if (!next) {
-//       // wrap carousel by using first child
-//       next = items[0];
-//     }
-//     let cloneChild = next.cloneNode(true);
-//     el.appendChild(cloneChild.children[0]);
-//     next = next.nextElementSibling;
-//   }
-// });
-
 const swiper = new Swiper(".swiper", {
   slidesPerView: 1,
   spaceBetween: 12,

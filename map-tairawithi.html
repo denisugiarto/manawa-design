@@ -800,19 +800,27 @@
             <p class="fw-bold my-2 fs-8">${
               roomStatusDescription != 'offline'
                 ? 'Home is ' + roomStatusDescription
-                : 'Offline Sensor'
-            }</p>
-                <div class="${temperatureStatus}">
-                    Temperature <span class="fw-bold ms-auto">${
-                      temperature != null ? temperature : ''
-                    }°C</span>
-                </div>
-                <div class="${humidityStatus}">
-                      Humidity <span class="fw-bold ms-auto">${
-                        humidity != null ? humidity : ''
-                      }%</span>
-                </div>
-            <a class="d-block mt-2 fw-bold text-success text-decoration-underscore">See Detail Room</a>
+                : 'Sensor Offline'
+            }
+            </p>
+            ${
+              roomStatusDescription === 'offline'
+                ? ''
+                : `
+            
+            <div class="mb-1">  <span class="circle-status ${temperatureStatus}"></span>
+              Temperature <span class="fw-bold float-end">${
+                temperature != null ? temperature : ''
+              }°C</span>
+            </div>
+            <div class="mb-1"> <span class="circle-status ${humidityStatus}"></span> 
+              Humidity <span class="fw-bold float-end">${
+                humidity != null ? humidity : ''
+              }%</span>
+            </div>`
+            }
+                  
+                  <a class="d-block mt-2 fw-bold text-success text-decoration-underline">See Detail Room</a>
             `;
       }
 
