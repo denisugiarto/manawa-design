@@ -273,122 +273,122 @@ Homes by Map' %} {% import "../components/cards.html" as card %}
       {
         latitute: -37.8839,
         longitute: 175.3745188667,
-        title: "Rudi’s House",
+        title: 'Rudi’s House',
         temperature: 17,
         humidity: 55,
       },
       {
         latitute: -37.8869090667,
         longitute: 175.3657417333,
-        title: "Rudi’s House",
+        title: 'Rudi’s House',
         temperature: 31,
         humidity: 50,
       },
       {
         latitute: -37.8894207167,
         longitute: 175.4015351167,
-        title: "Rudi’s House",
+        title: 'Rudi’s House',
         temperature: 17,
         humidity: 25,
       },
       {
         latitute: -37.8927369333,
         longitute: 175.4087452333,
-        title: "Rudi’s House",
+        title: 'Rudi’s House',
         temperature: 15,
         humidity: 65,
       },
       {
         latitute: -37.90585105,
         longitute: 175.4453463833,
-        title: "Rudi’s House",
+        title: 'Rudi’s House',
         temperature: 23,
         humidity: 70,
       },
       {
         latitute: -37.9064188833,
         longitute: 175.4441556833,
-        title: "Rudi’s House",
+        title: 'Rudi’s House',
         temperature: 20,
         humidity: 25,
       },
       {
         latitute: -37.90584715,
         longitute: 175.4463564333,
-        title: "Rudi’s House",
+        title: 'Rudi’s House',
         temperature: 35,
         humidity: 65,
       },
       {
         latitute: -37.9033391333,
         longitute: 175.4244005667,
-        title: "Rudi’s House",
+        title: 'Rudi’s House',
         temperature: 32,
         humidity: 20,
       },
       {
         latitute: -37.9061991333,
         longitute: 175.4492620333,
-        title: "Rudi’s House",
+        title: 'Rudi’s House',
         temperature: 28,
         humidity: 50,
       },
       {
         latitute: -37.9061991333,
         longitute: 175.4392620333,
-        title: "Deni House",
+        title: 'Deni House',
         temperature: null,
         humidity: null,
       },
     ];
 
     function searchTypeHandle(type) {
-      if (type === "email") {
-        $(".search-type-label").text("By email");
-        $(".search-type-email").addClass("show");
-        $(".search-type-suburb").removeClass("show");
+      if (type === 'email') {
+        $('.search-type-label').text('By email');
+        $('.search-type-email').addClass('show');
+        $('.search-type-suburb').removeClass('show');
       } else {
-        $(".search-type-label").text("By suburb");
-        $(".search-type-email").removeClass("show");
-        $(".search-type-suburb").addClass("show");
+        $('.search-type-label').text('By suburb');
+        $('.search-type-email').removeClass('show');
+        $('.search-type-suburb').addClass('show');
       }
     }
 
     $(document).ready(function () {
-      $(".view-type").change(function () {
-        $("#list-wrapper").toggleClass("show");
-        $("#map-wrapper").toggleClass("show");
-        $(".form--float.header").toggleClass("no-float");
-        if ($(this)[0].value === "list") {
-          $(".toggle-hide-show__label").text("Filter Conditions");
+      $('.view-type').change(function () {
+        $('#list-wrapper').toggleClass('show');
+        $('#map-wrapper').toggleClass('show');
+        $('.form--float.header').toggleClass('no-float');
+        if ($(this)[0].value === 'list') {
+          $('.toggle-hide-show__label').text('Filter Conditions');
         } else {
-          $(".toggle-hide-show__label").text("Marker Information");
+          $('.toggle-hide-show__label').text('Marker Information');
         }
       });
-      $(".search-type").change(function () {
-        $(".search-type-list").toggleClass("show");
+      $('.search-type').change(function () {
+        $('.search-type-list').toggleClass('show');
       });
-      $(".js-select").select2({
-        placeholder: "Eg. dedekysf93@gmail.com",
+      $('.js-select').select2({
+        placeholder: 'Eg. dedekysf93@gmail.com',
         allowClear: true,
         dropdownAutoWidth: true,
-        width: "100%",
+        width: '100%',
       });
-      $(".toggle-hide-show").click(function () {
-        $(this).toggleClass("active");
+      $('.toggle-hide-show').click(function () {
+        $(this).toggleClass('active');
       });
 
-      var tiles = L.tileLayer(
-          "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-          {
-            maxZoom: 18,
-            attribution:
-              '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ',
-          }
-        ),
-        latlng = L.latLng(-37.89, 175.46);
+      let tiles = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+          maxZoom: 18,
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ',
+        }
+      );
+      let latlng = L.latLng(-37.89, 175.46);
 
-      var map = L.map("map", {
+      var map = L.map('map', {
         center: latlng,
         zoomControl: false,
         zoom: 13,
@@ -406,22 +406,22 @@ Homes by Map' %} {% import "../components/cards.html" as card %}
         let temperatureStatus = getTemperatureStatus(temperature).toLowerCase();
         let humidityStatus = getHumidityStatus(humidity).toLowerCase();
         let isComfortable =
-          temperatureStatus === "comfortable" &&
-          humidityStatus === "comfortable";
-        console.log("isComfortable: ", isComfortable);
+          temperatureStatus === 'comfortable' &&
+          humidityStatus === 'comfortable';
+        console.log('isComfortable: ', isComfortable);
 
         function getRoomStatusDescription(roomStatus) {
-          if (!roomStatus == null || roomStatus === "offline") return "offline";
+          if (!roomStatus == null || roomStatus === 'offline') return 'offline';
           let roomStatusDescription = `${roomStatus
             .split(/(?=[A-Z])/)
-            .join(" and ")}`;
-          if (roomStatus != "Comfortable")
+            .join(' and ')}`;
+          if (roomStatus != 'Comfortable')
             return `too ${roomStatusDescription}`;
           return roomStatusDescription;
         }
 
         let roomStatusDescription = getRoomStatusDescription(roomStatus);
-        console.log("roomStatusDescription: ", roomStatusDescription);
+        console.log('roomStatusDescription: ', roomStatusDescription);
 
         var myIcon = L.icon({
           iconUrl: `/assets/img/MapMarker/${roomStatus}.svg`,
@@ -432,23 +432,23 @@ Homes by Map' %} {% import "../components/cards.html" as card %}
         var marker = L.marker(L.latLng(latitute, longitute), {
           icon: myIcon,
           title: title,
-          maxWidth: "180px",
+          maxWidth: '180px',
         });
 
         function addCardContent(roomStatus) {
           return `
             <h6 class="text-danger fw-bold border-bottom pb-2">${title}</h6>
             <p class="fw-bold border-bottom pb-1 text-center">${
-              roomStatusDescription != "offline"
-                ? "Home is " + roomStatusDescription
-                : "Offline Sensor"
+              roomStatusDescription != 'offline'
+                ? 'Home is ' + roomStatusDescription
+                : 'Offline Sensor'
             }</p>
             <div class="status-bar-wrapper ${temperatureStatus}">
               <div class="status-bar"></div>
               <div class="position-absolute start-0 top-0 w-100 p-1">
                 <div class="status-bar-value">
                   Temperature <span class="fw-bold ms-auto">${
-                    temperature != null ? temperature : ""
+                    temperature != null ? temperature : ''
                   }°C</span>
                 </div>
               </div>
@@ -458,7 +458,7 @@ Homes by Map' %} {% import "../components/cards.html" as card %}
               <div class="position-absolute start-0 top-0 w-100 p-1">
                 <div class="status-bar-value">
                   Humidity <span class="fw-bold ms-auto">${
-                    humidity != null ? humidity : ""
+                    humidity != null ? humidity : ''
                   }%</span>
                 </div>
               </div>

@@ -25,7 +25,7 @@
     margin: 0 0 15px 0;
   }
   &__tab {
-    &.active[data-step="step1"] ~ .step-guide__navigation {
+    &.active[data-step='step1'] ~ .step-guide__navigation {
       justify-content: flex-end;
     }
   }
@@ -182,19 +182,31 @@
   &__input-wrapper {
     width: 100%;
     position: relative;
+    &--has-icon {
+      .form__input {
+        padding-right: 32px;
+      }
+      .icon {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+      }
+    }
     .icon.icon-password {
       @include absolute(top 50% right 10px);
       z-index: 1;
       cursor: pointer;
       transform: translateY(-50%);
       &::after {
-        font-family: "Font Awesome 5 Free";
-        content: "\f06e";
+        font-family: 'Font Awesome 5 Free';
+        content: '\f06e';
         color: $color-dark-grey;
       }
       &.active {
         &::after {
-          content: "\f070";
+          content: '\f070';
         }
       }
       &.fa-eye:before {
@@ -272,8 +284,8 @@
     flex: 0 0 auto;
     @include absolute(left 0);
     &::after {
-      font-family: "Font Awesome 5 Free";
-      content: "\f00c";
+      font-family: 'Font Awesome 5 Free';
+      content: '\f00c';
       display: none;
       font-weight: bold;
       color: $white;
