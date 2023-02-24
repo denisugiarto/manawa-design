@@ -125,12 +125,12 @@
                     </div>
                     <div class="form__field form__field--has-map">
                       <div class="form__map-wrapper">
-                        <div class="form__map-overlay">
+                        <div class="form__map-overlay" style="z-index: 1000;">
                           <button
                             type="button"
                             class="button button--black"
                             data-bs-toggle="modal"
-                            data-bs-target="#exampleModal"
+                            data-bs-target="#modalSelectMap"
                           >
                             <i
                               class="icon icon--location fas fa-map-marked-alt"
@@ -138,14 +138,7 @@
                             Set Your Location
                           </button>
                         </div>
-                        <iframe
-                          class="form__map"
-                          frameborder="0"
-                          scrolling="no"
-                          marginheight="0"
-                          marginwidth="0"
-                          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                        ></iframe>
+                        <div id="mapPreview" style="height: 150px; width: 100%;"></div>
                       </div>
                     </div>
                     <div class="form__field form__field--selected-location">
@@ -940,17 +933,17 @@
 <!-- Modal -->
 <div
   class="modal modal--step-guide fade"
-  id="exampleModal"
+  id="modalSelectMap"
   tabindex="-1"
-  aria-labelledby="exampleModalLabel"
+  aria-labelledby="modalSelectMapLabel"
   aria-hidden="true"
 >
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-body p-4">
         <div class="map-wrapper position-relative">
-          <div id="selectMap" style="height: 420px"></div>
-          <div class="form__field position-absolute top-0 p-4" style="z-index: 1000;">
+          <div id="selectMap" style="height: 420px;"></div>
+          <div class="form__field position-absolute top-0 p-4" style="z-index: 1000;" >
             <div class="form__input-wrapper form__input-wrapper--has-icon">
               <input
                 type="text"
@@ -968,7 +961,7 @@
         <button class="button button--white" data-bs-dismiss="modal">
           Cancel
         </button>
-        <button class="button button--primary">Confirmation</button>
+        <button id="buttonConfirm" class="button button--primary">Confirmation</button>
       </div>
     </div>
   </div>
